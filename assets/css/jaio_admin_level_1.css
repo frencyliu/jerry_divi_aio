@@ -1,0 +1,155 @@
+/*
+ * for Designer
+ * 人性化界面
+ * 可以使用AVADA複雜選項選單(懂CSS)，可以套版
+ * 新增用戶
+*/
+
+@import "jaio_admin_level_0.css";
+
+/*BOGO*/
+#toplevel_page_bogo,
+/*AVADA隱藏區塊*/
+.avada-dashboard .avada-db-header-main,
+.avada-dashboard .avada-db-header-sticky,
+.avada-dashboard .avada-db-demos-notices,
+.avada-dashboard .fusion-template-builder.avada-db-card-first,
+/*控制台留言*/
+#latest-comments,
+ul#wp-admin-bar-root-default > li:not(#wp-admin-bar-site-name),
+#contextual-help-link-wrap,
+.woocommerce-marketing-knowledgebase-card,
+.wp-list-table tr#tag-29,
+/*wordfenece通知*/
+#wf-extended-protection-notice,
+/*Woocommerce 開始匯入產品*/
+.woocommerce-BlankState-buttons .woocommerce-BlankState-cta,
+/*Woocommerce Setting*/
+#wpbody-content .woocommerce #mainform > ul > li:nth-child(3),
+#wpbody-content .woocommerce #mainform > table:nth-child(5) > tbody > tr:nth-child(2)
+h2.nav-tab-wrapper#tabs, #toplevel_page_woocommerce,
+.woocommerce-layout__header,
+.woocommerce-layout__activity-panel,
+/*Advanced Shipment Tracking*/
+.zorem-layout__header,
+.zorem_admin_sidebar,
+.woopt_add_action,
+.tab_label[for="tab6"],
+.tab_label[for="trackship"],
+.ast_nav_div .menu_trackship_link,
+.bulk_upload_documentation_ul li:nth-child(2),
+/**/
+#export_job_settings #reset-profile,
+#export_job_settings #my-left .my-block:last-child,
+#export_job_settings #save-only-btn,
+#export_job_settings #export-wo-pb-btn,
+span#wp-version,
+.update-nag,
+/*創建角時，隱藏其他角色選項*/
+select#role option[value="subscriber"],
+select#role option[value="designer"],
+select#role option[value="wpseo_editor"],
+select#role option[value="wpseo_manager"],
+select#role option[value="contributor"],
+select#role option[value="author"],
+select#role option[value="translator"],
+/*新增使用者*/
+#createuser > table:nth-child(6),
+#createuser > table:nth-child(4) > tbody > tr:nth-child(5),
+/*profile.php*/
+.profile-php #your-profile .form-table:nth-child(5),
+.profile-php #your-profile h3:first-child,
+.profile-php #your-profile .form-table:nth-child(11),
+.profile-php #your-profile .form-table:nth-child(15),
+.profile-php tr.user-last-name-wrap,
+.profile-php .user-description-wrap,
+.profile-php .user-profile-picture,
+.profile-php h2,
+.profile-php .user-pinterest-wrap,
+.profile-php .user-myspace-wrap,
+.profile-php .user-soundcloud-wrap,
+.profile-php .user-tumblr-wrap,
+.profile-php .user-wikipedia-wrap,
+.profile-php tr.user-author_facebook-wrap,
+.profile-php tr.user-url-wrap,
+/*WC 折價券*/
+#coupon-root,
+.components-card.woocommerce-store-alerts.is-alert-update,
+/*匯出會員資料*/
+.wt-import-export-upsell-wrapper.market-box,
+#wpbody-content > div.wt_user_show_legecy_menu.notice-info.notice.is-dismissible,
+#wpbody-content > div.wt_user_show_server_info.notice-warning.notice.is-dismissible,
+/*EZ SMTP*/
+#swpsmtp_settings_form > div:nth-child(3) > div:nth-child(2),
+#post-body > div.swpsmtp-settings-container > div.swpsmtp-settings-grid.swpsmtp-settings-sidebar-cont,
+#swpsmtp-mail > h2,
+/*選單*/
+#nav-menu-meta #add-post-type-admin_menu,
+#nav-menu-meta #add-post-type-admin_notice,
+#nav-menu-meta #add-post-type-admin_toolbar,
+#nav-menu-meta #add-post-type-custom_admin_code,
+#nav-menu-meta #add-post-type-custom_frontend_code,
+#nav-menu-meta #add-post-type-dashboard_widget,
+#nav-menu-meta #add-post-type-hide_metabox,
+#nav-menu-meta #add-post-type-hide_plugin,
+#nav-menu-meta #add-post-type-hide_sidebar,
+#nav-menu-meta #add-post-type-hide_user,
+#nav-menu-meta #add-post-type-avada_portfolio,
+#nav-menu-meta #add-portfolio_category,
+#nav-menu-meta #add-portfolio_skills,
+#nav-menu-meta #add-portfolio_tags,
+#nav-menu-meta #woocommerce-endpoints-checklist > li:nth-child(2),
+/*MENU PAGE*/
+#menu-appearance,
+#toplevel_page_avada,
+#toplevel_page_woocommerce,
+#toplevel_page_wt_import_export_for_woo_basic_export,
+#toplevel_page_woocommerce-marketing,
+#toplevel_page_ai1wm_export,
+#toplevel_page_optimisationio-dashboard,
+#toplevel_page_custom_admin_interface_pro,
+#toplevel_page_Wordfence,
+#toplevel_page_loco,
+#toplevel_page_heateor-ss-general-options,
+.wp-menu-separator,
+#toplevel_page_WFLS,
+#toplevel_page_theseoframework-settings,
+/*外觀自訂*/
+#accordion-section-themes,
+#customize-control-site_icon,
+#accordion-section-colors,
+#accordion-section-header_image,
+#accordion-section-background_image,
+#accordion-panel-widgets,
+#accordion-section-custom_css,
+#accordion-panel-woocommerce,
+/*All in one migration備份*/
+#wpbody-content > div.ai1wm-container > div > div.ai1wm-right,
+#ai1wm-report-problem-button,
+/*自訂結帳表單*/
+.woocommerce_page_checkout_form_designer #wpbody-content > div.wrap > div > h2 > a:nth-child(3),
+/*admin 2020*/
+li.uk-animation-slide-right #a2020-update-wrap,
+#offcanvas-user-menu > div > div:nth-child(2) > div > div.uk-width-1-1.uk-margin-top.uk-grid-margin.uk-first-column > div.a2020-switch-container.uk-margin-bottom,
+/*文章編輯*/
+#side-sortables #featured-image-2_post,
+#side-sortables #featured-image-3_post,
+#side-sortables #featured-image-4_post,
+#side-sortables #featured-image-5_post,
+#side-sortables #fusion_featured_images_info,
+/*woocommerce_page_wc-order-export menu*/
+.woocommerce_page_wc-order-export h2.nav-tab-wrapper,
+/*social login*/
+.super-socializer_page_heateor-social-login .ui-widget-content,
+.super-socializer_page_heateor-social-login table.menu_content_table{
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+
+
+/*admin 2020 menu*/
+#adminmenu a, #catlist a, #taglist a{
+    white-space: nowrap;
+}

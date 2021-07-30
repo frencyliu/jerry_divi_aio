@@ -1,0 +1,50 @@
+/*
+ * for webmail front end and backend
+*/
+/*wemail*/
+
+#adminmenumain .progress-data-container p{
+    margin: 0px;
+}
+.wemail-form.form-style-floating-box, .wemail-form.form-style-modal{
+    z-index: 30051 !important; /*比AVADA 20051高*/
+}
+
+.wemail-form.form-style-floating-bar .wemail-form-close{
+    top: 30px !important;
+    right: 10px !important;
+    background: transparent !important;
+    fill: rgb(85, 83, 83) !important;
+}
+.wemail-form.form-style-floating-box .wemail-form-close,
+.wemail-form.form-style-modal .wemail-form-close{
+    background: transparent !important;
+    fill: rgb(85, 83, 83) !important;
+}
+
+.wemail-frontend-form .wemail-form.form-style-modal,
+.wemail-form-container .wemail-form.form-style-modal{
+    margin-left: -450px;
+}
+
+.wemail-frontend-form .wemail-form.form-style-floating-box,
+.wemail-frontend-form .wemail-form.form-style-modal,
+.wemail-form-container .wemail-form.form-style-floating-box,
+.wemail-form-container .wemail-form.form-style-modal{
+    width: 900px;
+}
+
+@media (max-width:991px){
+    .wemail-frontend-form .wemail-form.form-style-floating-box,
+    .wemail-frontend-form .wemail-form.form-style-modal,
+    .wemail-form-container .wemail-form.form-style-floating-box,
+    .wemail-form-container .wemail-form.form-style-modal{
+        width: 100%;
+    }
+
+    .wemail-frontend-form .wemail-form.form-style-modal,
+    .wemail-form-container .wemail-form.form-style-modal{
+        margin-left: -50%;
+    }
+
+}

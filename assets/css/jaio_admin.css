@@ -1,0 +1,64 @@
+
+
+ul#wp-admin-bar-root-default > li:not(#wp-admin-bar-site-name),
+#contextual-help-link-wrap,
+.woocommerce-marketing-knowledgebase-card,
+.wp-list-table tr#tag-29,
+/*Woocommerce Setting*/
+#wpbody-content .woocommerce #mainform > ul > li:nth-child(3),
+#wpbody-content .woocommerce #mainform > table:nth-child(5) > tbody > tr:nth-child(2)
+h2.nav-tab-wrapper#tabs, #toplevel_page_woocommerce,
+.woocommerce-layout__header,
+.woocommerce-layout__activity-panel,
+/*Advanced Shipment Tracking*/
+.zorem-layout__header,
+.zorem_admin_sidebar,
+.woopt_add_action,
+.tab_label[for="tab6"],
+.ast_nav_div .menu_trackship_link,
+.bulk_upload_documentation_ul li:nth-child(2),
+/**/
+.wc_emails.widefat,
+#export_job_settings #reset-profile,
+#export_job_settings #my-left .my-block:last-child,
+#export_job_settings #save-only-btn,
+#export_job_settings #export-wo-pb-btn,
+span#wp-version,
+.update-nag,
+/*創建角時，隱藏其他角色選項*/
+select#role option[value="subscriber"],
+select#role option[value="desinger"],
+select#role option[value="wpseo_editor"],
+select#role option[value="wpseo_manager"],
+select#role option[value="contributor"],
+select#role option[value="author"],
+select#role option[value="translator"],
+/*新增使用者*/
+#createuser > table:nth-child(6),
+#createuser > table:nth-child(4) > tbody > tr:nth-child(5),
+/*編輯個人資料*/
+tr.user-comment-shortcuts-wrap,
+tr.user-last-name-wrap,
+tr.user-author_dribble-wrap,
+tr.user-author_whatsapp-wrap,
+tr.user-author_custom-wrap,
+/*WC 折價券*/
+#coupon-root,
+/*匯出會員資料*/
+.wt-import-export-upsell-wrapper.market-box,
+#wpbody-content > div.wt_user_show_legecy_menu.notice-info.notice.is-dismissible,
+#wpbody-content > div.wt_user_show_server_info.notice-warning.notice.is-dismissible{
+    display: none !important;
+}
+
+img.avatar{
+  border-radius:100% !important;
+}
+
+#woocommerce_dashboard_status .wc_status_list li,
+.select2-container{
+    height: fit-content !important;
+}
+.php-error #adminmenuback, .php-error #adminmenuwrap{
+	margin-top:0px !important;
+}

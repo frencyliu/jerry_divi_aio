@@ -1,0 +1,13 @@
+/*
+ * 極簡模式
+*/
+/*商品中心 分類 標籤*/
+#menu-posts-product > ul > li:nth-child(3),
+#menu-posts-product > ul > li:nth-child(4),
+/**/
+.woocommerce nav.nav-tab-wrapper.woo-nav-tab-wrapper,
+#adminmenu #toplevel_page_googlesitekit-dashboard,
+#adminmenu #menu-posts,
+#adminmenu #menu-pages{
+    display: none !important;
+}

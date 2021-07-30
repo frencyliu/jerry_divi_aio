@@ -1,0 +1,6 @@
+{
+    "require": {
+        "oberonlai/wp-metabox": "^1.0",
+        "oberonlai/wp-option": "^1.0"
+    }
+}

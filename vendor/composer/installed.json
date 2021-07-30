@@ -1,0 +1,96 @@
+{
+    "packages": [
+        {
+            "name": "oberonlai/wp-metabox",
+            "version": "v1.0.3",
+            "version_normalized": "1.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oberonlai/wp-metabox.git",
+                "reference": "e01c588f47e4520020d39be335ace88fb61539e1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oberonlai/wp-metabox/zipball/e01c588f47e4520020d39be335ace88fb61539e1",
+                "reference": "e01c588f47e4520020d39be335ace88fb61539e1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "time": "2021-06-29T01:26:39+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ODS\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oberon Lai",
+                    "email": "m615926@gmail.com",
+                    "homepage": "https://oberonlai.blog"
+                }
+            ],
+            "description": "Adding custom field for WordPress Post Type.",
+            "homepage": "https://github.com/oberonlai/wp-metabox",
+            "support": {
+                "issues": "https://github.com/oberonlai/wp-metabox/issues",
+                "source": "https://github.com/oberonlai/wp-metabox/tree/v1.0.3"
+            },
+            "install-path": "../oberonlai/wp-metabox"
+        },
+        {
+            "name": "oberonlai/wp-option",
+            "version": "v1.0.3",
+            "version_normalized": "1.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/oberonlai/wp-option.git",
+                "reference": "9ba78cd63926316103d2b24f6f92d8727a38c01c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/oberonlai/wp-option/zipball/9ba78cd63926316103d2b24f6f92d8727a38c01c",
+                "reference": "9ba78cd63926316103d2b24f6f92d8727a38c01c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "time": "2021-06-30T05:16:11+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ODS\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Oberon Lai",
+                    "email": "m615926@gmail.com",
+                    "homepage": "https://oberonlai.blog"
+                }
+            ],
+            "description": "Adding option page for WordPress.",
+            "homepage": "https://github.com/oberonlai/wp-option",
+            "support": {
+                "issues": "https://github.com/oberonlai/wp-option/issues",
+                "source": "https://github.com/oberonlai/wp-option/tree/v1.0.3"
+            },
+            "install-path": "../oberonlai/wp-option"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
