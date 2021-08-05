@@ -123,6 +123,8 @@ class Custom_Admin extends Jerry_Divi_AIO
     public function jdaio_amp_setting()
     {
 
+
+
         switch (self::$current_user_level) {
             case 0:
                 # do nothing
@@ -988,8 +990,8 @@ class Custom_Admin extends Jerry_Divi_AIO
     {
         global $menu; // Global to get menu array
         /*echo '<pre>';
-  var_dump($menu);
-  echo '</pre>';*/
+        var_dump($menu);
+        echo '</pre>';*/
         foreach ($menu as $key => $menu_array) {
 
             switch ($menu_array[2]) {
@@ -1008,7 +1010,9 @@ class Custom_Admin extends Jerry_Divi_AIO
                 case 'users.php':
                     $menu[$key][0] = '用戶中心';
                     break;
-
+                case 'wc-admin&path=/analytics/overview':
+                    $menu[$key][0] = '數據中心';
+                    break;
                 default:
                     # code...
                     break;
@@ -1032,9 +1036,9 @@ class Custom_Admin extends Jerry_Divi_AIO
         remove_menu_page('tools.php');
         remove_menu_page('options-general.php');
         remove_menu_page('themes.php');
-        remove_menu_page('admin.php?page=et_bloom_options');
-        remove_menu_page('admin.php?page=et_divi_options');
-        remove_menu_page('admin.php?page=theseoframework-settings');
+        remove_menu_page('et_bloom_options');
+        remove_menu_page('et_divi_options');
+        remove_menu_page('theseoframework-settings');
         remove_menu_page('edit.php?post_type=project');
 
         //分析 - 移除下載跟稅金
