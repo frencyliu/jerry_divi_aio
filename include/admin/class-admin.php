@@ -1141,6 +1141,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'users.php',
             'edit.php?post_type=shop_coupon',
             'admin.php?page=theseoframework-settings',
+            'loco',
             //'jdaio_extention',
             //'jdaio_teach',
         );
