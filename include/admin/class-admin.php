@@ -913,12 +913,15 @@ class Custom_Admin extends Jerry_Divi_AIO
 
     public function jdaio_login_redirect($redirect_to, $request, $user)
     {
-        if (class_exists('WooCommerce', false)) {
+        /*if (class_exists('WooCommerce', false)) {
             $redirect_to = admin_url() . "admin.php?page=wc-admin&path=%2Fanalytics%2Foverview";
             return $redirect_to;
         } else {
             return $redirect_to;
-        }
+        }*/
+
+        $redirect_to = admin_url() . 'admin.php?page=googlesitekit-splash';
+        return $redirect_to;
     }
 
     public function jdaio_toolbar($wp_admin_bar)
@@ -1027,7 +1030,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         //remove_submenu_page( string $menu_slug, string $submenu_slug )
 
         //移除主選單
-        //remove_menu_page('index.php');
+        remove_menu_page('index.php');
         remove_menu_page('upload.php');
         if (!COMMENT_OPEN) {
             remove_menu_page('edit-comments.php');
@@ -1095,15 +1098,14 @@ class Custom_Admin extends Jerry_Divi_AIO
         }
 
         //--debug--//
-        /*global $menu;
-        echo '<pre>';
-        var_dump($menu);
+        /*echo '<pre>';
+        var_dump($menu_ord);
         echo '</pre>';*/
         //--debug--//
 
         if ($this->jdaio_simple_mode()) {
             return array(
-                'admin.php?page=googlesitekit-splash',
+                'googlesitekit-dashboard',
                 'wc-admin&path=/analytics/overview',
                 'edit.php?post_type=shop_order',
                 'edit.php?post_type=product',
@@ -1121,7 +1123,7 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         return array(
             //'index.php',
-            'admin.php?page=googlesitekit-splash',
+            'googlesitekit-dashboard',
             'wc-admin&path=/analytics/overview',
             'edit.php?post_type=shop_order',
             'edit.php?post_type=product',
