@@ -177,7 +177,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             }
         }
 
-        if (class_exists('User_import_export_Review_Request', false)) {
+        /*if (class_exists('User_import_export_Review_Request', false)) {
             //用戶中心
             add_submenu_page(
                 'users.php',
@@ -188,7 +188,7 @@ class Custom_Admin extends Jerry_Divi_AIO
                 '',
                 2
             );
-        }
+        }*/
 
         //行銷中心
         if (class_exists('WooCommerce', false)) {
@@ -920,8 +920,13 @@ class Custom_Admin extends Jerry_Divi_AIO
             return $redirect_to;
         }*/
 
-        $redirect_to = admin_url() . 'admin.php?page=googlesitekit-splash';
-        return $redirect_to;
+        $class = 'Google\\Site_Kit\\Plugin';
+        if (class_exists($class, false)) {
+            $redirect_to = admin_url() . 'admin.php?page=googlesitekit-splash';
+            return $redirect_to;
+        }else{
+            return $redirect_to;
+        }
     }
 
     public function jdaio_toolbar($wp_admin_bar)
@@ -1051,6 +1056,7 @@ class Custom_Admin extends Jerry_Divi_AIO
     public function jdaio_remove_menu_page_level_2()
     {
         $this->jdaio_remove_menu_page_level_1();
+        remove_menu_page('loco');
     }
     public function jdaio_remove_menu_page_simple_mode()
     {
