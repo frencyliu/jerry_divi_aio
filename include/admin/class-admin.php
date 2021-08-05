@@ -1103,6 +1103,7 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         if ($this->jdaio_simple_mode()) {
             return array(
+                'admin.php?page=googlesitekit-splash',
                 'wc-admin&path=/analytics/overview',
                 'edit.php?post_type=shop_order',
                 'edit.php?post_type=product',
@@ -1112,13 +1113,15 @@ class Custom_Admin extends Jerry_Divi_AIO
                 'admin.php?page=wc-settings&tab=checkout',
                 'users.php',
                 'edit.php?post_type=shop_coupon',
+                'admin.php?page=theseoframework-settings',
                 //'jdaio_extention',
                 //'jdaio_teach',
             );
         }
 
         return array(
-            'index.php',
+            //'index.php',
+            'admin.php?page=googlesitekit-splash',
             'wc-admin&path=/analytics/overview',
             'edit.php?post_type=shop_order',
             'edit.php?post_type=product',
@@ -1129,6 +1132,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'admin.php?page=wc-settings',
             'users.php',
             'edit.php?post_type=shop_coupon',
+            'admin.php?page=theseoframework-settings',
             //'jdaio_extention',
             //'jdaio_teach',
         );
