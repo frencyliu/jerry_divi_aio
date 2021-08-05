@@ -4,30 +4,33 @@
  * customise admin
  */
 
-namespace Admin\JAIO;
+namespace Admin\JDAIO;
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-class Notice{
+class Notice
+{
 
 
-    public function __construct() {
+    public function __construct()
+    {
         /* admin notice
          * notice-error – error message displayed with a red border
          * notice-warning – warning message displayed with a yellow border
          * notice-success – success message displayed with a green border
          * notice-info – info message displayed with a blue border
         */
-        add_action('admin_notices', [$this, 'jaio_admin_notice'], 2);
+        add_action('admin_notices', [$this, 'jdaio_admin_notice'], 2);
     }
 
-    function jaio_admin_notice(){
-        echo '<div class="notice jaio-notice notice-warning is-dismissible">
-                 <p>This is an example of a notice that appears on the settings page.</p>
-             </div>';
+    function jdaio_admin_notice()
+    {
+?>
+<!--
+        <div class="notice jaio-notice notice-warning is-dismissible">
+            <p>This is an example of a notice that appears on the settings page.</p>
+        </div>
+        -->
+<?php
     }
-
-
-
 }
-

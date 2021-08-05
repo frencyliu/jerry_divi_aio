@@ -1,11 +1,11 @@
 /*
  * for shop_manager_super shop_manager editor
  * 人性化界面
- * 更簡單的AVADA選單
+ * 更簡單的Builder選單
  * 新增用戶
 */
 
-@import "jaio_admin_level_1.css";
+@import "jdaio_admin_level_1.css";
 
 li.designer .count{
     display: none;

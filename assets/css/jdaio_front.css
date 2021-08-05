@@ -1,4 +1,4 @@
-@import "jaio_webmail.css";
+
 
 /* BASIC */
 .white-space-nowrap{
@@ -104,6 +104,10 @@ body.fusion-button_size-large .fusion-button-default-size, body.fusion-button_si
 .woocommerce form.checkout #billing_first_name_field, form.checkout #shipping_first_name_field{
     width: 100%;
     float: unset;
+}
+
+.woo-sale-badge-circle .onsale{
+    display: none !important;
 }
 
 
@@ -259,6 +263,56 @@ i.theChampLogin .theChampLineLoginSvg {
 /* WCMP */
 .wcmp-wrapper .navbar-default.sidebar.side-collapse{
     width: 284px !important;
+}
+.wcmp-banner-below .wcmp-contact-deatil{
+    display: block !important;
+}
+.wcmp-profile-area{
+    padding-left: 15px;
+}
+#vendor-profile-img,
+.wcmp-profile-imgcls{
+    border-radius: 100%;
+}
+.wcmp_social_profile > a{
+    border-radius: 100%;
+    overflow: hidden;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+}
+.wcmp_social_profile a i.wcmp-font{
+    font-size: 35px !important;
+}
+.wcmp-tablink.active{
+    background-color: transparent !important;
+}
+.wcmp_vendor_img{
+    position: absolute !important;
+    top: -25px !important;
+    left: 15px !important;
+    padding: 0px !important;
+}
+.wcmp_vendor_img > img {
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 100% !important;
+    border: 5px solid #fff !important;
+}
+.wcmp-tab-header{
+    margin-bottom: 40px !important;
+}
+.featured-image > img,
+.crossfade-images > img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+#main > div.wcmp-main-section ul > li > div.fusion-product-wrapper > div.fusion-product-content > div.product-buttons > div.fusion-content-sep.sep-double.sep-solid{
+    border-top: none !important;
+}
+html:not(.avada-has-site-width-percent) #main, html:not(.avada-has-site-width-percent) .fusion-footer-copyright-area, html:not(.avada-has-site-width-percent) .fusion-footer-widget-area, html:not(.avada-has-site-width-percent) .fusion-sliding-bar-position-bottom .fusion-sliding-bar, html:not(.avada-has-site-width-percent) .fusion-sliding-bar-position-top .fusion-sliding-bar, html:not(.avada-has-site-width-percent) .tfs-slider .slide-content-container{
+    padding: 50px 0px 0px 0px !important;
 }
 @media (max-width: 768px) {
     .wcmp-wrapper .navbar-default.sidebar.side-collapse{

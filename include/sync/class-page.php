@@ -4,50 +4,56 @@
  * customise admin
  */
 
-namespace Sync\JAIO;
+namespace Sync\JDAIO;
 
-use Jerry_AIO;
+use Jerry_Divi_AIO;
 
-defined( 'ABSPATH' ) || exit;
-
-
-class Page extends Jerry_AIO{
+defined('ABSPATH') || exit;
 
 
-    public function __construct() {
+class Page extends Jerry_Divi_AIO
+{
 
 
-        add_action('admin_head', [$this, 'jaio_create_default_page']);
-        add_action('admin_head', [$this, 'jaio_hide_post']);
-        add_action('init', [$this, 'jaio_add_shortcode']);
+    public function __construct()
+    {
+
+
+        add_action('admin_head', [$this, 'jdaio_create_default_page']);
+        add_action('admin_head', [$this, 'jdaio_hide_post']);
+        add_action('init', [$this, 'jdaio_add_shortcode']);
     }
 
-    function jaio_create_default_page(){
+    function jdaio_create_default_page()
+    {
         //auto create register page
-        $register_page_exist = post_exists('Register', '', '', 'page');
-        if( $register_page_exist == 0 ){
-            $postarr = [
-                'post_content'  => '[wc_reg_form_bbloomer]',
-                'post_title'    => 'Register',
-                'post_status'   => 'publish',
-                'post_type'     => 'page',
-            ];
-            wp_insert_post( $postarr);
-
+        if (class_exists('TheChampLoginWidget', false)) {
+            $register_page_exist = post_exists('Register', '', '', 'page');
+            if ($register_page_exist == 0) {
+                $postarr = [
+                    'post_content'  => '[wc_reg_form_bbloomer]',
+                    'post_title'    => 'Register',
+                    'post_status'   => 'publish',
+                    'post_type'     => 'page',
+                ];
+                wp_insert_post($postarr);
+            }
         }
     }
-    function jaio_add_shortcode(){
-        add_shortcode( 'wc_reg_form_bbloomer', [ $this, 'bbloomer_separate_registration_form'] );
+    function jdaio_add_shortcode()
+    {
+        add_shortcode('wc_reg_form_bbloomer', [$this, 'bbloomer_separate_registration_form']);
     }
 
 
-    function bbloomer_separate_registration_form() {
+    function bbloomer_separate_registration_form()
+    {
 
         /*
          * custum register field
          * https://www.cloudways.com/blog/add-woocommerce-registration-form-fields/
          */
-        if ( is_admin() || is_user_logged_in() ){
+        if (is_admin() || is_user_logged_in()) {
             wp_redirect(site_url());
             return;
         }
@@ -56,61 +62,65 @@ class Page extends Jerry_AIO{
         // NOTE: THE FOLLOWING <FORM></FORM> IS COPIED FROM woocommerce\templates\myaccount\form-login.php
         // IF WOOCOMMERCE RELEASES AN UPDATE TO THAT TEMPLATE, YOU MUST CHANGE THIS ACCORDINGLY
 
-        do_action( 'woocommerce_before_customer_login_form' );
+        do_action('woocommerce_before_customer_login_form');
 
-        ?>
+?>
         <h2 data-fontsize="24" data-lineheight="38.64px" class="fusion-responsive-typography-calculated" style="--fontSize:24; line-height: 1.61; --minFontSize:24;">註冊</h2>
-           <form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action( 'woocommerce_register_form_tag' ); ?> >
+        <form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action('woocommerce_register_form_tag'); ?>>
 
-              <?php do_action( 'woocommerce_register_form_start' ); ?>
+            <?php do_action('woocommerce_register_form_start'); ?>
 
-              <?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
+            <?php if ('no' === get_option('woocommerce_registration_generate_username')) : ?>
 
-                 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                    <label for="reg_username"><?php esc_html_e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
-                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" autocomplete="username" value="<?php echo ( ! empty( $_POST['username'] ) ) ? esc_attr( wp_unslash( $_POST['username'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-                 </p>
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                    <label for="reg_username"><?php esc_html_e('Username', 'woocommerce'); ?> <span class="required">*</span></label>
+                    <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine
+                                                                                                                                                                                                                                                                                ?>
+                </p>
 
-              <?php endif; ?>
+            <?php endif; ?>
 
-              <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                 <label for="reg_email"><?php esc_html_e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
-                 <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="<?php echo ( ! empty( $_POST['email'] ) ) ? esc_attr( wp_unslash( $_POST['email'] ) ) : ''; ?>" /><?php // @codingStandardsIgnoreLine ?>
-              </p>
+            <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                <label for="reg_email"><?php esc_html_e('Email address', 'woocommerce'); ?> <span class="required">*</span></label>
+                <input type="email" class="woocommerce-Input woocommerce-Input--text input-text" name="email" id="reg_email" autocomplete="email" value="<?php echo (!empty($_POST['email'])) ? esc_attr(wp_unslash($_POST['email'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine
+                                                                                                                                                                                                                                                            ?>
+            </p>
 
-              <?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
+            <?php if ('no' === get_option('woocommerce_registration_generate_password')) : ?>
 
-                 <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                    <label for="reg_password"><?php esc_html_e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
+                <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
+                    <label for="reg_password"><?php esc_html_e('Password', 'woocommerce'); ?> <span class="required">*</span></label>
                     <input type="password" class="woocommerce-Input woocommerce-Input--text input-text" name="password" id="reg_password" autocomplete="new-password" />
-                 </p>
+                </p>
 
-              <?php else : ?>
+            <?php else : ?>
 
-                 <p><?php esc_html_e( 'A password will be sent to your email address.', 'woocommerce' ); ?></p>
+                <p><?php esc_html_e('A password will be sent to your email address.', 'woocommerce'); ?></p>
 
-              <?php endif; ?>
+            <?php endif; ?>
 
-              <?php do_action( 'woocommerce_register_form' ); ?>
+            <?php do_action('woocommerce_register_form'); ?>
 
-              <p class="woocommerce-FormRow form-row">
-                 <?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-                 <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e( 'Register', 'woocommerce' ); ?>"><?php esc_html_e( 'Register', 'woocommerce' ); ?></button>
-              </p>
+            <p class="woocommerce-FormRow form-row">
+                <?php wp_nonce_field('woocommerce-register', 'woocommerce-register-nonce'); ?>
+                <button type="submit" class="woocommerce-Button woocommerce-button button woocommerce-form-register__submit" name="register" value="<?php esc_attr_e('Register', 'woocommerce'); ?>"><?php esc_html_e('Register', 'woocommerce'); ?></button>
+            </p>
 
-              <?php do_action( 'woocommerce_register_form_end' ); ?>
+            <?php do_action('woocommerce_register_form_end'); ?>
 
-           </form>
+        </form>
 
-        <?php
+<?php
 
         return ob_get_clean();
-     }
+    }
 
-     function jaio_hide_post(){
-        $user_level = $this->jaio_get_current_user_level();
+
+    //防止客人修改註冊頁
+    function jdaio_hide_post()
+    {
         $register_page_exist = post_exists('Register', '', '', 'page');
-        if( $register_page_exist == 0 || $user_level == 0 ) return;
+        if ($register_page_exist == 0 || self::$current_user_level == 0) return;
 
         $css = '';
         $css .= '<style>';
@@ -120,10 +130,5 @@ class Page extends Jerry_AIO{
         $css .= '</style>';
 
         echo $css;
-
-     }
-
-
-
+    }
 }
-

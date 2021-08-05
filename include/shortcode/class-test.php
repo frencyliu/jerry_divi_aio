@@ -5,25 +5,23 @@
  * https://pagely.com/blog/creating-custom-shortcodes/
  */
 
-namespace Shortcode\JAIO;
+namespace Shortcode\JDAIO;
 
-use Jerry_AIO;
+use Jerry_Divi_AIO;
 
 defined('ABSPATH') || exit;
 
 
-class Test extends Jerry_AIO
+class Test extends Jerry_Divi_AIO
 {
 
 
     public function __construct()
     {
-
-
-        add_action('init', [$this, 'jaio_add_shortcode']);
+        add_action('init', [$this, 'jdaio_add_shortcode']);
     }
 
-    function jaio_add_shortcode(){
+    function jdaio_add_shortcode(){
         add_shortcode('dotifollow', [ $this, 'dotifollow_function' ] );
     }
 

@@ -2,8 +2,8 @@
  * for Admin
  * 限制最少
 */
-@import "jaio_webmail.css";
 
+.uk-nav-divider,
 #wp-admin-bar-archive,
 #wp-admin-bar-root-default #wp-admin-bar-view,
 span.gutenberg,
@@ -15,13 +15,13 @@ span.gutenberg,
 }
 
 /*極簡模式*/
-.jaio_simple_mode_btn{
+.jdaio_simple_mode_btn{
     position: fixed;
     top: 20px;
     left: 50%;
     z-index: 999;
 }
-.jaio_simple_mode_form{
+.jdaio_simple_mode_form{
     display: inline-block;
     margin-left: 15px;
 }
@@ -38,7 +38,7 @@ img.avatar{
 /*DASHBOARD跑版*/
 #woocommerce_dashboard_status .wc_status_list li,
 .select2-container{
-    height: fit-content !important;
+    height: unset !important;
 }
 .php-error #adminmenuback, .php-error #adminmenuwrap{
 	margin-top:0px !important;
@@ -97,9 +97,7 @@ body.wp-admin{
   #adminmenu .dashicons-admin-page:before{
       content: "\f121";
   }
-  #adminmenu #menu-posts-avada_portfolio div.wp-menu-image:before{
-    content: "\f184";
-}
+
 .wp-admin #wpadminbar #wp-admin-bar-site-name>.ab-item:before{
     content: "\f319";
 }
@@ -145,14 +143,9 @@ body.wp-admin{
 }
 
 
-
-.jaio_upload_input{
-    width: calc(25em - 75px);
-}
-
-.jaio_thumbnail{
-    max-width: 25em;
-    max-height: 100px;
+/*all in one migration*/
+.admin2020_menu .wp-menu-open.toplevel_page_ai1wm_export,.admin2020_menu .wp-menu-open.toplevel_page_ai1wm_export > a{
+    background-color: unset !important;
 }
 
 /*調整快取選單位置*/
@@ -176,43 +169,7 @@ body.wp-admin{
 }
 
 /*新增文章*/
-.fusion-builder-update-buttons.fusion-draft-button a.button{
-    margin-left: 0px;
-    border-radius: 0px;
-}
 
-/*Webmail*/
-#toplevel_page_wemail span.uk-icon-button{
-    background-image: unset !important;
-    font-size: 18px;
-    font-family: dashicons;
-    display: inline-block;
-    line-height: 1;
-    font-weight: 400;
-    font-style: normal;
-}
-#toplevel_page_wemail span.uk-icon-button::before{
-    content: "\f465";
-}
-#wemail-admin #wemail-customizer,
-#wemail-admin #wemail-form-customizer{
-    top: 61px;
-    width: calc(100% - 302px);
-    margin-left: 282px;
-}
-#wemail-admin .editor-progress-bar{
-    left: 260px;
-    width: calc(100% - 260px);
-}
-#wemail-customizer #customizer-container{
-    height: calc(100vh - 170px);
-}
-
-/*wt_import_export_for_woo_basic_export*/
-.toplevel_page_wt_import_export_for_woo_basic_export #wpbody-content h2.wt_iew_page_hd,
-.toplevel_page_wt_import_export_for_woo_basic_export #wpbody-content p{
-    padding-left: 60px;
-}
 
 /*Loco translate*/
 #loco-actions fieldset{
@@ -220,45 +177,6 @@ body.wp-admin{
 }
 #loco-admin.wrap #loco-editor>nav button.only-icon{
     width: unset !important;
-}
-
-/*Avada Builder*/
-.fusion-builder-all-modules .fusion_module_title{
-    margin: 20px 0px;
-}
-.fusion-builder-update-buttons a.button.fusion-update{
-    margin-left: 0px;
-    border-radius: 0px;
-    font-size: 13px;
-}
-#wpbody .fusion-split-page-title-action{
-    top: -6px;
-}
-#wpbody .fusion-split-page-title-action > a,
-#wpbody .fusion-split-page-title-action .expander{
-    background: var(--a2020-primary);
-    color: #fff;
-    font-weight: normal;
-    font-size: 0.8rem;
-    transition: all 0.2s ease-in-out;
-    height: 41px;
-    line-height: 31px;
-}
-#wpbody .fusion-split-page-title-action > a:hover,
-#wpbody .fusion-split-page-title-action .expander:hover{
-    background: var(--a2020-primary-darker);
-    text-decoration: none;
-}
-#wpbody .fusion-split-page-title-action > a{
-    border-radius: 4px 0px 0px 4px;
-}
-#wpbody .fusion-split-page-title-action .expander{
-    border-radius: 0px 4px 4px 0px;
-    border-left: none;
-}
-#advanced-sortables .avada-buttonset .ui-buttonset .ui-button{
-    display: inline-block;
-    overflow: hidden;
 }
 
 

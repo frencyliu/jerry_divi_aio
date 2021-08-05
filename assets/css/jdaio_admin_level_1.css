@@ -5,15 +5,10 @@
  * 新增用戶
 */
 
-@import "jaio_admin_level_0.css";
+@import "jdaio_admin_level_0.css";
 
 /*BOGO*/
 #toplevel_page_bogo,
-/*AVADA隱藏區塊*/
-.avada-dashboard .avada-db-header-main,
-.avada-dashboard .avada-db-header-sticky,
-.avada-dashboard .avada-db-demos-notices,
-.avada-dashboard .fusion-template-builder.avada-db-card-first,
 /*控制台留言*/
 #latest-comments,
 ul#wp-admin-bar-root-default > li:not(#wp-admin-bar-site-name),
@@ -94,14 +89,12 @@ select#role option[value="translator"],
 #nav-menu-meta #add-post-type-hide_plugin,
 #nav-menu-meta #add-post-type-hide_sidebar,
 #nav-menu-meta #add-post-type-hide_user,
-#nav-menu-meta #add-post-type-avada_portfolio,
 #nav-menu-meta #add-portfolio_category,
 #nav-menu-meta #add-portfolio_skills,
 #nav-menu-meta #add-portfolio_tags,
 #nav-menu-meta #woocommerce-endpoints-checklist > li:nth-child(2),
 /*MENU PAGE*/
 #menu-appearance,
-#toplevel_page_avada,
 #toplevel_page_woocommerce,
 #toplevel_page_wt_import_export_for_woo_basic_export,
 #toplevel_page_woocommerce-marketing,
@@ -113,7 +106,6 @@ select#role option[value="translator"],
 #toplevel_page_heateor-ss-general-options,
 .wp-menu-separator,
 #toplevel_page_WFLS,
-#toplevel_page_theseoframework-settings,
 /*外觀自訂*/
 #accordion-section-themes,
 #customize-control-site_icon,
