@@ -1,4 +1,19 @@
-
+:root {
+	--woocommerce: #2ea2cc;
+    --wc-green: #7ad03a;
+    --wc-red: #ffa4a4;
+    --wc-orange: #ffba00;
+    --wc-blue: #2ea2cc;
+    --wc-primary: #2ea2cc;
+    --wc-primary-hover: #4bb7df;
+    --wc-primary-text: white;
+    --wc-secondary: #ebe9eb;
+    --wc-secondary-text: #515151;
+    --wc-highlight: #77a464;
+    --wc-highligh-text: white;
+    --wc-content-bg: #fff;
+    --wc-subtext: #767676;
+}
 
 /* BASIC */
 .white-space-nowrap{
@@ -11,6 +26,39 @@
 .woocommerce-MyAccount-navigation-link--downloads {
     display: none !important;
 }
+
+/*垂直選單*/
+.vertical-menu .et_pb_menu__menu>nav>ul>li{
+    width: 100%;
+}
+/*SOCIAL ICON*/
+.social-icon-font-awsome i{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+.social-icon-brand-color i{
+    color: #fff;
+}
+.social-icon-brand-color .fa-youtube{
+    background: #f00;
+}
+.social-icon-brand-color .fa-facebook-f{
+    background: #15a2fa;
+}
+.social-icon-brand-color .fa-instagram{
+    background: linear-gradient(45deg, #f3b664, #a02ba6);
+}
+.social-icon-brand-color .fa-google{
+    background: #000;
+}
+.social-icon-brand-color .fa-line{
+    background: #07b53b;
+}
+
 
 /*滾動條*/
 ::-webkit-scrollbar {
@@ -112,6 +160,7 @@ body.fusion-button_size-large .fusion-button-default-size, body.fusion-button_si
 
 
 /*woocommerce login form*/
+/*
 .woocommerce #customer_login .login .form-row:not(.woocommerce-form-row--wide) {
     display: block;
     margin: 0px;
@@ -149,6 +198,70 @@ body.fusion-button_size-large .fusion-button-default-size, body.fusion-button_si
 #customer_login h2{
     border: none !important;
 }
+*/
+/*Register*/
+h1.entry-title.main_title{
+    display: none;
+}
+form.woocommerce-form-register{
+    margin-bottom: 60px;
+}
+form.woocommerce-form-register label,
+form.woocommerce-form-register input{
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+}
+form.woocommerce-form-register input{
+    line-height: 2.5em;
+    padding: 0px 0.5rem;
+}
+
+
+form.woocommerce-form-register .register_title{
+    padding: 0.5rem 1rem;
+    background-color: inherit;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 2px;
+    font-weight: 900;
+    text-align: center;
+}
+form.woocommerce-form-register .register_title::before,
+form.woocommerce-form-register .register_title::after{
+    content: '';
+    width: calc( 50% - 100px );
+    height: 1px;
+    position: absolute;
+    background-color: #999;
+    font-size: inherit;
+    top: 50%;
+    z-index: 1;
+}
+form.woocommerce-form-register .register_title::before{
+    left: 0px;
+}
+form.woocommerce-form-register .register_title::after{
+    right: 0px;
+}
+form.woocommerce-form-register .woocommerce-form-register__submit{
+    margin-top: 15px;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    border: 0px;
+    background-color: var(--wc-primary, #2ea2cc);
+    cursor: pointer;
+    color: #fff;
+}
+form.woocommerce-form-register .woocommerce-form-register__submit:hover{
+    background-color: var(--wc-primary-hover, #4bb7df);
+}
+.woocommerce-error{
+    background-color: var(--wc-red, #ffa4a4);
+}
+
 @media (min-width: 992px) {
     #customer_login {
         max-width: 600px;

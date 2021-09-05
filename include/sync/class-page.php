@@ -36,7 +36,11 @@ class Page extends Jerry_Divi_AIO
                     'post_status'   => 'publish',
                     'post_type'     => 'page',
                 ];
-                wp_insert_post($postarr);
+                //新增文章
+                $r_post_id = wp_insert_post($postarr);
+                //新增預設LAYOUT
+                update_post_meta( $r_post_id, '_et_pb_page_layout', 'et_no_sidebar');
+
             }
         }
     }
@@ -48,7 +52,7 @@ class Page extends Jerry_Divi_AIO
 
     function bbloomer_separate_registration_form()
     {
-
+        ob_start();
         /*
          * custum register field
          * https://www.cloudways.com/blog/add-woocommerce-registration-form-fields/
@@ -57,7 +61,7 @@ class Page extends Jerry_Divi_AIO
             wp_redirect(site_url());
             return;
         }
-        ob_start();
+
 
         // NOTE: THE FOLLOWING <FORM></FORM> IS COPIED FROM woocommerce\templates\myaccount\form-login.php
         // IF WOOCOMMERCE RELEASES AN UPDATE TO THAT TEMPLATE, YOU MUST CHANGE THIS ACCORDINGLY
@@ -65,8 +69,9 @@ class Page extends Jerry_Divi_AIO
         do_action('woocommerce_before_customer_login_form');
 
 ?>
-        <h2 data-fontsize="24" data-lineheight="38.64px" class="fusion-responsive-typography-calculated" style="--fontSize:24; line-height: 1.61; --minFontSize:24;">註冊</h2>
+
         <form method="post" class="woocommerce-form woocommerce-form-register register" <?php do_action('woocommerce_register_form_tag'); ?>>
+        <h2 class="register_title">註冊</h2>
 
             <?php do_action('woocommerce_register_form_start'); ?>
 
@@ -132,3 +137,4 @@ class Page extends Jerry_Divi_AIO
         echo $css;
     }
 }
+

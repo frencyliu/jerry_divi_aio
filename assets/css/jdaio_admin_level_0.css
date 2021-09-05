@@ -10,42 +10,52 @@ span.gutenberg,
 /*發布區塊的清除快取*/
 #misc-publishing-actions > div.misc-pub-section:nth-child(6),
 /*訂單*/
-#posts-filter > div.tablenav.bottom > div.woocommerce-BlankState > div > a.woocommerce-BlankState-cta.button-primary.button{
+#posts-filter > div.tablenav.bottom > div.woocommerce-BlankState > div > a.woocommerce-BlankState-cta.button-primary.button,
+/*slider revolution*/
+#wpadmin_overlay,
+#wpadmin_overlay_top {
     display: none !important;
 }
 
 /*極簡模式*/
-.jdaio_simple_mode_btn{
+.jdaio_simple_mode_btn {
     position: fixed;
     top: 20px;
     left: 50%;
     z-index: 999;
 }
-.jdaio_simple_mode_form{
+.jdaio_simple_mode_form {
     display: inline-block;
     margin-left: 15px;
 }
-.upload > img{
-    background-image: url('../img/transparent.jpg');
+.upload > img {
+    background-image: url("../img/transparent.jpg");
 }
 
-
+/*自訂結帳欄位*/
+#wpbody-content > div.wrap > div.thwcfd-wrap > div.wrap.woocommerce {
+    padding: 0px;
+}
 
 /*用戶圖片*/
-img.avatar{
-  border-radius:100% !important;
+img.avatar {
+    border-radius: 100% !important;
 }
-/*DASHBOARD跑版*/
+/*外觀調整 DASHBOARD跑版*/
 #woocommerce_dashboard_status .wc_status_list li,
-.select2-container{
+.select2-container {
     height: unset !important;
 }
-.php-error #adminmenuback, .php-error #adminmenuwrap{
-	margin-top:0px !important;
+.php-error #adminmenuback,
+.php-error #adminmenuwrap {
+    margin-top: 0px !important;
 }
-body.wp-admin{
+body.wp-admin {
     overflow-x: hidden;
     overflow-y: auto;
+}
+.theme-browser .theme .theme-actions a.button-primary {
+    line-height: 30px;
 }
 /*滾動條*/
 ::-webkit-scrollbar {
@@ -63,138 +73,362 @@ body.wp-admin{
     background-color: #bbd6fb;
     color: #fff;
 }
-.plugin-card .desc.column-description p:first-child{
+.plugin-card .desc.column-description p:first-child {
     height: 100px;
     overflow: auto;
 }
-.plugin-card .name h3{
+.plugin-card .name h3 {
     height: 70px;
     overflow: hidden;
 }
 .column-compatibility span,
-.plugin-card .desc.column-description p.authors{
+.plugin-card .desc.column-description p.authors {
     white-space: nowrap;
 }
 
 /*woocommerce_page_wc-order-export調整*/
-#export_job_settings{
+#export_job_settings {
     padding-left: 30px;
 }
-.wc-wp-version-gte-53 .select2-container .select2-selection--single .select2-selection__rendered{
+.wc-wp-version-gte-53 .select2-container .select2-selection--single .select2-selection__rendered {
     line-height: 28px !important;
 }
-
+.woocommerce_page_wc-order-export #my-left,
+.woocommerce_page_wc-order-export #my-right {
+    max-width: unset !important;
+}
+.woocommerce_page_wc-order-export .my-block {
+    width: calc(96% + 10px);
+}
+.woocommerce_page_wc-order-export #export-btn,
+.woocommerce_page_wc-order-export.wp-core-ui .button-primary {
+    background-color: var(--a2020-primary);
+    color: #fff;
+}
+.woocommerce_page_wc-order-export #export-btn:hover,
+.woocommerce_page_wc-order-export.wp-core-ui .button-primary:hover {
+    background-color: var(--a2020-primary-darker);
+}
+.woocommerce_page_wc-order-export #fields,
+#unselected_fields {
+    height: 880px;
+}
+.woocommerce_page_wc-order-export .subsubsub li,
+.filter-links li {
+    margin: 0px 5px 15px 0px !important;
+}
+.woocommerce_page_wc-order-export #your-profile label + a {
+    white-space: nowrap;
+}
+.woocommerce_page_wc-order-export .select2-search__field {
+    border-color: #aaa !important;
+}
+.woocommerce_page_wc-order-export.wc-wp-version-gte-53
+    .select2-container
+    .select2-search--inline
+    .select2-search__field,
+.woocommerce_page_wc-order-export
+    .select2-container--default
+    .select2-selection--multiple
+    .select2-selection__rendered
+    li:not(.select2-selection__choice),
+.woocommerce_page_wc-order-export #HTML_options textarea {
+    width: 100% !important;
+}
+.woocommerce_page_wc-order-export.wc-wp-version-gte-53 .select2-container .select2-selection--single {
+    height: 30px !important;
+}
+.woocommerce_page_wc-order-export .wp-picker-container {
+    display: block;
+}
+.woocommerce_page_wc-order-export #XLS_options input[type="text"],
+.woocommerce_page_wc-order-export #CSV_options input[type="text"],
+.woocommerce_page_wc-order-export #XML_options input[type="text"],
+.woocommerce_page_wc-order-export #JSON_options input[type="text"],
+.woocommerce_page_wc-order-export #TSV_options input[type="text"],
+.woocommerce_page_wc-order-export #PDF_options input[type="text"],
+.woocommerce_page_wc-order-export #PDF_options input[type="number"],
+.woocommerce_page_wc-order-export #HTML_options input[type="text"],
+.woocommerce_page_wc-order-export #HTML_options input[type="number"] {
+    display: block;
+    width: 100%;
+    min-height: unset !important;
+    height: 30px;
+}
 /*後台選單換ICON*/
 #adminmenu #toplevel_page_wc-admin-path--analytics-overview div.wp-menu-image:before {
     content: "\f238";
-  }
-  #adminmenu #menu-posts-product div.wp-menu-image:before {
+}
+#adminmenu #menu-posts-product div.wp-menu-image:before {
     content: "\f312";
-  }
-  #adminmenu #menu-posts div.wp-menu-image:before {
+}
+#adminmenu #menu-posts div.wp-menu-image:before {
     content: "\f327";
-  }
-  #adminmenu .dashicons-admin-page:before{
-      content: "\f121";
-  }
+}
+#adminmenu .dashicons-admin-page:before {
+    content: "\f121";
+}
 
-.wp-admin #wpadminbar #wp-admin-bar-site-name>.ab-item:before{
+.wp-admin #wpadminbar #wp-admin-bar-site-name > .ab-item:before {
     content: "\f319";
 }
-.admin2020_menu .uk-icon-button{
+.admin2020_menu .uk-icon-button {
     background-color: transparent !important;
 }
 
 .a2020-admin-bar.a2020_night_mode {
     background: #111 !important;
 }
-.a2020_night_mode #wpadminbar #wp-admin-bar-cache > div.ab-item{
+.a2020_night_mode #wpadminbar #wp-admin-bar-cache > div.ab-item {
     color: rgba(255, 255, 255, 0.5);
     background-color: rgba(56, 56, 56, 0.36) !important;
 }
-.a2020_night_mode #wpadminbar #wp-admin-bar-cache:hover{
+.a2020_night_mode #wpadminbar #wp-admin-bar-cache:hover {
     color: rgba(255, 255, 255, 0.7);
 }
 .a2020_night_mode #wpadminbar #wp-admin-bar-root-default li .ab-item,
-.a2020_night_mode #wpadminbar #wp-admin-bar-top-secondary li .ab-item{
+.a2020_night_mode #wpadminbar #wp-admin-bar-top-secondary li .ab-item {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 .a2020_night_mode #wpadminbar #wp-admin-bar-root-default li .ab-item:hover,
-.a2020_night_mode #wpadminbar #wp-admin-bar-top-secondary li .ab-item:hover{
+.a2020_night_mode #wpadminbar #wp-admin-bar-top-secondary li .ab-item:hover {
     color: rgba(255, 255, 255, 0.7) !important;
 }
 
 /*文章編輯*/
-#wpbody-content > div.wrap > a.page-title-action:nth-child(2){
+#wpbody-content > div.wrap > a.page-title-action:nth-child(2) {
     margin-left: 10px;
 }
-#product_tag > div > div.ajaxtag.hide-if-no-js > input.button.tagadd{
+#product_tag > div > div.ajaxtag.hide-if-no-js > input.button.tagadd {
     margin-top: 5px;
     width: 100%;
 }
-#new-tag-product_tag{
+#new-tag-product_tag {
     width: 100%;
+}
+.tagsdiv #new-tag-post_tag {
+    width: 165px;
+}
+
+/*元件庫*/
+#et_load_category_page {
+    margin-left: 50px;
 }
 
 /*修改google site kit LOGO顏色*/
-.toplevel_page_googlesitekit-dashboard span.uk-icon-image{
+.toplevel_page_googlesitekit-dashboard span.uk-icon-image {
     background-color: #777 !important;
     border-radius: 100%;
 }
 
-
 /*all in one migration*/
-.admin2020_menu .wp-menu-open.toplevel_page_ai1wm_export,.admin2020_menu .wp-menu-open.toplevel_page_ai1wm_export > a{
+.admin2020_menu .wp-menu-open.toplevel_page_ai1wm_export,
+.admin2020_menu .wp-menu-open.toplevel_page_ai1wm_export > a {
     background-color: unset !important;
 }
 
 /*調整快取選單位置*/
-#wpadminbar .ab-top-secondary .menupop .ab-sub-wrapper{
+#wpadminbar .ab-top-secondary .menupop .ab-sub-wrapper {
     right: auto;
     left: 0;
-    top: calc( 100% + 15px );
+    top: calc(100% + 15px);
 }
 /* tool bar cache icon*/
-#wpadminbar #wp-admin-bar-cache > div.ab-item{
+#wpadminbar #wp-admin-bar-cache > div.ab-item {
     /*min-height: unset;
     background-color: #f8f8f8 !important;*/
     border-radius: 5px;
     cursor: pointer;
 }
 
-
-
-.wp-menu-open.toplevel_page_ai1wm_export, .wp-menu-open.toplevel_page_ai1wm_export > a{
+.wp-menu-open.toplevel_page_ai1wm_export,
+.wp-menu-open.toplevel_page_ai1wm_export > a {
     background-color: unset !important;
 }
 
-/*新增文章*/
-
-
 /*Loco translate*/
-#loco-actions fieldset{
+#loco-actions fieldset {
     margin-top: 0px !important;
 }
-#loco-admin.wrap #loco-editor>nav button.only-icon{
+#loco-admin.wrap #loco-editor > nav button.only-icon {
     width: unset !important;
 }
 
-
 /*woocommerce-advanced-shipment-tracking*/
-table.wp-list-table img.provider-thumb{
+.woocommerce_page_woocommerce-advanced-shipment-tracking table.wp-list-table img.provider-thumb {
     height: unset;
 }
+.woocommerce_page_woocommerce-advanced-shipment-tracking .wrap {
+    padding: 30px 0px;
+}
+.woocommerce_page_woocommerce-advanced-shipment-tracking .wp-header-end {
+    visibility: visible;
+    border: 1px solid #999;
+}
+.woocommerce_page_woocommerce-advanced-shipment-tracking .wrap h2.wp-heading-inline {
+    font-size: 1.5rem;
+}
+.woocommerce_page_woocommerce-advanced-shipment-tracking .wrap .page-title-action {
+    margin-bottom: 50px;
+    display: inline-block;
+    float: unset;
+    padding: 10px 20px !important;
+}
 
+/*woocommerce order*/
+
+.tablenav.top .alignleft.actions.bulkactions {
+    display: flex;
+}
+.post-type-shop_order #order_data h3::before {
+    content: "◤";
+    font-size: 22px;
+}
+.post-type-shop_order #order_data h3 {
+    font-size: 18px;
+    font-weight: 900;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 30px !important;
+    padding-bottom: 20px;
+}
+
+.post-type-shop_order #order_data .order_data_column:first-child {
+    padding-bottom: 25px;
+}
+.post-type-shop_order #order_data .order_data_column {
+    width: 98%;
+}
+.post-type-shop_order #poststuff #woocommerce-order-notes .inside button,
+.post-type-shop_order #poststuff #woocommerce-order-actions .inside button,
+.tablenav.top .alignleft.actions {
+    width: 100%;
+}
+.post-type-shop_order #poststuff #woocommerce-order-notes .inside {
+    padding: 20px 0px;
+}
+.post-type-shop_order .add_note > p:first-child {
+    margin-bottom: -15px;
+}
+.post-type-shop_order #order_note_type {
+    margin-bottom: 10px;
+}
+.post-type-shop_order .add_note #add_order_note {
+    height: 150px;
+}
+/*.post-type-shop_order #order_data .order_data_column .form-field .select2-container,*/
+.post-type-shop_order #order_data .order_data_column .form-field .date-picker {
+    max-width: 300px !important;
+}
+.post-type-shop_order #order_data .order_data_column .form-field .hour,
+#order_data .order_data_column .form-field .minute {
+    width: 67px;
+    text-align: right !important;
+}
 
 /*setting api*/
-div.upload > div{
+div.upload > div {
     display: inline-block;
     min-width: 300px;
     margin-top: 5px;
 }
-div.metabox-holder > form > h2{
+div.metabox-holder > form > h2 {
     display: none;
 }
-form[action="options.php"] .button.button-primary{
+form[action="options.php"] .button.button-primary {
     margin-left: -10px !important;
 }
+
+/*wp statistic*/
+body[class*="_page_wps_optimization_page"] #poststuff {
+    min-width: unset;
+}
+body[class*="_page_wps_optimization_page"] #poststuff #post-body.columns-2 {
+    margin-right: unset;
+}
+body[class*="_page_wps_optimization_page"] .wps-wrap__main {
+    padding: 0px;
+}
+
+/*Duplicate post*/
+#export-action > a {
+    width: 100%;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: none;
+    font-size: 13px;
+    line-height: 2.15384615;
+    min-height: 30px;
+    font-weight: normal;
+    border: none;
+    color: #333;
+    border: 1px solid #e5e5e5;
+}
+#export-action > a:hover {
+    border-color: #666;
+    color: #333;
+    text-decoration: unset;
+}
+/*Divi Builder*/
+#post-body #et_pb_layout,
+#post-body #et_pb_layout.et-loaded {
+    min-height: 70px;
+}
+/*預設把Divi builder縮起來*/
+/*#post-body #et_pb_layout > .inside{
+    display: none;
+}*/
+
+/*新增文章 post*/
+#minor-publishing #misc-publishing-actions {
+    padding-bottom: 0px;
+}
+#minor-publishing #minor-publishing-actions {
+    padding: 20px 20px 0px 20px;
+}
+.wp-core-ui select:not(#product-type) {
+    width: 100%;
+}
+.wp-core-ui #woocommerce-product-data select:not(#product-type) {
+    width: 50%;
+}
+
+label[for="slugdiv-hide"] {
+    display: none;
+}
+
+#slugdiv {
+    display: none;
+}
+
+/*新增產品 product*/
+.post-type-product #sku {
+    min-width: 53px;
+}
+
+/*slider revolution*/
+/*body.toplevel_page_revslider,
+    body.toplevel_page_revslider #wpwrap,
+    body.toplevel_page_revslider #wpwrap #wpcontent,
+    body.toplevel_page_revslider #rs_overview{
+        -webkit-filter: invert(100%);
+    }*/
+body.toplevel_page_revslider #toplevel_page_revslider,
+body.toplevel_page_revslider .toplevel_page_revslider {
+    background-color: unset;
+    background: unset;
+}
+body.toplevel_page_revslider #rs_overview_menu {
+    margin-left: 0px;
+    top: 61px !important;
+}
+body.toplevel_page_revslider #rb_the_logo {
+    background: url(../img/menu.png) !important;
+    background-size: 30px 30px !important;
+    background-repeat: no-repeat !important;
+    background-position: center !important;
+}
+.showwpmenus .uk-background-default {
+    background-color: #323438;
+}
+

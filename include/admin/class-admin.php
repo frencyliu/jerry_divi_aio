@@ -46,8 +46,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         //---- 在WordPress後台新增選單 ----//
         add_action('admin_menu', [$this, 'jdaio_amp_setting'], 97);
         add_action('admin_menu', [$this, 'wd_admin_menu_rename'], 98);
-        //add_filter('custom_menu_order', [$this, 'custom_menu_order'], 99);
-        add_filter('menu_order', [$this, 'custom_menu_order'], 100, 1);
+        add_filter('custom_menu_order', '__return_true', 10);
+        add_filter('menu_order', [$this, 'jdaio_menu_reorder'], 100, 1);
 
         //add_filter('menu_order', array($this, 'jdaio_submenu_order'), 10099);
 
@@ -68,7 +68,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         add_action('wp_dashboard_setup', [$this, 'jdaio_remove_dashboard_widgets']);
 
         //---- tool bar ----//
-        //add_action( 'admin_bar_menu', [ $this, 'jdaio_toolbar' ], 99 );
+        add_action('admin_bar_menu', [$this, 'jdaio_toolbar'], 99);
 
         //login redirect
         add_filter('login_redirect', [$this, 'jdaio_login_redirect'], 100, 3);
@@ -80,6 +80,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         //change favicon
         add_action('wp_head', [$this, 'jdaio_add_wp_head']);
         add_action('admin_head', [$this, 'jdaio_add_wp_head']);
+        add_action('admin_head', [$this, 'jdaio_add_admin_head']);
+
 
         //remove hook
         add_action('admin_init', [$this, 'jdaio_remove_filters'], 100);
@@ -89,45 +91,67 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         add_action('after_setup_theme', [$this, 'remove_admin_bar']);
 
-        if (class_exists('Bogo_POMO', false)) {
-            add_filter('bogo_localizable_post_types', [$this, 'my_localizable_post_types'], 10, 1);
-        }
+
+        add_filter('bogo_localizable_post_types', [$this, 'jdaio_bogo_support_for_custom_post_types'], 10, 1);
+
+
+        //redirect when user access wp-admin/
+        add_action('admin_init', [$this, 'jdaio_set_admin_redirect']);
 
         //Disable comment
+        add_action('init', [$this, 'jdaio_disable_comments_admin_bar']);
+        add_action('admin_init', [$this, 'jdaio_disable_comments_post_types_support']);
+        add_filter('comments_open', [$this, 'jdaio_disable_comments_status'], 20, 2);
+        add_filter('pings_open', [$this, 'jdaio_disable_comments_status'], 20, 2);
+        add_filter('comments_array', [$this, 'jdaio_disable_comments_hide_existing_comments'], 10, 2);
 
-        if (!COMMENT_OPEN) {
-            add_action('init', [$this, 'jdaio_disable_comments_admin_bar']);
-            add_action('admin_init', [$this, 'jdaio_disable_comments_post_types_support']);
-            add_filter('comments_open', [$this, 'jdaio_disable_comments_status'], 20, 2);
-            add_filter('pings_open', [$this, 'jdaio_disable_comments_status'], 20, 2);
-            add_filter('comments_array', [$this, 'jdaio_disable_comments_hide_existing_comments'], 10, 2);
-        }
+        add_filter('add_et_builder_role_options', [$this, 'jdaio_add_role_to_et_builder_role_options'], 10, 2);
+
+        //移除所有圖片尺寸
+        add_action('init', [$this, 'jdaio_remove_all_image_sizes']);
+    }
+
+
+
+
+    //把下列用戶也加入Theme Builder的權限管理
+    public function jdaio_add_role_to_et_builder_role_options($all_role_options)
+    {
+        $new_role = [
+            'designer',
+            'shop_manager',
+            'super_shop_manager',
+        ];
+
+        $all_role_options["general_capabilities"]["options"]["theme_builder"]["applicability"] = array_merge($all_role_options["general_capabilities"]["options"]["theme_builder"]["applicability"], $new_role);
+
+
+        return $all_role_options;
     }
 
     /**
      * Support custom post type with bogo.
      * @param array $ locallyizable Supported post types.
      */
-
-    public function my_localizable_post_types($localizable)
+    public function jdaio_bogo_support_for_custom_post_types($localizable)
     {
-        $args = array(
-            'public' => true,
-            '_builtin' => false,
-        );
-        $custom_post_types = get_post_types($args);
-        return array_merge($localizable, $custom_post_types);
+        if (class_exists('Bogo_POMO', false)) {
+            $args = array(
+                'public' => true,
+                '_builtin' => false,
+            );
+            $custom_post_types = get_post_types($args);
+            return array_merge($localizable, $custom_post_types);
+        }
     }
 
-    //li.uk-open選單會打開
+    //代辦：9li.uk-open選單會打開
+    //自訂後台頁面
     public function jdaio_amp_setting()
     {
-
-
-
         switch (self::$current_user_level) {
             case 0:
-                # do nothing
+                $this->jdaio_remove_menu_page_level_0();
                 break;
             case 1:
                 $this->jdaio_remove_menu_page_level_1();
@@ -139,6 +163,7 @@ class Custom_Admin extends Jerry_Divi_AIO
                 $this->jdaio_remove_menu_page_level_2();
                 break;
         }
+
 
         //訂單中心
         if (class_exists('WooCommerce', false)) {
@@ -165,14 +190,15 @@ class Custom_Admin extends Jerry_Divi_AIO
             }
 
             if (class_exists('Zorem_Woocommerce_Advanced_Shipment_Tracking', false)) {
-                add_submenu_page(
-                    'edit.php?post_type=shop_order',
-                    '批量匯入物流單號',
-                    '批量匯入物流單號',
+
+                add_menu_page(
+                    '物流中心',
+                    '物流中心',
                     'edit_shop_orders',
                     'admin.php?page=woocommerce-advanced-shipment-tracking',
                     '',
-                    2
+                    'dashicons-car', //icon
+                    null
                 );
             }
         }
@@ -198,7 +224,7 @@ class Custom_Admin extends Jerry_Divi_AIO
                 'edit_shop_orders',
                 'edit.php?post_type=shop_coupon',
                 '',
-                'dashicons-admin-appearance', //icon
+                'dashicons-megaphone', //icon
                 null
             );
             add_submenu_page(
@@ -233,14 +259,14 @@ class Custom_Admin extends Jerry_Divi_AIO
                 4
             );
             //}
-        }else{
+        } else {
             add_menu_page(
                 '行銷中心',
                 '行銷中心',
                 'read',
                 'admin.php?page=theseoframework-settings',
                 '',
-                'dashicons-admin-appearance', //icon
+                'dashicons-megaphone', //icon
                 null
             );
         }
@@ -279,26 +305,27 @@ class Custom_Admin extends Jerry_Divi_AIO
         }
 
         //網站外觀選項
+
         add_menu_page(
-            '網站外觀選項',
-            '網站外觀選項',
+            '網站外觀組件',
+            '網站外觀組件',
             'edit_theme_options',
-            'customize.php?et_customizer_option_set=theme',
+            'admin.php?page=et_theme_builder',
             '',
             'dashicons-admin-appearance', //icon
             null
         );
         add_submenu_page(
-            'customize.php?et_customizer_option_set=theme',
-            '進階設定',
-            '進階設定',
+            'admin.php?page=et_theme_builder',
+            '建立Slider',
+            '建立Slider',
             'edit_theme_options',
-            'admin.php?page=et_divi_options',
+            'admin.php?page=revslider',
             '',
-            2
+            3
         );
         add_submenu_page(
-            'customize.php?et_customizer_option_set=theme',
+            'admin.php?page=et_theme_builder',
             '元件庫',
             '元件庫',
             'edit_theme_options',
@@ -306,6 +333,26 @@ class Custom_Admin extends Jerry_Divi_AIO
             '',
             3
         );
+        /*add_submenu_page(
+            'et_theme_builder',
+            '基礎外觀定義',
+            '基礎外觀定義',
+            'edit_theme_options',
+            'customize.php?et_customizer_option_set=theme',
+            '',
+            2
+        );*/
+
+
+        /*add_submenu_page(
+            'et_theme_builder',
+            '進階設定',
+            '進階設定',
+            'edit_theme_options',
+            'admin.php?page=et_divi_options',
+            '',
+            4
+        );*/
 
         //網路商店設定
         if (class_exists('WooCommerce', false)) {
@@ -389,14 +436,14 @@ class Custom_Admin extends Jerry_Divi_AIO
   null
   );*/
 
-        //[DEV]擴充模組
-        if (WP_DEBUG == true && self::$current_user_level == 0) {
+        //[DEV]擴充模組  //GPDR
+        if (DEV_ENV) {
             add_menu_page(
                 '擴充模組',
                 '擴充模組',
                 'read',
                 'jdaio_extention',
-                [$this, 'jdaio_extention_f'],
+                [$this, 'jdaio_extention_page'],
                 'dashicons-block-default', //icon
                 null
             );
@@ -406,7 +453,7 @@ class Custom_Admin extends Jerry_Divi_AIO
                 '教學中心',
                 'read',
                 'jdaio_teach',
-                [$this, 'jdaio_teach_f'],
+                [$this, 'jdaio_teach_page'],
                 'dashicons-info', //icon
                 null
             );
@@ -893,7 +940,21 @@ class Custom_Admin extends Jerry_Divi_AIO
         <script>
             let SITE_URL = "<?php echo site_url(); ?>";
         </script>
+        <?php
+    }
+
+    public function jdaio_add_admin_head()
+    {
+
+        if (!PROJECT_OPEN) :
+        ?>
+            <style>
+                #menu-posts-project {
+                    display: none;
+                }
+            </style>
 <?php
+        endif;
     }
 
     public function jdaio_add_register_form_field()
@@ -913,44 +974,99 @@ class Custom_Admin extends Jerry_Divi_AIO
 
     public function jdaio_login_redirect($redirect_to, $request, $user)
     {
-        /*if (class_exists('WooCommerce', false)) {
-            $redirect_to = admin_url() . "admin.php?page=wc-admin&path=%2Fanalytics%2Foverview";
+        if (class_exists('WP_Statistics', false)) {
+            $redirect_to = admin_url() . 'admin.php?page=wps_overview_page';
             return $redirect_to;
         } else {
-            return $redirect_to;
-        }*/
-
-        $class = 'Google\\Site_Kit\\Plugin';
-        if (class_exists($class, false)) {
-            $redirect_to = admin_url() . 'admin.php?page=googlesitekit-splash';
-            return $redirect_to;
-        }else{
             return $redirect_to;
         }
     }
 
-    public function jdaio_toolbar($wp_admin_bar)
+    function jdaio_set_admin_redirect()
     {
+        if (class_exists('WP_Statistics', false)) {
+            global $pagenow;
+            if ($pagenow === 'index.php') {
+                $redirect_to = admin_url() . 'admin.php?page=wps_overview_page';
+                wp_redirect($redirect_to);
+                exit;
+            }
+        }
+    }
+
+    function jdaio_toolbar(WP_Admin_Bar $admin_bar)
+    {
+        /**
+         * https://developer.wordpress.org/reference/classes/wp_admin_bar/add_node/
+         */
+
+
+
+        $args = array(
+            'id'    => 'sitetool',
+            'title' => '站長工具',
+            'meta'  => array(
+                'class' => 'uk-background-muted uk-border-rounded '
+            ),
+        );
+        $admin_bar->add_node($args);
+
+        $args = array(
+            'parent' => 'sitetool',
+            'id'     => 'google-analytics',
+            'title'  => 'Google Analytics',
+            'href'   => 'https://analytics.google.com/',
+            'meta'   => array(
+                'target' => '_blank'
+            ),
+        );
+        $admin_bar->add_node($args);
+
+        $args = array(
+            'parent' => 'sitetool',
+            'id'     => 'google-console',
+            'title'  => 'Google Console',
+            'href'   => 'https://accounts.google.com/ServiceLogin?service=sitemaps&hl=zh-TW&continue=https://search.google.com/search-console?hl%3Dzh-tw%26utm_source%3Dabout-page',
+            'meta'   => array(
+                'target' => '_blank'
+            ),
+        );
+        $admin_bar->add_node($args);
+
+        if (class_exists('WooCommerce', false)) {
+            $args = array(
+                'parent' => 'sitetool',
+                'id'     => 'ecpay',
+                'title'  => '綠界科技',
+                'href'   => 'https://www.ecpay.com.tw/',
+                'meta'   => array(
+                    'target' => '_blank'
+                ),
+            );
+            $admin_bar->add_node($args);
+        }
+
 
         /*$wp_admin_bar->add_node([
- 'id'      => 'line',
- 'title'   => 'Google Analytics',
- 'parent'  => '',
- 'href'    => esc_url( admin_url( 'admin.php?page=googlesitekit-splash' ) ),
- 'group'   => false,
- 'meta'    => [
- 'class' => 'jdaio_toolbar_btn'
- ],
- ]);
-  */
+            'id'      => 'line',
+            'title'   => 'Google Analytics',
+            'parent'  => '',
+            'href'    => esc_url( admin_url( 'admin.php?page=googlesitekit-splash' ) ),
+            'group'   => false,
+            'meta'    => [
+            'class' => 'jdaio_toolbar_btn'
+            ],
+            ]);*/
     }
+
+
 
     public function jdaio_remove_dashboard_widgets()
     {
 
         remove_meta_box('dashboard_right_now', 'dashboard', 'normal'); // Right Now
         // Remove comments metabox from dashboard
-        if (!COMMENT_OPEN) {
+        if (!COMMENTS_OPEN) {
             remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
         }
         remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal'); // Incoming Links
@@ -997,9 +1113,7 @@ class Custom_Admin extends Jerry_Divi_AIO
     public function wd_admin_menu_rename()
     {
         global $menu; // Global to get menu array
-        /*echo '<pre>';
-        var_dump($menu);
-        echo '</pre>';*/
+        //var_dump($menu);
         foreach ($menu as $key => $menu_array) {
 
             switch ($menu_array[2]) {
@@ -1009,9 +1123,9 @@ class Custom_Admin extends Jerry_Divi_AIO
                 case 'edit.php?post_type=page':
                     $menu[$key][0] = '頁面中心';
                     break;
-                    /*case 'edit.php?post_type=portfolio':
-    $menu[$key][0] = '作品展示';
-    break;*/
+                case 'edit.php?post_type=project':
+                    $menu[$key][0] = '作品集/案例展示';
+                    break;
                 case 'edit.php?post_type=product':
                     $menu[$key][0] = '商品中心';
                     break;
@@ -1019,25 +1133,62 @@ class Custom_Admin extends Jerry_Divi_AIO
                     $menu[$key][0] = '用戶中心';
                     break;
                 case 'wc-admin&path=/analytics/overview':
-                    $menu[$key][0] = '數據中心';
+                    $menu[$key][0] = '銷售圖表';
                     break;
+                case 'wps_overview_page':
+                    $menu[$key][0] = '流量中心';
+                    break;
+                case 'loco':
+                    $menu[$key][0] = '翻譯中心';
+                    break;
+                case 'et_divi_options':
+                    $menu[$key][0] = '網站外觀設定';
+                    break;
+
                 default:
                     # code...
                     break;
             }
         }
 
-        return $menu;
+        global $submenu;
+
+        foreach ($submenu["users.php"] as $key => $submenu_array) {
+            switch ($submenu_array[2]) {
+                case 'import-export-menu-old':
+                    $submenu["users.php"][$key][0] = '匯出用戶資料';
+                    break;
+
+                default:
+                    # code...
+                    break;
+            }
+        }
+        //var_dump($submenu["et_divi_options"]);
+
+
+
+
+
+        /*echo '<pre>';
+        var_dump($submenu["users.php"]);
+        echo '</pre>';*/
+    }
+    public function jdaio_remove_menu_page_level_0()
+    {
+        remove_menu_page('revslider');
+        remove_menu_page('theseoframework-settings');
+
     }
 
     public function jdaio_remove_menu_page_level_1()
     {
+        $this->jdaio_remove_menu_page_level_0();
         //remove_submenu_page( string $menu_slug, string $submenu_slug )
-
         //移除主選單
         remove_menu_page('index.php');
         remove_menu_page('upload.php');
-        if (!COMMENT_OPEN) {
+        if (!COMMENTS_OPEN) {
             remove_menu_page('edit-comments.php');
         }
         remove_menu_page('plugins.php');
@@ -1047,16 +1198,26 @@ class Custom_Admin extends Jerry_Divi_AIO
         remove_menu_page('et_bloom_options');
         remove_menu_page('et_divi_options');
         remove_menu_page('theseoframework-settings');
-        remove_menu_page('edit.php?post_type=project');
+
+
+
 
         //分析 - 移除下載跟稅金
         remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/taxes');
         remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/downloads');
+
+        //WP statistic
+
+        remove_submenu_page('wps_overview_page', 'wps_authors_page');
+        remove_submenu_page('wps_overview_page', 'wps_settings_page');
+        remove_submenu_page('wps_overview_page', 'wps_plugins_page');
+        remove_submenu_page('wps_overview_page', 'wps_donate_page');
     }
     public function jdaio_remove_menu_page_level_2()
     {
         $this->jdaio_remove_menu_page_level_1();
         remove_menu_page('loco');
+        remove_menu_page('ags-layouts');
     }
     public function jdaio_remove_menu_page_simple_mode()
     {
@@ -1097,26 +1258,28 @@ class Custom_Admin extends Jerry_Divi_AIO
     }
 
     //調整主選單順序
-    public function custom_menu_order($menu_ord)
+    public function jdaio_menu_reorder($menu_ord)
     {
         if (!$menu_ord) {
             return true;
         }
-
+        global $menu;
         //--debug--//
         /*echo '<pre>';
-        var_dump($menu_ord);
+        var_dump($menu);
         echo '</pre>';*/
         //--debug--//
 
         if ($this->jdaio_simple_mode()) {
             return array(
-                'googlesitekit-dashboard',
+                'wps_overview_page',
                 'wc-admin&path=/analytics/overview',
                 'edit.php?post_type=shop_order',
+                'admin.php?page=woocommerce-advanced-shipment-tracking',
                 'edit.php?post_type=product',
                 'edit.php',
                 'edit.php?post_type=page',
+                'edit.php?post_type=project',
                 'jdaio_setting',
                 'admin.php?page=wc-settings&tab=checkout',
                 'users.php',
@@ -1129,13 +1292,15 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         return array(
             //'index.php',
-            'googlesitekit-dashboard',
+            'wps_overview_page',
             'wc-admin&path=/analytics/overview',
             'edit.php?post_type=shop_order',
+            'admin.php?page=woocommerce-advanced-shipment-tracking',
             'edit.php?post_type=product',
             'edit.php',
             'edit.php?post_type=page',
-            'customize.php?et_customizer_option_set=theme',
+            'edit.php?post_type=project',
+            'admin.php?page=et_theme_builder',
             'jdaio_setting',
             'admin.php?page=wc-settings',
             'users.php',
@@ -1154,7 +1319,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         /*echo '<pre>';
   var_dump($wp_admin_bar);
   echo '</pre>';*/
-        if (!COMMENT_OPEN) {
+        if (!COMMENTS_OPEN) {
             $wp_admin_bar->remove_menu('comments');
         }
         $wp_admin_bar->remove_menu('updates');
@@ -1169,51 +1334,71 @@ class Custom_Admin extends Jerry_Divi_AIO
         $wp_admin_bar->remove_menu('fb-edit');
     }
 
-    public function jdaio_teach_f()
+    function jdaio_remove_all_image_sizes()
+    {
+        foreach (get_intermediate_image_sizes() as $size) {
+            remove_image_size($size);
+        }
+    }
+
+
+
+
+
+    /*public function jdaio_shipping_dtod_page(){
+        include_once 'template/shipping_dtod_page.php';
+    }*/
+
+    public function jdaio_teach_page()
     {
         echo '<h2>還在吸取日月精華...</h2>';
     }
-    public function jdaio_extention_f()
+    public function jdaio_extention_page()
     {
         echo '<h2>還在吸取日月精華...</h2>';
     }
 
     public function jdaio_disable_comments_post_types_support()
     {
-        // Disable support for comments and trackbacks in post types
-        $post_types = get_post_types();
-        foreach ($post_types as $post_type) {
-            if (post_type_supports($post_type, 'comments')) {
-                remove_post_type_support($post_type, 'comments');
-                remove_post_type_support($post_type, 'trackbacks');
-            }
-        }
 
-        // Redirect any user trying to access comments page
-        global $pagenow;
-        if ($pagenow === 'edit-comments.php') {
-            wp_redirect(admin_url());
-            exit;
+        if (!COMMENTS_OPEN) {
+            // Disable support for comments and trackbacks in post types
+            $post_types = get_post_types();
+            foreach ($post_types as $post_type) {
+                if (post_type_supports($post_type, 'comments')) {
+                    remove_post_type_support($post_type, 'comments');
+                    remove_post_type_support($post_type, 'trackbacks');
+                }
+            }
+
+            // Redirect any user trying to access comments page
+            global $pagenow;
+            if ($pagenow === 'edit-comments.php') {
+                wp_redirect(admin_url());
+                exit;
+            }
         }
     }
 
     // Close comments on the front-end
     public function jdaio_disable_comments_status()
     {
-        return false;
+        return COMMENTS_OPEN;
     }
 
     // Hide existing comments
     public function jdaio_disable_comments_hide_existing_comments($comments)
     {
-        $comments = array();
-        return $comments;
+        if (!COMMENTS_OPEN) {
+            $comments = array();
+            return $comments;
+        }
     }
 
     // Remove comments links from admin bar
     public function jdaio_disable_comments_admin_bar()
     {
-        if (is_admin_bar_showing()) {
+        if (!COMMENTS_OPEN) {
             remove_action('admin_bar_menu', 'wp_admin_bar_comments_menu', 60);
         }
     }

@@ -44,14 +44,20 @@ if (!class_exists('Jerry_Divi_AIO')) {
         //隱藏的用戶
         static $hide_user = ['JerryLiu', 'KarenShen', 'Emily'];
 
+        //預設隱藏以及縮合起來的METABOX
+        static $hidden_metabox = ['postexcerpt', 'slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv', 'wp-statistics-post-widget'];
+        static $close_metabox = ['tsf-inpost-box'];
+
 
         public function __construct()
         {
             //add_action('admin_head', [ $this, 'test' ]);
             add_action('init', [$this, 'jdaio_get_current_user_level']);
-            define('COMMENT_OPEN', false);
 
-
+            if(!defined('DEV_ENV')) define('DEV_ENV', false);
+            if(!defined('COMMENTS_OPEN')) define('COMMENTS_OPEN', false);
+            if(!defined('PROJECT_OPEN')) define('PROJECT_OPEN', false);
+            if(!defined('FLUSH_METABOX')) define('FLUSH_METABOX', false);
 
         }
 

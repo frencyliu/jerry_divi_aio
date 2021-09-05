@@ -11,7 +11,7 @@
 #toplevel_page_bogo,
 /*控制台留言*/
 #latest-comments,
-ul#wp-admin-bar-root-default > li:not(#wp-admin-bar-site-name),
+#wp-admin-bar-root-default > li,
 #contextual-help-link-wrap,
 .woocommerce-marketing-knowledgebase-card,
 .wp-list-table tr#tag-29,
@@ -25,13 +25,17 @@ ul#wp-admin-bar-root-default > li:not(#wp-admin-bar-site-name),
 h2.nav-tab-wrapper#tabs, #toplevel_page_woocommerce,
 .woocommerce-layout__header,
 .woocommerce-layout__activity-panel,
+.a2020_admin_menu .woocommerce-layout__header,
+#wpbody-content > div > .woocommerce-layout,
+#woocommerce-layout__primary .components-card.woocommerce-store-alerts.is-alert-update,
 /*Advanced Shipment Tracking*/
 .zorem-layout__header,
 .zorem_admin_sidebar,
 .woopt_add_action,
 .tab_label[for="tab6"],
 .tab_label[for="trackship"],
-.ast_nav_div .menu_trackship_link,
+.tab_label[for="integrations_tab"],
+/*.ast_nav_div .menu_trackship_link,*/
 .bulk_upload_documentation_ul li:nth-child(2),
 /**/
 #export_job_settings #reset-profile,
@@ -120,9 +124,11 @@ select#role option[value="translator"],
 #ai1wm-report-problem-button,
 /*自訂結帳表單*/
 .woocommerce_page_checkout_form_designer #wpbody-content > div.wrap > div > h2 > a:nth-child(3),
+.woocommerce_page_checkout_form_designer #wpbody-content > div.wrap > div.thwcfd-wrap > h2,
+.woocommerce_page_checkout_form_designer #thwcfd_field_form > div > main-title,
 /*admin 2020*/
 li.uk-animation-slide-right #a2020-update-wrap,
-#offcanvas-user-menu > div > div:nth-child(2) > div > div.uk-width-1-1.uk-margin-top.uk-grid-margin.uk-first-column > div.a2020-switch-container.uk-margin-bottom,
+/*#offcanvas-user-menu > div > div:nth-child(2) > div > div.uk-width-1-1.uk-margin-top.uk-grid-margin.uk-first-column > div.a2020-switch-container.uk-margin-bottom,*/
 /*文章編輯*/
 #side-sortables #featured-image-2_post,
 #side-sortables #featured-image-3_post,
@@ -133,15 +139,32 @@ li.uk-animation-slide-right #a2020-update-wrap,
 .woocommerce_page_wc-order-export h2.nav-tab-wrapper,
 /*social login*/
 .super-socializer_page_heateor-social-login .ui-widget-content,
-.super-socializer_page_heateor-social-login table.menu_content_table{
+.super-socializer_page_heateor-social-login table.menu_content_table,
+/*wp statistics*/
+.wps-wrap .wps-header-banner,
+#wps_overview_ads_postbox,
+#wp-statistics-about-widget,
+body[class*='_page_wps_optimization_page'] #postbox-container-1{
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
 }
 
 
+.admin2020_legacy_admin ul#wp-admin-bar-root-default > li#wp-admin-bar-sitetool{
+    display:block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 
 /*admin 2020 menu*/
 #adminmenu a, #catlist a, #taglist a{
     white-space: nowrap;
+}
+
+/*新增產品 product*/
+label[for="_downloadable"],
+label[for="_virtual"]{
+    display: none;
 }
