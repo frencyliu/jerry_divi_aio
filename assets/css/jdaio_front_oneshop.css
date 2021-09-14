@@ -1,0 +1,18 @@
+.jdaio_oneshop .woocommerce ul.products li.product .button{
+    display: block;
+    color: #fff;
+    text-align: center;
+}
+
+.jdaio_oneshop .jdaio_btn-primary{
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: var(--primary, #dd4200);
+    color: #fff;
+    border-radius: 10px;
+    text-align: center;
+    margin-top:15px;
+}
+.jdaio_oneshop .jdaio_btn-primary:hover{
+    opacity: 0.8;
+}

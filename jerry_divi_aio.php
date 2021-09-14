@@ -49,6 +49,8 @@ if (!class_exists('Jerry_Divi_AIO')) {
         static $close_metabox = ['tsf-inpost-box'];
 
 
+
+
         public function __construct()
         {
             //add_action('admin_head', [ $this, 'test' ]);
@@ -58,6 +60,14 @@ if (!class_exists('Jerry_Divi_AIO')) {
             if(!defined('COMMENTS_OPEN')) define('COMMENTS_OPEN', false);
             if(!defined('PROJECT_OPEN')) define('PROJECT_OPEN', false);
             if(!defined('FLUSH_METABOX')) define('FLUSH_METABOX', false);
+            if(!defined('ONESHOP')) define('ONESHOP', false);
+            if(!defined('FA_ENABLE')) define('FA_ENABLE', true);
+            //是否啟用擴充模組
+            if(!defined('JDAIO_EXTENSION')) define('JDAIO_EXTENSION', false);
+
+            //破解divi mega menu pro
+            update_option( 'divilife_edd_divimegapro_license_status', 'valid' );// by jerryliu
+
 
         }
 
@@ -102,6 +112,8 @@ if (!class_exists('Jerry_Divi_AIO')) {
             }
         }
 
+
+
         function activate()
         {
             flush_rewrite_rules();
@@ -120,6 +132,7 @@ if (class_exists('Jerry_Divi_AIO')) {
 require_once(__DIR__ . '/include/admin/class-admin.php');
 require_once(__DIR__ . '/include/sync/sync.php');
 require_once(__DIR__ . '/include/shortcode/shortcode.php');
+require_once(__DIR__ . '/include/oneshop/class-oneshop.php');
 
 new Custom_Admin();
 

@@ -109,6 +109,12 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         //移除所有圖片尺寸
         add_action('init', [$this, 'jdaio_remove_all_image_sizes']);
+
+        //自訂後台標題
+        add_filter('admin_title', [$this, 'jdaio_admin_title'], 99, 2);
+
+        //CHATBUTTON 前端顯示
+        add_action('wp_footer', [$this, 'jdaio_add_chatbutton_frontend']);
     }
 
 
@@ -120,7 +126,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         $new_role = [
             'designer',
             'shop_manager',
-            'super_shop_manager',
+            'shop_manager_super',
         ];
 
         $all_role_options["general_capabilities"]["options"]["theme_builder"]["applicability"] = array_merge($all_role_options["general_capabilities"]["options"]["theme_builder"]["applicability"], $new_role);
@@ -162,6 +168,19 @@ class Custom_Admin extends Jerry_Divi_AIO
             default:
                 $this->jdaio_remove_menu_page_level_2();
                 break;
+        }
+
+        //流量中心
+        if (class_exists('WP_Statistics', false)) {
+            add_menu_page(
+                '流量中心',
+                '流量中心',
+                'read',
+                'admin.php?page=wps_overview_page',
+                '',
+                'dashicons-chart-line', //icon
+                null
+            );
         }
 
 
@@ -326,12 +345,40 @@ class Custom_Admin extends Jerry_Divi_AIO
         );
         add_submenu_page(
             'admin.php?page=et_theme_builder',
+            '用戶見證',
+            '用戶見證',
+            'edit_theme_options',
+            'edit.php?post_type=dipl-testimonial',
+            '',
+            5
+        );
+        add_submenu_page(
+            'admin.php?page=et_theme_builder',
+            '團隊介紹',
+            '團隊介紹',
+            'edit_theme_options',
+            'edit.php?post_type=dipl-team-member',
+            '',
+            4
+        );
+        add_submenu_page(
+            'admin.php?page=et_theme_builder',
+            'MEGA MENU',
+            'MEGA MENU',
+            'edit_theme_options',
+            'edit.php?post_type=divi_mega_pro',
+            '',
+            5
+        );
+
+        add_submenu_page(
+            'admin.php?page=et_theme_builder',
             '元件庫',
             '元件庫',
             'edit_theme_options',
             'edit.php?post_type=et_pb_layout',
             '',
-            3
+            6
         );
         /*add_submenu_page(
             'et_theme_builder',
@@ -437,16 +484,18 @@ class Custom_Admin extends Jerry_Divi_AIO
   );*/
 
         //[DEV]擴充模組  //GPDR
-        if (DEV_ENV) {
+        if (JDAIO_EXTENSION) {
             add_menu_page(
                 '擴充模組',
                 '擴充模組',
                 'read',
                 'jdaio_extention',
-                [$this, 'jdaio_extention_page'],
+                [$this, 'jdaio_extension_page'],
                 'dashicons-block-default', //icon
                 null
             );
+        }
+        if (DEV_ENV) {
             //教學中心
             add_menu_page(
                 '教學中心',
@@ -493,6 +542,7 @@ class Custom_Admin extends Jerry_Divi_AIO
   'priority' => 'default'
   ));*/
 
+
         $defalut = new Option();
 
         $defalut->register();
@@ -515,6 +565,11 @@ class Custom_Admin extends Jerry_Divi_AIO
                     'id' => 'general_section',
                     'title' => __('基礎設定', 'plugin-name'),
                     //'desc'  => __( 'These are general settings for Plugin Name', 'plugin-name' ),
+                ),
+                array(
+                    'id' => 'chatbutton_section',
+                    'title' => __('聊天按鈕', 'plugin-name'),
+                    //'desc'  => __( 'These are advance settings for Plugin Name', 'plugin-name' )
                 ),
                 array(
                     'id' => 'tracking_section',
@@ -608,6 +663,121 @@ class Custom_Admin extends Jerry_Divi_AIO
                     //'max_width' => 1000,
                 ),
                 'default' => wp_get_attachment_image_url(20147, 'full'),
+            ),
+        );
+        //---------- ChatButton SECTION ----------//
+
+        //檢查套件是否有開，模組化
+
+        $messenger_activate = get_option('jdaio_chatbutton_fb_enable', '');
+        if (!empty($messenger_activate)) {
+            activate_plugin("facebook-messenger-customer-chat/facebook-messenger-customer-chat.php");
+        } else {
+            deactivate_plugins("facebook-messenger-customer-chat/facebook-messenger-customer-chat.php");
+        }
+
+        $fb_chat_plugin_activate = is_plugin_active("facebook-messenger-customer-chat/facebook-messenger-customer-chat.php");
+        $checked = ($fb_chat_plugin_activate) ? 'checked' : '';
+        $jdaio_chatbutton_fb_edit = ($fb_chat_plugin_activate) ? '<br><a href="https://www.facebook.com/login.php?next=https%3A%2F%2Fwww.facebook.com%2Fcustomer_chat%2Fdialog%2F%3Fdomain%3D' . site_url() .  '" target="_blank" class="button-primary">編輯 Facebook Messenger</a>' : '';
+        $defalut->addCheckboxes(
+            'chatbutton_section',
+            array(
+                'id' => 'jdaio_chatbutton_fb_enable',
+                'class' => 'submit_on_change',
+                'label' => __('啟用 FB 即時聊天', 'plugin-name'),
+                'desc' => $jdaio_chatbutton_fb_edit . '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;"><span class="material-icons-outlined uk-margin-small-right">info</span><span>用戶可在網頁直接傳送訊息</span></div>',
+                'options' => array(
+                    '1' => '啟用',
+                ),
+            ),
+        );
+
+
+
+        $defalut->addText(
+            'chatbutton_section',
+            array(
+                'id' => 'jdaio_chatbutton_line',
+                'label' => __('輸入 LINE 連結', 'plugin-name'),
+                'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
+                                    <span class="material-icons-outlined uk-margin-small-right">info</span><span>
+                                        <a href="https://www.pkstep.com/archives/5261" target="_blank">如何產生 LINE 連結</a>
+                                    </span>
+                                </div>',
+                'placeholder' => '',
+                'show_in_rest' => false,
+                'size' => 'regular',
+            ),
+        );
+        $defalut->addText(
+            'chatbutton_section',
+            array(
+                'id' => 'jdaio_chatbutton_tg',
+                'label' => __('輸入 Telegram 連結', 'plugin-name'),
+                'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
+                <span class="material-icons-outlined uk-margin-small-right">info</span><span>
+                                        <a href="https://www.inside.com.tw/article/18743-Telegram-username" target="_blank">如何產生 Telegram 連結</a>
+                                    </span>
+            </div>',
+                'placeholder' => '例如：https://t.me/telegram',
+                'show_in_rest' => false,
+                'size' => 'regular',
+            ),
+        );
+        $defalut->addText(
+            'chatbutton_section',
+            array(
+                'id' => 'jdaio_chatbutton_ig',
+                'label' => __('輸入 Instagram 連結', 'plugin-name'),
+                'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
+                <span class="material-icons-outlined uk-margin-small-right">info</span><span>
+                                        <a href="https://www.tech-girlz.com/2020/08/instagram-bio-link.html" target="_blank">如何產生 Instagram 連結</a>
+                                    </span>
+            </div>',
+                'placeholder' => '例如：https://www.instagram.com/instagram',
+                'show_in_rest' => false,
+                'size' => 'regular',
+            ),
+        );
+        $defalut->addText(
+            'chatbutton_section',
+            array(
+                'id' => 'jdaio_chatbutton_whatsapp',
+                'label' => __('輸入 WhatsApp 連結', 'plugin-name'),
+                'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
+                <span class="material-icons-outlined uk-margin-small-right">info</span><span>
+                                        <a href="https://moredigital.com.hk/2018/07/23/%E7%B6%B2%E5%BA%97%E5%BF%85%E5%AD%B8-30-%E7%A7%92%E5%AE%8C%E6%88%90%E8%A8%AD%E5%AE%9A-direct-whatsapp/" target="_blank">如何產生 WhatsApp 連結</a>
+                                    </span>
+            </div>',
+                'placeholder' => 'https://wa.me/[區號][你的手提電話號碼] ，例如：https://wa.me/886/912345678',
+                'show_in_rest' => false,
+                'size' => 'regular',
+            ),
+        );
+        $defalut->addText(
+            'chatbutton_section',
+            array(
+                'id' => 'jdaio_chatbutton_email',
+                'label' => __('輸入 EMAIL', 'plugin-name'),
+                'desc' => '',
+                'placeholder' => '例如：my_name@gmail.com',
+                'show_in_rest' => false,
+                'size' => 'regular',
+            ),
+        );
+        $defalut->addText(
+            'chatbutton_section',
+            array(
+                'id' => 'jdaio_chatbutton_phone',
+                'label' => __('輸入手機號碼', 'plugin-name'),
+                'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
+                <span class="material-icons-outlined uk-margin-small-right">info</span><span>
+                請不要輸入-等符號
+                </span>
+            </div>',
+                'placeholder' => '例如：+886912345678',
+                'show_in_rest' => false,
+                'size' => 'regular',
             ),
         );
         //---------- TRACKING SECTION ----------//
@@ -745,6 +915,48 @@ class Custom_Admin extends Jerry_Divi_AIO
         );
     }
 
+    public function jdaio_add_chatbutton_frontend()
+    {
+        $fb_chat_plugin_activate = is_plugin_active("facebook-messenger-customer-chat/facebook-messenger-customer-chat.php");
+        $class = ($fb_chat_plugin_activate) ? 'jdaio_chatbutton' : 'jdaio_chatbutton_no_fb';
+
+        $chatbutton_order = ['jdaio_chatbutton_phone', 'jdaio_chatbutton_email', 'jdaio_chatbutton_whatsapp', 'jdaio_chatbutton_ig', 'jdaio_chatbutton_tg', 'jdaio_chatbutton_line'];
+
+        $html = '';
+        $html .= '<div class="' . $class . '">';
+
+        $html .= '<div class="chatbutton_content">';
+
+        /*$html .= '<i class="fas fa-arrow-from-right"></i>';
+        $html .= '<i class="fas fa-arrow-from-left"></i>';*/
+        $html .= '<i class="fad fa-reply-all"></i>';
+        $html .= '<i class="fad fa-share-all"></i>';
+        $html .= '<div class="chatbutton_content_inner">';
+        $html .= '<div class="chatbutton_content_inner_scroll">';
+        foreach ($chatbutton_order as $button) {
+            if (!empty(get_option($button))) {
+                switch ($button) {
+                    case 'jdaio_chatbutton_email':
+                        $prefix = 'mailto:';
+                        break;
+                    case 'jdaio_chatbutton_phone':
+                        $prefix = 'tel://';
+                        break;
+                    default:
+                        $prefix = '';
+                        break;
+                }
+                $html .= '<a href="' . $prefix . get_option($button) . '" class="' . $button . '" target="_blank"></a>';
+            }
+        }
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+        $html .= '</div>';
+
+        echo $html;
+    }
+
     public function jdaio_sync_data()
     {
 
@@ -828,11 +1040,17 @@ class Custom_Admin extends Jerry_Divi_AIO
     public function enqueue_front_css()
     {
         wp_enqueue_style('Jerry_Divi_AIO front css', plugins_url('/../../assets/css/jdaio_front.css', __FILE__));
+        if (FA_ENABLE) {
+            wp_enqueue_style('fontawesome_css', plugins_url('/../../assets/fontawesome/css/all.min.css', __FILE__));
+        }
     }
 
     public function enqueue_front_js()
     {
         wp_enqueue_script('Jerry_Divi_AIO front js', plugins_url('/../../assets/js/jdaio_front.js', __FILE__));
+        if (FA_ENABLE) {
+            wp_enqueue_script('fontawesome_js',  plugins_url('/../../assets/fontawesome/js/all.min.js', __FILE__));
+        }
     }
 
     public function remove_admin_bar()
@@ -858,12 +1076,12 @@ class Custom_Admin extends Jerry_Divi_AIO
   var_dump($jdaio_simple_mode_enable);
   echo '</div>';*/
 
-        $URL = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+        /*$URL = 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
         $is_checked = ($this->jdaio_simple_mode()) ? 'checked' : '';
 
         if (class_exists('WooCommerce', false)) {
             echo '<div class="jdaio_simple_mode_btn">極簡模式<form class="jdaio_simple_mode_form" action="' . $URL . '" method="post"><input type="checkbox" name="jdaio_simple_mode_enable" value="enable" class="jdaio_simple_mode" ' . $is_checked . ' /><input type="hidden" name="submit_ok" value="submit_ok" /></form>';
-        }
+        }*/
     }
 
     public function jdaio_remove_filters()
@@ -883,11 +1101,13 @@ class Custom_Admin extends Jerry_Divi_AIO
    */
         if (self::$current_user_level > 0) {
             unset($wp_filter['admin_notices']->callbacks[10]);
+            unset($wp_filter['admin_title']->callbacks[10]); //WC title
+            unset($wp_filter['admin_notices']->callbacks[20]); //wp-statistic
         }
 
         /*debug*/
         /*echo '<pre>';
-  var_dump($wp_filter['admin_notices']->callbacks[10]);
+  var_dump($wp_filter['admin_title']);
   echo '</pre>';*/
         /*debug*/
     }
@@ -953,7 +1173,7 @@ class Custom_Admin extends Jerry_Divi_AIO
                     display: none;
                 }
             </style>
-<?php
+        <?php
         endif;
     }
 
@@ -1126,6 +1346,12 @@ class Custom_Admin extends Jerry_Divi_AIO
                 case 'edit.php?post_type=project':
                     $menu[$key][0] = '作品集/案例展示';
                     break;
+                case 'edit.php?post_type=dipl-testimonial':
+                    $menu[$key][0] = '用戶見證';
+                    break;
+                case 'edit.php?post_type=dipl-team-member':
+                    $menu[$key][0] = '團隊介紹';
+                    break;
                 case 'edit.php?post_type=product':
                     $menu[$key][0] = '商品中心';
                     break;
@@ -1141,9 +1367,7 @@ class Custom_Admin extends Jerry_Divi_AIO
                 case 'loco':
                     $menu[$key][0] = '翻譯中心';
                     break;
-                case 'et_divi_options':
-                    $menu[$key][0] = '網站外觀設定';
-                    break;
+
 
                 default:
                     # code...
@@ -1178,7 +1402,6 @@ class Custom_Admin extends Jerry_Divi_AIO
     {
         remove_menu_page('revslider');
         remove_menu_page('theseoframework-settings');
-
     }
 
     public function jdaio_remove_menu_page_level_1()
@@ -1198,6 +1421,10 @@ class Custom_Admin extends Jerry_Divi_AIO
         remove_menu_page('et_bloom_options');
         remove_menu_page('et_divi_options');
         remove_menu_page('theseoframework-settings');
+        remove_menu_page('wps_overview_page');
+        remove_menu_page('facebook-messenger-customer-chat');
+        remove_menu_page('edit.php?post_type=divi_mega_pro');
+        remove_menu_page('wpclever');
 
 
 
@@ -1207,11 +1434,24 @@ class Custom_Admin extends Jerry_Divi_AIO
         remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/downloads');
 
         //WP statistic
-
+        /*remove_submenu_page('wps_overview_page', 'wps_overview_page');
+        remove_submenu_page('wps_overview_page', 'wps_hits_page');
+        remove_submenu_page('wps_overview_page', 'wps_visitors_page');
+        remove_submenu_page('wps_overview_page', 'wps_referrers_page');
+        remove_submenu_page('wps_overview_page', 'wps_words_page');
+        remove_submenu_page('wps_overview_page', 'wps_searches_page');
+        remove_submenu_page('wps_overview_page', 'wps_pages_page');
+        remove_submenu_page('wps_overview_page', 'wps_categories_page');
+        remove_submenu_page('wps_overview_page', 'wps_tags_page');
+        remove_submenu_page('wps_overview_page', 'wps_browser_page');
+        remove_submenu_page('wps_overview_page', 'wps_platform_page');
+        remove_submenu_page('wps_overview_page', 'wps_top-visitors_page');
+        remove_submenu_page('wps_overview_page', 'wps_optimization_page');
         remove_submenu_page('wps_overview_page', 'wps_authors_page');
         remove_submenu_page('wps_overview_page', 'wps_settings_page');
         remove_submenu_page('wps_overview_page', 'wps_plugins_page');
         remove_submenu_page('wps_overview_page', 'wps_donate_page');
+        */
     }
     public function jdaio_remove_menu_page_level_2()
     {
@@ -1272,7 +1512,7 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         if ($this->jdaio_simple_mode()) {
             return array(
-                'wps_overview_page',
+                'admin.php?page=wps_overview_page',
                 'wc-admin&path=/analytics/overview',
                 'edit.php?post_type=shop_order',
                 'admin.php?page=woocommerce-advanced-shipment-tracking',
@@ -1292,7 +1532,7 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         return array(
             //'index.php',
-            'wps_overview_page',
+            'admin.php?page=wps_overview_page',
             'wc-admin&path=/analytics/overview',
             'edit.php?post_type=shop_order',
             'admin.php?page=woocommerce-advanced-shipment-tracking',
@@ -1341,6 +1581,11 @@ class Custom_Admin extends Jerry_Divi_AIO
         }
     }
 
+    function jdaio_admin_title($admin_title, $title)
+    {
+        return $title;
+    }
+
 
 
 
@@ -1353,9 +1598,55 @@ class Custom_Admin extends Jerry_Divi_AIO
     {
         echo '<h2>還在吸取日月精華...</h2>';
     }
-    public function jdaio_extention_page()
+    public function jdaio_extension_page()
     {
-        echo '<h2>還在吸取日月精華...</h2>';
+        //add_thickbox();
+        ?>
+        <div class="wpclever_settings_page wrap">
+                <h1>擴充模組</h1>
+        <div class="wp-list-table widefat plugin-install-network">
+        <div class="plugin-card woo-fly-cart" id="woo-fly-cart">
+            <div class="plugin-card-top">
+
+                    <img src="https://login.ecpay.com.tw/Content/themes/WebStyle20190717/images/ecpay_logo.svg" class="plugin-icon" alt="">
+
+                <div class="name column-name">
+                    <h3>綠界支付</h3>
+                </div>
+                <div class="action-links">
+                    <ul class="plugin-action-buttons">
+                        <li>
+                            <a href="http://localhost/divi_tp/wp-admin/admin.php?page=wpclever-kit&amp;action=deactivate&amp;plugin=woo-fly-cart%2Fwpc-fly-cart.php&amp;_wpnonce=3ed8fa5423#woo-fly-cart" class="button deactivate-now">
+                                Deactivate </a>
+                        </li>
+                        <li>
+                            <a href="" class="">
+                                前往官網 <span class="dashicons dashicons-external"></span></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="desc column-description">
+                    <p>綠界科技Ecpay是第三方支付領導品牌,提供金流、物流、電子發票、 跨境電商、資安聯防一站購足服務。<br>也支援VISA、JCB、MASTERCARD、銀聯卡等多種信用卡支付方式，還提供超商取貨付款、定期定額等支付方式</p>
+                </div>
+            </div>
+            <div class="plugin-card-bottom">
+                <div class="vers column-rating">
+                    <p style="margin-bottom:10px;">推薦指數</p>
+                    <div class="star-rating"><span class="screen-reader-text"></span>
+                        <div class="star star-full" aria-hidden="true"></div>
+                        <div class="star star-full" aria-hidden="true"></div>
+                        <div class="star star-full" aria-hidden="true"></div>
+                        <div class="star star-full" aria-hidden="true"></div>
+                        <div class="star star-half" aria-hidden="true"></div>
+                    </div> <span class="num-ratings"></span>
+                </div>
+
+            </div>
+        </div>
+        </div>
+        </div>
+<?php
+
     }
 
     public function jdaio_disable_comments_post_types_support()

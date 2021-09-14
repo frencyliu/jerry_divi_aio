@@ -144,7 +144,15 @@ li.uk-animation-slide-right #a2020-update-wrap,
 .wps-wrap .wps-header-banner,
 #wps_overview_ads_postbox,
 #wp-statistics-about-widget,
-body[class*='_page_wps_optimization_page'] #postbox-container-1{
+body[class*='_page_wps_optimization_page'] #postbox-container-1,
+/*slider revolution*/
+#rs_welcome_header_area,
+/*#new_slider_from_template,
+#add_on_management,*/
+#plugin_update_row,
+#plugin_activation_row,
+#plugin_news_row,
+body.toplevel_page_revslider .div150{
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
@@ -166,5 +174,8 @@ body[class*='_page_wps_optimization_page'] #postbox-container-1{
 /*新增產品 product*/
 label[for="_downloadable"],
 label[for="_virtual"]{
+    display: none;
+}
+#rs_overview_menu{
     display: none;
 }

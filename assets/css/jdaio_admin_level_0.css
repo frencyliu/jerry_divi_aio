@@ -17,6 +17,29 @@ span.gutenberg,
     display: none !important;
 }
 
+/*BASIC*/
+::placeholder {
+    color: #ddd;
+    font-style: italic;
+}
+.button-primary{
+    background: var(--a2020-primary) !important;
+    border-color:unset !important;
+    line-height:unset !important;
+    color: #fff;
+    border-radius: 10px !important;
+    font-size: 14px;
+    margin-left: 4px;
+    font-weight: normal;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    padding: 10px 20px !important;
+}
+.button-primary:hover{
+    background: var(--a2020-primary-darker) !important;
+}
+
+
 /*極簡模式*/
 .jdaio_simple_mode_btn {
     position: fixed;
@@ -86,6 +109,10 @@ body.wp-admin {
     white-space: nowrap;
 }
 
+/*訂單*/
+.post-type-shop_order .woocommerce_order_items_wrapper .quantity{
+    white-space: nowrap;
+}
 /*woocommerce_page_wc-order-export調整*/
 #export_job_settings {
     padding-left: 30px;
@@ -374,6 +401,10 @@ body[class*="_page_wps_optimization_page"] .wps-wrap__main {
 #post-body #et_pb_layout.et-loaded {
     min-height: 70px;
 }
+.et_pb_toggle_builder #et_pb_toggle_builder.et_pb_builder_is_used,
+.et_pb_toggle_builder #et_pb_fb_cta{
+    color: #fff;
+}
 /*預設把Divi builder縮起來*/
 /*#post-body #et_pb_layout > .inside{
     display: none;
@@ -430,5 +461,15 @@ body.toplevel_page_revslider #rb_the_logo {
 }
 .showwpmenus .uk-background-default {
     background-color: #323438;
+}
+#rs_overview_menu{
+    z-index: 98;
+}
+/*擴充模組*/
+.toplevel_page_jdaio_extention .plugin-card .desc{
+    margin-right: 0px;
+}
+.toplevel_page_jdaio_extention .plugin-card .name{
+    margin-right: 85px;
 }
 

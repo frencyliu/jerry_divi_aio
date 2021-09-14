@@ -19,6 +19,88 @@
 .white-space-nowrap{
     white-space: nowrap !important;
 }
+/*font awesome*/
+.fa,.fab,.fad,.fal,.far,.fas{
+    font-family: "Font Awesome 5 pro" !important;
+}
+/*CHATBUTTON*/
+.jdaio_chatbutton_no_fb{
+    position: fixed;
+    bottom: 17px;
+    right: 24px;
+    z-index: 214748364;
+    overflow: hidden;
+
+}
+.jdaio_chatbutton{
+    position: fixed;
+    bottom: 17px;
+    right: 84px;
+    z-index: 214748364;
+    overflow: hidden;
+
+}
+.chatbutton_content{
+    display:flex;
+    align-items:center;
+    position: relative;
+    left: calc(100% - 75px);
+}
+.jdaio_chatbutton a,
+.jdaio_chatbutton i,
+.jdaio_chatbutton_no_fb a,
+.jdaio_chatbutton_no_fb i{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background-size: cover;
+    margin-right: 15px;
+    font-size: 36px;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 100%;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+.chatbutton_content.expand .fa-arrow-from-right,
+.chatbutton_content:not(.expand) .fa-arrow-from-left,
+.chatbutton_content.expand .fa-reply-all,
+.chatbutton_content:not(.expand) .fa-share-all{
+    display: none;
+}
+.chatbutton_content:not(.expand) .fa-arrow-from-right,
+.chatbutton_content.expand .fa-arrow-from-left,
+.chatbutton_content:not(.expand) .fa-reply-all,
+.chatbutton_content.expand .fa-share-all{
+    display: inline-block;
+}
+.jdaio_chatbutton_line{
+    background: url('../img/line.png');
+}
+.jdaio_chatbutton_tg{
+    background: url('../img/tg.png');
+}
+.jdaio_chatbutton_ig{
+    background: url('../img/ig.png');
+}
+.jdaio_chatbutton_whatsapp{
+    background: url('../img/whatsapp.png');
+}
+.jdaio_chatbutton_email{
+    background: url('../img/mail.png');
+}
+.jdaio_chatbutton_phone{
+    background: url('../img/phone.png');
+}
+/*
+.chatbutton_content_inner{
+
+}
+
+.chatbutton_content_inner_scroll{
+    min-width: 460px;
+}*/
 
 /*隱藏webpush 前端icon*/
 #webpushr-prompt-wrapper,
@@ -85,9 +167,20 @@ select[name="ecpay_choose_payment"] {
     margin-left: 0px;
     width: 100%;
     padding: 0px 15px;
+    height: 51px;
+    border-radius: 5px;
 }
 
-/*結帳頁 按鈕*/
+/*結帳頁 按鈕 woocommerce*/
+.woocommerce-error,.woocommerce-info,.woocommerce-message{
+    border-radius: 5px;
+}
+.checkout_coupon  button[name="apply_coupon"]{
+    height: 51px;
+}
+.checkout_coupon  .form-row-last{
+    float: left !important;
+}
 button#place_order {
     width: 100%;
 }
@@ -116,11 +209,9 @@ p.woocommerce-shipping-destination{
 #order_comments{
     min-height: 160px;
 }
-.woocommerce-additional-fields{
-    margin-top: 20px;
-}
-.woocommerce-shipping-fields,
-#billing_country_field{
+
+/*#billing_country_field,*/
+.woocommerce-shipping-fields{
     display: none;
 }
 .cart_totals table th{
@@ -132,7 +223,7 @@ tr.cart-subtotal td,
 tr.cart-subtotal th,
 tr.woocommerce-shipping-totals th,
 tr.woocommerce-shipping-totals td{
-    padding: 15px 0px !important;
+    padding: 15px !important;
 }
 body.fusion-button_size-large .fusion-button-default-size, body.fusion-button_size-large button.button{
     width: 49.2%;
@@ -157,7 +248,61 @@ body.fusion-button_size-large .fusion-button-default-size, body.fusion-button_si
 .woo-sale-badge-circle .onsale{
     display: none !important;
 }
+p.woocommerce-thankyou-order-received{
+    margin-bottom: 30px;
+    padding-left: 15px;
+}
+.woocommerce ul.order_details li{
+    line-height: 3em;
+}
+.woocommerce-column{
+    float: none !important;
+    width: 100% !important;
+    margin-bottom: 30px !important;
+}
 
+.woocommerce-checkout .woocommerce-order h2,
+.woocommerce-checkout h3{
+    font-size: 18px;
+    font-weight: 900;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 30px !important;
+    padding-bottom: 0px;
+    width: 100%;
+}
+.woocommerce-checkout .woocommerce-order h2::before,
+.woocommerce-checkout h3::before{
+    content: "◤";
+    font-size: 22px;
+}
+li.product p,
+li.product .short-desic{
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+}
+span.et_portfolio_image, span.et_shop_image{
+    display: flex;
+}
+.jdaio_oneshop a.added_to_cart.wc-forward{
+    display: none !important;
+}
+.lwp-hide-mobile-menu.et_pb_menu .et_pb_menu__menu,.lwp-hide-mobile-menu.et_pb_fullwidth_menu .et_pb_menu__menu {
+    display: flex!important;
+}
+
+.lwp-hide-mobile-menu .et_mobile_nav_menu {
+    display: none;
+}
+@media (min-width: 768px) and (max-width: 980px) {
+    .lwp-hide-mobile-menu.et_pb_menu .et_pb_menu__menu,.lwp-hide-mobile-menu.et_pb_fullwidth_menu .et_pb_menu__menu {
+        display: flex!important;
+    }
+
+    .lwp-hide-mobile-menu .et_mobile_nav_menu {
+        display: none;
+    }
+}
 
 /*woocommerce login form*/
 /*
@@ -430,6 +575,10 @@ html:not(.avada-has-site-width-percent) #main, html:not(.avada-has-site-width-pe
 @media (max-width: 768px) {
     .wcmp-wrapper .navbar-default.sidebar.side-collapse{
         width: 200px !important;
+    }
+    .chatbutton_content_inner{
+        max-width: calc( 100vw - 168px );
+        overflow: auto;
     }
 }
 

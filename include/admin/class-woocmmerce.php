@@ -8,20 +8,31 @@ namespace Admin\JDAIO;
 
 use Jerry_Divi_AIO;
 
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
-class Woocommerce extends Jerry_Divi_AIO{
+class Woocommerce extends Jerry_Divi_AIO
+{
 
-    public function __construct() {
+    public function __construct()
+    {
         //change woocommerce default recipient
-        add_filter('woocommerce_email_recipient_new_order', [ $this, 'my_email_heading_customisation_function_ent' ], 99999, 2);
-        add_filter( 'woocommerce_email_recipient_cancelled_order', [ $this, 'quadlayers_add_email_recipient_to' ], 9999, 3 );
+        add_filter('woocommerce_email_recipient_new_order', [$this, 'my_email_heading_customisation_function_ent'], 99999, 2);
+        add_filter('woocommerce_email_recipient_cancelled_order', [$this, 'quadlayers_add_email_recipient_to'], 9999, 3);
         //---- woocommerce ----//
-        add_filter('woocommerce_customer_meta_fields', [$this, 'jdaio_remove_shipping_fields'], 999);
+        //add_filter('woocommerce_customer_meta_fields', [$this, 'jdaio_remove_shipping_fields'], 999);
         //remove woocommerce setting tab
         add_filter('woocommerce_settings_tabs_array', [$this, 'jdaio_remove_woocommerce_setting_tabs'], 200, 1);
+
+        add_action('init', [ $this, 'jdaio_get_post_data']);
     }
 
+
+    public function jdaio_get_post_data(){
+    if ( isset( $_GET['empty_cart'] ) ) {
+        global $woocommerce;
+        $woocommerce->cart->empty_cart();
+    }
+}
 
     public function my_email_heading_customisation_function_ent($recipient, $order)
     {
@@ -55,18 +66,19 @@ class Woocommerce extends Jerry_Divi_AIO{
     }
 
     //停用帳單部分欄位跟shipping欄位
-    function jdaio_remove_shipping_fields($show_fields)
+    //有裝套件，所以停用
+    /*function jdaio_remove_shipping_fields($show_fields)
     {
         unset($show_fields['billing']['fields']['billing_last_name']);
         unset($show_fields['billing']['fields']['billing_address_2']);
         unset($show_fields['billing']['fields']['billing_city']);
-        unset($show_fields['billing']['fields']['billing_country']);
+        //unset($show_fields['billing']['fields']['billing_country']);
         unset($show_fields['billing']['fields']['billing_state']);
         unset($show_fields['billing']['fields']['billing_email']);
         unset($show_fields['shipping']);
         //var_dump($show_fields);
         return $show_fields;
-    }
+    }*/
 
     //Remove single page
     /*
@@ -77,7 +89,4 @@ function hide_product_page($args){
     return $args;
 }
 */
-
-
 }
-

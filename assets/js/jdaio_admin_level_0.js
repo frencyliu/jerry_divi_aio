@@ -40,9 +40,10 @@ jQuery(document).ready(($) => {
 
     /**
      * 極簡模式
+     * 改變checkbox後送出表單
      */
-    jQuery(".jdaio_simple_mode_btn").on("change", () => {
-        jQuery(".jdaio_simple_mode_form").submit();
+    jQuery(".submit_on_change input, .jdaio_simple_mode_btn").on("change", function(){
+        jQuery("#submit").click();
     });
 
     /**
@@ -51,7 +52,7 @@ jQuery(document).ready(($) => {
     jQuery("#activationpanel").remove();
 
     /**
-     * Divi builder
+     * Divi builder  點擊縮合
      */
     jQuery("#et_pb_layout > .postbox-header > h2").on("click", function(e){
         if( e.target != this ) return;
