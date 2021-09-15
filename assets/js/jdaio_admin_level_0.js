@@ -56,7 +56,7 @@ jQuery(document).ready(($) => {
      */
     jQuery("#et_pb_layout > .postbox-header > h2").on("click", function(e){
         if( e.target != this ) return;
-        jQuery("#et_pb_layout > .inside").slideToggle();
+        jQuery("#et_pb_layout > .inside").slideToggle('slow');
     });
 
     /**

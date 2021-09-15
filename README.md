@@ -1,39 +1,26 @@
-# Foobar
+# 目標 - 自動化營運
 
-Foobar is a Python library for dealing with word pluralization.
+1. 每日統計平台業績，EMAIL+LINE通知
+2. 每月統計報表，EMAIL+LINE通知
+3. 計算好每月要被抽多少錢
+4. EMAIL跟LINE附上繳款連結
+5. 時間內沒繳款  自動發催繳信跟警告
+6. 期限到沒繳款，自動斷網站
+7. 第二期限到，自動刪除網站
 
-## Installation
+# 代辦清單
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+- [ ] 串接電子報
+- [ ] 串接歐付寶
+- [ ] 串接藍星
+- [ ] 簡易模式重購
+- [ ] 串接簡訊API
 
-```bash
-pip install foobar
-```
 
-## Usage
+# 教學
 
-```python
-import foobar
+## 1.常數
 
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-常數
 COMMENTS_OPEN - (bool) 是否開啟留言功能
 
 不要更新的PLUGIN：

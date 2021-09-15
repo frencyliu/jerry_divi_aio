@@ -152,11 +152,14 @@ body[class*='_page_wps_optimization_page'] #postbox-container-1,
 #plugin_update_row,
 #plugin_activation_row,
 #plugin_news_row,
-body.toplevel_page_revslider .div150{
+body.toplevel_page_revslider .div150,
+/*分類頁 - 分類與標籤轉換程式*/
+.edit-term-notes{
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;
 }
+
 
 
 .admin2020_legacy_admin ul#wp-admin-bar-root-default > li#wp-admin-bar-sitetool{

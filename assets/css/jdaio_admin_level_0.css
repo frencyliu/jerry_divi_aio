@@ -22,9 +22,10 @@ span.gutenberg,
     color: #ddd;
     font-style: italic;
 }
+
 .button-primary{
     background: var(--a2020-primary) !important;
-    border-color:unset !important;
+    /*border-color:unset !important;
     line-height:unset !important;
     color: #fff;
     border-radius: 10px !important;
@@ -33,11 +34,12 @@ span.gutenberg,
     font-weight: normal;
     border: none;
     transition: all 0.2s ease-in-out;
-    padding: 10px 20px !important;
+    padding: 10px 20px !important;*/
 }
 .button-primary:hover{
     background: var(--a2020-primary-darker) !important;
 }
+
 
 
 /*極簡模式*/
@@ -113,6 +115,14 @@ body.wp-admin {
 .post-type-shop_order .woocommerce_order_items_wrapper .quantity{
     white-space: nowrap;
 }
+ul.order_notes li.system-note .note_content::after {
+    border-color: #e6efff transparent;
+}
+ul.order_notes li.system-note .note_content {
+    background: #e6efff;
+    border-radius: 5px;
+}
+
 /*woocommerce_page_wc-order-export調整*/
 #export_job_settings {
     padding-left: 30px;
@@ -235,6 +245,24 @@ body.wp-admin {
 }
 .tagsdiv #new-tag-post_tag {
     width: 165px;
+}
+.wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs{
+    border: none;
+    background-color: var(--a2020-primary) !important;
+    padding: 8px 16px;
+    border-radius: 5px;
+
+}
+#post-body ul.add-menu-item-tabs li.tabs a, #post-body ul.category-tabs li.tabs a, #side-sortables .add-menu-item-tabs .tabs a, #side-sortables .category-tabs .tabs a, .wp-tab-bar .wp-tab-active a{
+    color: #fff;
+}
+.categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel{
+    border: none;
+}
+ul.add-menu-item-tabs li, ul.category-tabs li, ul.wp-tab-bar li{
+    width: 40% !important;
+    display: inline-block;
+    text-align: center;
 }
 
 /*元件庫*/
@@ -401,9 +429,15 @@ body[class*="_page_wps_optimization_page"] .wps-wrap__main {
 #post-body #et_pb_layout.et-loaded {
     min-height: 70px;
 }
-.et_pb_toggle_builder #et_pb_toggle_builder.et_pb_builder_is_used,
-.et_pb_toggle_builder #et_pb_fb_cta{
-    color: #fff;
+.et_pb_toggle_builder_wrapper  #et_pb_toggle_builder,
+.et_pb_toggle_builder_wrapper  #et_pb_fb_cta{
+    color: #fff !important;
+}
+.et_pb_toggle_builder_wrapper  #et_pb_toggle_builder.button-primary{
+    background-color: #ddd !important;
+}
+.et_pb_toggle_builder_wrapper  #et_pb_toggle_builder.button-primary:hover{
+    background-color: #ccc !important;
 }
 /*預設把Divi builder縮起來*/
 /*#post-body #et_pb_layout > .inside{
@@ -472,4 +506,14 @@ body.toplevel_page_revslider #rb_the_logo {
 .toplevel_page_jdaio_extention .plugin-card .name{
     margin-right: 85px;
 }
+
+/*分類頁*/
+body[class*="taxonomy-"] .button.button-primary{
+    margin-left: 0px;
+}
+/*商品 product*/
+table.wp-list-table span.wc-featured, table.wp-list-table span.wc-image{
+    margin-left: 0px;
+}
+
 

@@ -44,9 +44,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
         //隱藏的用戶
         static $hide_user = ['JerryLiu', 'KarenShen', 'Emily'];
 
-        //預設隱藏以及縮合起來的METABOX
-        static $hidden_metabox = ['postexcerpt', 'slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv', 'wp-statistics-post-widget'];
-        static $close_metabox = ['tsf-inpost-box'];
+
 
 
 
@@ -133,6 +131,7 @@ require_once(__DIR__ . '/include/admin/class-admin.php');
 require_once(__DIR__ . '/include/sync/sync.php');
 require_once(__DIR__ . '/include/shortcode/shortcode.php');
 require_once(__DIR__ . '/include/oneshop/class-oneshop.php');
+require_once(__DIR__ . '/include/extensions/class-extension.php');
 
 new Custom_Admin();
 

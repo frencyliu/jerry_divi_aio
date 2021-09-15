@@ -16,6 +16,7 @@ if (ONESHOP) {
     {
         public function __construct()
         {
+
             //shop頁添加 購物車按鈕
             add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 20);
 
@@ -24,13 +25,14 @@ if (ONESHOP) {
             add_filter('body_class', [$this, 'jdaio_add_bodyclass']);
 
             //Remove single page
-            add_filter('woocommerce_register_post_type_product', [$this, 'jdaio_hide_product_page'], 12, 1);
+            //add_filter('woocommerce_register_post_type_product', [$this, 'jdaio_hide_product_page'], 12, 1);
 
             //override woocommerce template
             //https://www.skyverge.com/blog/override-woocommerce-template-file-within-a-plugin/
             add_filter( 'woocommerce_locate_template', [$this, 'myplugin_woocommerce_locate_template' ], 10, 3 );
 
             add_action('after_setup_theme', [$this, 'jdaio_remove_product_link'], 98);
+
         }
 
         public function enqueue_front_css()
