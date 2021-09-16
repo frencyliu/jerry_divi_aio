@@ -21,8 +21,22 @@
 
 ## 1.常數
 
-COMMENTS_OPEN - (bool) 是否開啟留言功能
+常數             | 型態  | 預設  | 說明
+----------------|:-----:|:-----:|------------------------
+DEV_ENV         | bool  | false | 是否為開發環境
+COMMENTS_OPEN   | bool  | false | 是否開啟留言功能
+PROJECT_OPEN    | bool  | false | 是否開啟Project(作品集/案例)
+FLUSH_METABOX   | bool  | false | 是否刷新所有使用者的Metabox設定
+ONESHOP         | bool  | false | 是否為啟用一頁電商功能
+FA_ENABLE       | bool  | true  | 是否載入FontAwesome資源
+JDAIO_EXTENSION | bool  | false | 是否開啟擴充模組功能
 
-不要更新的PLUGIN：
+
+
+
+
+## 不要更新的PLUGIN
+
 1. users-customers-import-export-for-wp-woocommerce
 因為他的多語系沒有指定text domain，所以更新可能被覆蓋掉
+2. Divi Mega Pro
