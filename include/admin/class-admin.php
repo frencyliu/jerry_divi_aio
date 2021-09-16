@@ -660,7 +660,6 @@ class Custom_Admin extends Jerry_Divi_AIO
         //---------- ChatButton SECTION ----------//
 
         //檢查套件是否有開，模組化
-
         $messenger_activate = get_option('jdaio_chatbutton_fb_enable', '');
         if (!empty($messenger_activate)) {
             activate_plugin("facebook-messenger-customer-chat/facebook-messenger-customer-chat.php");
@@ -914,17 +913,7 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         $chatbutton_order = ['jdaio_chatbutton_phone', 'jdaio_chatbutton_email', 'jdaio_chatbutton_whatsapp', 'jdaio_chatbutton_ig', 'jdaio_chatbutton_tg', 'jdaio_chatbutton_line'];
 
-        $html = '';
-        $html .= '<div class="' . $class . '">';
-
-        $html .= '<div class="chatbutton_content">';
-
-        /*$html .= '<i class="fas fa-arrow-from-right"></i>';
-        $html .= '<i class="fas fa-arrow-from-left"></i>';*/
-        $html .= '<i class="fad fa-reply-all"></i>';
-        $html .= '<i class="fad fa-share-all"></i>';
-        $html .= '<div class="chatbutton_content_inner">';
-        $html .= '<div class="chatbutton_content_inner_scroll">';
+        $html_btn = '';
         foreach ($chatbutton_order as $button) {
             if (!empty(get_option($button))) {
                 switch ($button) {
@@ -938,9 +927,23 @@ class Custom_Admin extends Jerry_Divi_AIO
                         $prefix = '';
                         break;
                 }
-                $html .= '<a href="' . $prefix . get_option($button) . '" class="' . $button . '" target="_blank"></a>';
+                $html_btn .= '<a href="' . $prefix . get_option($button) . '" class="' . $button . '" target="_blank"></a>';
             }
         }
+        if(empty($html_btn)) return;
+
+        $html = '';
+        $html .= '<div class="' . $class . '">';
+
+        $html .= '<div class="chatbutton_content">';
+
+        /*$html .= '<i class="fas fa-arrow-from-right"></i>';
+        $html .= '<i class="fas fa-arrow-from-left"></i>';*/
+        $html .= '<i class="fad fa-reply-all"></i>';
+        $html .= '<i class="fad fa-share-all"></i>';
+        $html .= '<div class="chatbutton_content_inner">';
+        $html .= '<div class="chatbutton_content_inner_scroll">';
+        $html .= $html_btn;
         $html .= '</div>';
         $html .= '</div>';
         $html .= '</div>';
