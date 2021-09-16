@@ -46,10 +46,13 @@ if (JDAIO_EXTENSION) {
                     <div class="plugin-card woo-fly-cart" id="woo-fly-cart">
                         <div class="plugin-card-top">
 
-                            <img src="https://login.ecpay.com.tw/Content/themes/WebStyle20190717/images/ecpay_logo.svg" class="plugin-icon" alt="">
+                            <img src="https://login.ecpay.com.tw/Content/themes/WebStyle20190717/images/ecpay_logo.svg" class="plugin-icon plugin-card-img" alt="">
+
 
                             <div class="name column-name">
                                 <h3>綠界支付</h3>
+                                <p style="margin:0px;"><a href="" class="">
+                                            前往官網 <span class="dashicons dashicons-external"></span></a></p>
                             </div>
                             <div class="action-links">
                                 <ul class="plugin-action-buttons">
@@ -57,10 +60,7 @@ if (JDAIO_EXTENSION) {
                                         <a href="http://localhost/divi_tp/wp-admin/admin.php?page=wpclever-kit&amp;action=deactivate&amp;plugin=woo-fly-cart%2Fwpc-fly-cart.php&amp;_wpnonce=3ed8fa5423#woo-fly-cart" class="button deactivate-now">
                                             Deactivate </a>
                                     </li>
-                                    <li>
-                                        <a href="" class="">
-                                            前往官網 <span class="dashicons dashicons-external"></span></a>
-                                    </li>
+
                                 </ul>
                             </div>
                             <div class="desc column-description">
@@ -68,19 +68,19 @@ if (JDAIO_EXTENSION) {
                             </div>
                         </div>
                         <div class="plugin-card-bottom">
-                            <div class="vers column-rating">
-                                <p style="margin-bottom:10px;">推薦指數</p>
-                                <div class="star-rating"><span class="screen-reader-text"></span>
+                            <div class="">
+                                <div class="star-rating">
+                                    <span class="">推薦指數：</span>
                                     <div class="star star-full" aria-hidden="true"></div>
                                     <div class="star star-full" aria-hidden="true"></div>
                                     <div class="star star-full" aria-hidden="true"></div>
                                     <div class="star star-full" aria-hidden="true"></div>
                                     <div class="star star-half" aria-hidden="true"></div>
-                                </div> <span class="num-ratings"></span>
+                                </div>
+                                <div class="commend">
+                                    <p style="margin: 10px 0px 0px 0px;">點評：裝就對了！</p>
+                                </div>
                             </div>
-                            <div class="column-updated">
-                                <p>點評：</p><br><p>推薦使用！</p></div>
-
                         </div>
                     </div>
                 </div>

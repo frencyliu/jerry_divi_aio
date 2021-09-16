@@ -324,82 +324,90 @@ class Custom_Admin extends Jerry_Divi_AIO
         }
 
         //網站外觀選項
+        $theme = wp_get_theme()->Name;
+        if (strpos($theme, 'Divi') !== false) {
 
-        add_menu_page(
-            '網站外觀組件',
-            '網站外觀組件',
-            'edit_theme_options',
-            'admin.php?page=et_theme_builder',
-            '',
-            'dashicons-admin-appearance', //icon
-            null
-        );
-        add_submenu_page(
-            'admin.php?page=et_theme_builder',
-            '建立Slider',
-            '建立Slider',
-            'edit_theme_options',
-            'admin.php?page=revslider',
-            '',
-            3
-        );
-        add_submenu_page(
-            'admin.php?page=et_theme_builder',
-            '用戶見證',
-            '用戶見證',
-            'edit_theme_options',
-            'edit.php?post_type=dipl-testimonial',
-            '',
-            5
-        );
-        add_submenu_page(
-            'admin.php?page=et_theme_builder',
-            '團隊介紹',
-            '團隊介紹',
-            'edit_theme_options',
-            'edit.php?post_type=dipl-team-member',
-            '',
-            4
-        );
-        add_submenu_page(
-            'admin.php?page=et_theme_builder',
-            'MEGA MENU',
-            'MEGA MENU',
-            'edit_theme_options',
-            'edit.php?post_type=divi_mega_pro',
-            '',
-            5
-        );
+            add_menu_page(
+                '網站外觀組件',
+                '網站外觀組件',
+                'edit_theme_options',
+                'admin.php?page=et_theme_builder',
+                '',
+                'dashicons-admin-appearance', //icon
+                null
+            );
+            add_submenu_page(
+                'admin.php?page=et_theme_builder',
+                '建立Slider',
+                '建立Slider',
+                'edit_theme_options',
+                'admin.php?page=revslider',
+                '',
+                3
+            );
+            if (class_exists('DIPL_DiviPlus', false)) {
+                add_submenu_page(
+                    'admin.php?page=et_theme_builder',
+                    '用戶見證',
+                    '用戶見證',
+                    'edit_theme_options',
+                    'edit.php?post_type=dipl-testimonial',
+                    '',
+                    5
+                );
+                add_submenu_page(
+                    'admin.php?page=et_theme_builder',
+                    '團隊介紹',
+                    '團隊介紹',
+                    'edit_theme_options',
+                    'edit.php?post_type=dipl-team-member',
+                    '',
+                    4
+                );
+            }
+            if(class_exists('DiviMegaPro', false)){
+            add_submenu_page(
+                'admin.php?page=et_theme_builder',
+                'MEGA MENU',
+                'MEGA MENU',
+                'edit_theme_options',
+                'edit.php?post_type=divi_mega_pro',
+                '',
+                5
+            );
+        }
 
-        add_submenu_page(
-            'admin.php?page=et_theme_builder',
-            '元件庫',
-            '元件庫',
-            'edit_theme_options',
-            'edit.php?post_type=et_pb_layout',
-            '',
-            6
-        );
-        /*add_submenu_page(
-            'et_theme_builder',
-            '基礎外觀定義',
-            '基礎外觀定義',
-            'edit_theme_options',
-            'customize.php?et_customizer_option_set=theme',
-            '',
-            2
-        );*/
+            add_submenu_page(
+                'admin.php?page=et_theme_builder',
+                '元件庫',
+                '元件庫',
+                'edit_theme_options',
+                'edit.php?post_type=et_pb_layout',
+                '',
+                6
+            );
+            /*add_submenu_page(
+                'et_theme_builder',
+                '基礎外觀定義',
+                '基礎外觀定義',
+                'edit_theme_options',
+                'customize.php?et_customizer_option_set=theme',
+                '',
+                2
+            );*/
 
 
-        /*add_submenu_page(
-            'et_theme_builder',
-            '進階設定',
-            '進階設定',
-            'edit_theme_options',
-            'admin.php?page=et_divi_options',
-            '',
-            4
-        );*/
+            /*add_submenu_page(
+                'et_theme_builder',
+                '進階設定',
+                '進階設定',
+                'edit_theme_options',
+                'admin.php?page=et_divi_options',
+                '',
+                4
+            );*/
+        }
+
 
         //網路商店設定
         if (class_exists('WooCommerce', false)) {
@@ -569,12 +577,7 @@ class Custom_Admin extends Jerry_Divi_AIO
                     'id' => 'sociallogin_section',
                     'title' => __('社群登入', 'plugin-name'),
                     //'desc'  => __( 'These are advance settings for Plugin Name', 'plugin-name' )
-                ),
-                /*array(
-   'id'    => 'advance_section',
-   'title' => __('進階設定', 'plugin-name'),
-   //'desc'  => __( 'These are advance settings for Plugin Name', 'plugin-name' )
-   )*/
+                )
             )
         );
         //---------- GENERAL SECTION ----------//
@@ -1162,7 +1165,7 @@ class Custom_Admin extends Jerry_Divi_AIO
                     display: none;
                 }
             </style>
-        <?php
+<?php
         endif;
     }
 
@@ -1414,6 +1417,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         remove_menu_page('facebook-messenger-customer-chat');
         remove_menu_page('edit.php?post_type=divi_mega_pro');
         remove_menu_page('wpclever');
+        remove_menu_page('edit.php?post_type=dipl-testimonial');
+        remove_menu_page('edit.php?post_type=dipl-team-member');
 
 
 

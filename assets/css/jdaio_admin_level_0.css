@@ -106,6 +106,9 @@ body.wp-admin {
     height: 70px;
     overflow: hidden;
 }
+.toplevel_page_jdaio_extention  .plugin-card .name h3{
+    height: auto;
+}
 .column-compatibility span,
 .plugin-card .desc.column-description p.authors {
     white-space: nowrap;
@@ -505,6 +508,15 @@ body.toplevel_page_revslider #rb_the_logo {
 }
 .toplevel_page_jdaio_extention .plugin-card .name{
     margin-right: 85px;
+}
+
+.plugin-card-img{
+    height: 128px !important;
+    width: 128px !important;
+    object-fit: contain !important;
+    border-radius: 100% !important;
+    box-shadow: 0px 0px 10px #ccc !important;
+    padding: 10px !important;
 }
 
 /*分類頁*/
