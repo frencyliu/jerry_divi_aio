@@ -10,12 +10,13 @@
 
 # 代辦清單
 
+- [ ] FB轉換API
 - [ ] 串接電子報
 - [ ] 串接歐付寶
 - [ ] 串接藍星
 - [ ] 簡易模式重購
 - [ ] 串接簡訊API
-
+- [X] getButton功能
 
 # 教學
 
@@ -40,3 +41,9 @@ JDAIO_EXTENSION | bool  | false | 是否開啟擴充模組功能
 1. users-customers-import-export-for-wp-woocommerce
 因為他的多語系沒有指定text domain，所以更新可能被覆蓋掉
 2. Divi Mega Pro
+
+# Change Log
+
+時間            | 版本號 | 說明
+----------------|:-----:|------------------------
+2021-09-17      | 1.1.0 | 新增getButton、oneShop等功能

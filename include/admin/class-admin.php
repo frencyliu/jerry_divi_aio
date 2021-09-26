@@ -107,8 +107,11 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         add_filter('add_et_builder_role_options', [$this, 'jdaio_add_role_to_et_builder_role_options'], 10, 2);
 
-        //移除所有圖片尺寸
+        //圖片  移除所有圖片尺寸
         add_action('init', [$this, 'jdaio_remove_all_image_sizes']);
+        add_filter( 'big_image_size_threshold', function() { return 20000; } );
+        add_filter( 'jpeg_quality', function() { return 100; });
+
 
         //自訂後台標題
         add_filter('admin_title', [$this, 'jdaio_admin_title'], 99, 2);
@@ -116,8 +119,6 @@ class Custom_Admin extends Jerry_Divi_AIO
         //CHATBUTTON 前端顯示
         add_action('wp_footer', [$this, 'jdaio_add_chatbutton_frontend']);
     }
-
-
 
 
     //把下列用戶也加入Theme Builder的權限管理
@@ -504,6 +505,8 @@ class Custom_Admin extends Jerry_Divi_AIO
                 null
             );
         }
+
+
 
 
 
@@ -1362,6 +1365,9 @@ class Custom_Admin extends Jerry_Divi_AIO
                 case 'loco':
                     $menu[$key][0] = '翻譯中心';
                     break;
+                    case 'upload.php':
+                        $menu[$key][0] = '檔案上傳中心';
+                        break;
 
 
                 default:
@@ -1390,7 +1396,7 @@ class Custom_Admin extends Jerry_Divi_AIO
 
 
         /*echo '<pre>';
-        var_dump($submenu["users.php"]);
+        var_dump($submenu["upload.php"]);
         echo '</pre>';*/
     }
     public function jdaio_remove_menu_page_level_0()
@@ -1405,7 +1411,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         //remove_submenu_page( string $menu_slug, string $submenu_slug )
         //移除主選單
         remove_menu_page('index.php');
-        remove_menu_page('upload.php');
+
         if (!COMMENTS_OPEN) {
             remove_menu_page('edit-comments.php');
         }
@@ -1422,6 +1428,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         remove_menu_page('wpclever');
         remove_menu_page('edit.php?post_type=dipl-testimonial');
         remove_menu_page('edit.php?post_type=dipl-team-member');
+        remove_menu_page('media-cloud');
+        remove_menu_page('media-cloud-tools');
 
 
 
@@ -1429,6 +1437,12 @@ class Custom_Admin extends Jerry_Divi_AIO
         //分析 - 移除下載跟稅金
         remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/taxes');
         remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/downloads');
+
+        //remove_menu_page('upload.php');
+        remove_submenu_page('upload.php', 'upload.php');
+        remove_submenu_page('upload.php', 'media-new.php');
+        remove_submenu_page('upload.php', 'ewww-image-optimizer-bulk');
+
 
         //WP statistic
         /*remove_submenu_page('wps_overview_page', 'wps_overview_page');
@@ -1543,6 +1557,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'users.php',
             'edit.php?post_type=shop_coupon',
             'admin.php?page=theseoframework-settings',
+            'upload.php',
             'loco',
             //'jdaio_extention',
             //'jdaio_teach',

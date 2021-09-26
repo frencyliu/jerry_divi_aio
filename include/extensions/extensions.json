@@ -1,28 +1,43 @@
-{
-    "extensions": [
+
+[
         {
             "name": "綠界支付",
+            "slug": "ecpay-payment-for-woocommerce",
+            "path": "ecpay/integration_plugin.php",
             "description": "綠界科技Ecpay是第三方支付領導品牌,提供金流、物流、電子發票、 跨境電商、資安聯防一站購足服務。也支援VISA、JCB、MASTERCARD、銀聯卡等多種信用卡支付方式，還提供超商取貨付款、定期定額等支付方式",
             "thumbnail_url": "https://login.ecpay.com.tw/Content/themes/WebStyle20190717/images/ecpay_logo.svg",
             "website": "https://www.ecpay.com.tw/",
             "recommend_rate": 5.0,
-            "admin_commend": "測試",
+            "admin_commend": "包含綠界電子發票系統"
         },
         {
-            "name": "綠界支付",
+            "name": "歐付寶",
+            "slug": "woo-opay-payment",
+            "path": "woo-opay-payment/integration_plugin.php",
+            "description": "歐付寶提供多種服務，超商繳款、線上金流、信用卡刷卡、ATM轉帳、快速收款連結、電子發票、收款隔日即撥款之高效服務",
+            "thumbnail_url": "https://www.opay.tw/Content/themes/Landing/images/frame/logo_blue.png",
+            "website": "https://www.opay.tw/Landing",
+            "recommend_rate": 4.0,
+            "admin_commend": ""
+        },
+        {
+            "name": "藍新",
+            "slug": "woo-opay-payment",
+            "path": "ecpay/integration_plugin.php",
+            "description": "綠界科技Ecpay是第三方支付領導品牌,提供金流、物流、電子發票、 跨境電商、資安聯防一站購足服務。也支援VISA、JCB、MASTERCARD、銀聯卡等多種信用卡支付方式，還提供超商取貨付款、定期定額等支付方式",
+            "thumbnail_url": "https://login.ecpay.com.tw/Content/themes/WebStyle20190717/images/ecpay_logo.svg",
+            "website": "https://www.ecpay.com.tw/",
+            "recommend_rate": 2.0,
+            "admin_commend": "測試"
+        },
+        {
+            "name": "多語系套件",
+            "slug": "bogo",
+            "path": "ecpay/integration_plugin.php",
             "description": "綠界科技Ecpay是第三方支付領導品牌,提供金流、物流、電子發票、 跨境電商、資安聯防一站購足服務。也支援VISA、JCB、MASTERCARD、銀聯卡等多種信用卡支付方式，還提供超商取貨付款、定期定額等支付方式",
             "thumbnail_url": "https://login.ecpay.com.tw/Content/themes/WebStyle20190717/images/ecpay_logo.svg",
             "website": "https://www.ecpay.com.tw/",
             "recommend_rate": 5.0,
-            "admin_commend": "測試",
-        },
-        {
-            "name": "綠界支付",
-            "description": "綠界科技Ecpay是第三方支付領導品牌,提供金流、物流、電子發票、 跨境電商、資安聯防一站購足服務。也支援VISA、JCB、MASTERCARD、銀聯卡等多種信用卡支付方式，還提供超商取貨付款、定期定額等支付方式",
-            "thumbnail_url": "https://login.ecpay.com.tw/Content/themes/WebStyle20190717/images/ecpay_logo.svg",
-            "website": "https://www.ecpay.com.tw/",
-            "recommend_rate": 5.0,
-            "admin_commend": "測試",
-        },
+            "admin_commend": "測試"
+        }
     ]
-}

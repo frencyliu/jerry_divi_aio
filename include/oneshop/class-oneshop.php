@@ -20,7 +20,7 @@ if (ONESHOP) {
             //shop頁添加 購物車按鈕
             add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 20);
 
-            add_action('wp_enqueue_scripts', [$this, 'enqueue_front_css'], 101);
+            add_action('wp_enqueue_scripts', [$this, 'jdaio_enqueue_front_css'], 101);
 
             add_filter('body_class', [$this, 'jdaio_add_bodyclass']);
 
@@ -29,13 +29,13 @@ if (ONESHOP) {
 
             //override woocommerce template
             //https://www.skyverge.com/blog/override-woocommerce-template-file-within-a-plugin/
-            add_filter( 'woocommerce_locate_template', [$this, 'myplugin_woocommerce_locate_template' ], 10, 3 );
+            add_filter( 'woocommerce_locate_template', [$this, 'jdaio_oneshop_override_woocommerce_template' ], 20, 3 );
 
             add_action('after_setup_theme', [$this, 'jdaio_remove_product_link'], 98);
 
         }
 
-        public function enqueue_front_css()
+        public function jdaio_enqueue_front_css()
         {
             wp_enqueue_style('Jerry_Divi_AIO ONESHOP front css', plugins_url('/../../assets/css/jdaio_front_oneshop.css', __FILE__));
         }
@@ -54,21 +54,21 @@ if (ONESHOP) {
             return $args;
         }
 
-        function myplugin_plugin_path() {
+        function get_plugin_abs_path() {
 
             // gets the absolute path to this plugin directory
 
             return untrailingslashit( plugin_dir_path( __FILE__ ) );
           }
 
-          function myplugin_woocommerce_locate_template( $template, $template_name, $template_path ) {
+          function jdaio_oneshop_override_woocommerce_template( $template, $template_name, $template_path ) {
             global $woocommerce;
 
             $_template = $template;
 
             if ( ! $template_path ) $template_path = $woocommerce->template_url;
 
-            $plugin_path  = $this->myplugin_plugin_path() . '/woocommerce/';
+            $plugin_path  = $this->get_plugin_abs_path() . '/woocommerce/';
             //var_dump($plugin_path);
             // Look within passed path within the theme - this is priority
             $template = locate_template(

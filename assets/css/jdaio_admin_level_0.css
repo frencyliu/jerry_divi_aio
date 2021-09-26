@@ -454,9 +454,9 @@ body[class*="_page_wps_optimization_page"] .wps-wrap__main {
 #minor-publishing #minor-publishing-actions {
     padding: 20px 20px 0px 20px;
 }
-.wp-core-ui select:not(#product-type) {
+/*.wp-core-ui select:not(#product-type) {
     width: 100%;
-}
+}*/
 .wp-core-ui #woocommerce-product-data select:not(#product-type) {
     width: 50%;
 }
@@ -526,6 +526,17 @@ body[class*="taxonomy-"] .button.button-primary{
 /*商品 product*/
 table.wp-list-table span.wc-featured, table.wp-list-table span.wc-image{
     margin-left: 0px;
+}
+
+/*Media Upload*/
+.ilab-admin-separator-container .ilab-admin-separator-title{
+    color: #000 !important;
+}
+.ilab-admin-separator-container .ilab-admin-separator-title::before{
+    content:'- ';
+}
+.ilab-admin-separator-container .ilab-admin-separator-title::after{
+    content:' -';
 }
 
 

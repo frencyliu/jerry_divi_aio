@@ -20,9 +20,11 @@
     white-space: nowrap !important;
 }
 /*font awesome*/
+/*
 .fa,.fab,.fad,.fal,.far,.fas{
     font-family: "Font Awesome 5 pro" !important;
 }
+*/
 /*CHATBUTTON*/
 .jdaio_chatbutton_no_fb{
     position: fixed;
@@ -34,7 +36,7 @@
 }
 .jdaio_chatbutton{
     position: fixed;
-    bottom: 17px;
+    bottom: 22px;
     right: 84px;
     z-index: 214748364;
     overflow: hidden;
