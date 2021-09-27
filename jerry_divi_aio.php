@@ -97,6 +97,10 @@ if (!class_exists('Jerry_Divi_AIO')) {
 
             //破解divi mega menu pro
             update_option( 'divilife_edd_divimegapro_license_status', 'valid' );// by jerryliu
+
+
+            //修改WP Statistics Read capability權限
+            add_filter("wp_statistics_option_read_capability", function(){ return 'read'; }, 99, 1);
         }
 
 

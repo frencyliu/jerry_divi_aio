@@ -1037,7 +1037,8 @@ class Custom_Admin extends Jerry_Divi_AIO
 
     public function enqueue_front_css()
     {
-        wp_enqueue_style('Jerry_Divi_AIO front css', plugins_url('/../../assets/css/jdaio_front.css', __FILE__));
+        wp_enqueue_style('Jerry_Divi_AIO front css', plugins_url('/../../assets/css/jdaio_front_level_' . self::$current_user_level . '.css', __FILE__));
+
         if (FA_ENABLE) {
             wp_enqueue_style('fontawesome_css', plugins_url('/../../assets/fontawesome/css/all.min.css', __FILE__));
         }

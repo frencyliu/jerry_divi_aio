@@ -1,0 +1,9 @@
+@import "jdaio_front_level_1.css";
+
+/*ET Builder*/
+.et-fb-form__toggle.et-fb-form__toggle-enabled[data-name="admin_label"],
+.et-fb-modal__tab-footer,
+header.et-fb-tabs-outer,
+.et-fb-tabs__panel > .et-fb-options-filter{
+    display: none;
+}
