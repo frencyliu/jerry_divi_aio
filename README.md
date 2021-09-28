@@ -29,8 +29,9 @@ COMMENTS_OPEN   | bool  | false | 是否開啟留言功能
 PROJECT_OPEN    | bool  | false | 是否開啟Project(作品集/案例)
 FLUSH_METABOX   | bool  | false | 是否刷新所有使用者的Metabox設定
 ONESHOP         | bool  | false | 是否為啟用一頁電商功能
-FA_ENABLE       | bool  | true  | 是否載入FontAwesome資源
 JDAIO_EXTENSION | bool  | false | 是否開啟擴充模組功能
+FA_ENABLE       | bool  | true  | 是否載入FontAwesome資源
+FLIPSTER_ENABLE | bool  | false | 是否載入Flipster Slide資源
 
 
 

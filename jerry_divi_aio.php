@@ -61,6 +61,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
             if(!defined('FLUSH_METABOX')) define('FLUSH_METABOX', false);
             if(!defined('ONESHOP')) define('ONESHOP', false);
             if(!defined('FA_ENABLE')) define('FA_ENABLE', true);
+            if(!defined('FLIPSTER_ENABLE')) define('FLIPSTER_ENABLE', false);
             //是否啟用擴充模組
             if(!defined('JDAIO_EXTENSION')) define('JDAIO_EXTENSION', false);
 

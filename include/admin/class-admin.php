@@ -1042,6 +1042,9 @@ class Custom_Admin extends Jerry_Divi_AIO
         if (FA_ENABLE) {
             wp_enqueue_style('fontawesome_css', plugins_url('/../../assets/fontawesome/css/all.min.css', __FILE__));
         }
+        if (FLIPSTER_ENABLE) {
+            wp_enqueue_style('flipster_css', plugins_url('/../../assets/flipster/jquery.flipster.min.css', __FILE__));
+        }
     }
 
     public function enqueue_front_js()
@@ -1049,6 +1052,9 @@ class Custom_Admin extends Jerry_Divi_AIO
         wp_enqueue_script('Jerry_Divi_AIO front js', plugins_url('/../../assets/js/jdaio_front.js', __FILE__));
         if (FA_ENABLE) {
             wp_enqueue_script('fontawesome_js',  plugins_url('/../../assets/fontawesome/js/all.min.js', __FILE__));
+        }
+        if (FLIPSTER_ENABLE) {
+            wp_enqueue_script('flipster_js', plugins_url('/../../assets/flipster/jquery.flipster.min.js', __FILE__));
         }
     }
 
