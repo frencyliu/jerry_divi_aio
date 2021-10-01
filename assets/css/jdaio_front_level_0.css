@@ -283,9 +283,10 @@ li.product .short-desic{
     font-size: 14px;
     color: #555;
 }
-span.et_portfolio_image, span.et_shop_image{
+/*一頁電商會有BUG SAFARI*/
+/*span.et_portfolio_image, span.et_shop_image{
     display: flex;
-}
+}*/
 .jdaio_oneshop a.added_to_cart.wc-forward{
     display: none !important;
 }

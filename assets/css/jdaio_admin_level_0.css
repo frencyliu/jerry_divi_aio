@@ -24,7 +24,7 @@ span.gutenberg,
 }
 
 .button-primary{
-    background: var(--a2020-primary) !important;
+    background: var(--a2020-primary, #2271b1) !important;
     /*border-color:unset !important;
     line-height:unset !important;
     color: #fff;
@@ -37,7 +37,7 @@ span.gutenberg,
     padding: 10px 20px !important;*/
 }
 .button-primary:hover{
-    background: var(--a2020-primary-darker) !important;
+    background: var(--a2020-primary-darker, #135e96) !important;
 }
 
 

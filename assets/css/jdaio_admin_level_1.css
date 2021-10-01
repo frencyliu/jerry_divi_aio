@@ -20,7 +20,7 @@
 /*Woocommerce 開始匯入產品*/
 .woocommerce-BlankState-buttons .woocommerce-BlankState-cta,
 /*Woocommerce Setting*/
-#wpbody-content .woocommerce #mainform > ul > li:nth-child(3),
+/*#wpbody-content .woocommerce #mainform > ul > li:nth-child(3),*/
 #wpbody-content .woocommerce #mainform > table:nth-child(5) > tbody > tr:nth-child(2)
 h2.nav-tab-wrapper#tabs, #toplevel_page_woocommerce,
 .woocommerce-layout__header,

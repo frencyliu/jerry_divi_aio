@@ -27,9 +27,9 @@ class MetaBox extends Jerry_Divi_AIO
 {
 
     //預設隱藏以及縮合起來的METABOX
-    static $hidden_metabox = ['postexcerpt', 'slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv', 'wp-statistics-post-widget', 'pageparentdiv'];
+    static $hidden_metabox = ['slugdiv', 'postcustom', 'trackbacksdiv', 'commentstatusdiv', 'commentsdiv', 'authordiv', 'revisionsdiv', 'wp-statistics-post-widget', 'pageparentdiv'];
 
-    static $close_metabox = ['tsf-inpost-box'];
+    static $close_metabox = ['postexcerpt', 'tsf-inpost-box'];
 
     static $hide_product_column = ['is_in_stock', 'product_tag', 'featured', 'tsf-quick-edit'];
 

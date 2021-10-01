@@ -1,3 +1,6 @@
+# 2021/10/02
+新增多語系 text domain
+
 # 2021/09/28
 整合Flipster Slide的JS
 

@@ -1,0 +1,180 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Jerry-Divi-AIO\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-01 17:45+0000\n"
+"PO-Revision-Date: 2021-10-01 18:32+0000\n"
+"Last-Translator: \n"
+"Language-Team: 繁體中文\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.3; wp-5.8.1\n"
+"X-Domain: Jerry_Divi_AIO"
+
+#: include/admin/class-admin.php:1367
+msgid "Analytics"
+msgstr "銷售圖表"
+
+#: include/admin/class-admin.php:464 include/admin/class-admin.php:465
+msgid "Checkout Form"
+msgstr "自訂結帳表單"
+
+#: include/admin/class-admin.php:252 include/admin/class-admin.php:253
+msgid "Coupons"
+msgstr "折價券"
+
+#: include/admin/class-admin.php:453 include/admin/class-admin.php:454
+msgid "Email Notification"
+msgstr "訂單通知信內容設定"
+
+#: include/admin/class-admin.php:318 include/admin/class-admin.php:319
+msgid "Email Settings"
+msgstr "系統發信設定"
+
+#: include/admin/class-admin.php:203 include/admin/class-admin.php:204
+msgid "Export Oders"
+msgstr "匯出訂單"
+
+#: include/admin/class-admin.php:1391
+msgid "Export User"
+msgstr "匯出用戶資料"
+
+#. Description of the plugin
+msgid "EZ update all the site"
+msgstr ""
+
+#: include/admin/class-admin.php:263 include/admin/class-admin.php:264
+msgid "Generate Coupons"
+msgstr "批量產生折價券"
+
+#: include/admin/class-admin.php:298 include/admin/class-admin.php:299
+msgid "Homepage"
+msgstr "首頁設定"
+
+#. Author of the plugin
+msgid "Jerry Liu"
+msgstr ""
+
+#. Name of the plugin
+msgid "Jerry-Divi-AIO"
+msgstr ""
+
+#: include/admin/class-admin.php:383 include/admin/class-admin.php:384
+msgid "Library"
+msgstr "元件庫"
+
+#: include/admin/class-admin.php:242 include/admin/class-admin.php:243
+#: include/admin/class-admin.php:284 include/admin/class-admin.php:285
+msgid "Marketing"
+msgstr ""
+"行銷中心\n"
+
+#: include/admin/class-admin.php:307 include/admin/class-admin.php:308
+msgid "Menus"
+msgstr "網站選單"
+
+#: include/admin/class-admin.php:191 include/admin/class-admin.php:192
+msgid "Oders"
+msgstr "訂單中心"
+
+#: include/admin/class-admin.php:1349
+msgid "Pages"
+msgstr ""
+"頁面中心\n"
+
+#: include/admin/class-admin.php:435 include/admin/class-admin.php:436
+msgid "Payment Method"
+msgstr "付款方式設定"
+
+#: include/admin/class-admin.php:1346
+msgid "Posts"
+msgstr ""
+"\n"
+"文章中心\n"
+
+#: include/admin/class-admin.php:444 include/admin/class-admin.php:445
+msgid "Privacy"
+msgstr "帳號及隱私權設定"
+
+#: include/admin/class-admin.php:1361
+msgid "Products"
+msgstr ""
+"\n"
+"商品中心\n"
+
+#: include/admin/class-admin.php:1352
+msgid "Projects"
+msgstr "案例/作品集"
+
+#: include/admin/class-admin.php:274 include/admin/class-admin.php:275
+msgid "SEO Settings"
+msgstr "SEO設定"
+
+#: include/admin/class-admin.php:552
+msgid "Setting"
+msgstr ""
+"\n"
+"網站一般設定\n"
+
+#: include/admin/class-admin.php:215 include/admin/class-admin.php:216
+msgid "Shipping"
+msgstr ""
+"\n"
+"物流中心"
+
+#: include/admin/class-admin.php:426 include/admin/class-admin.php:427
+msgid "Shipping Cost"
+msgstr "運費設定"
+
+#: include/admin/class-admin.php:342 include/admin/class-admin.php:343
+msgid "Slider Revolution"
+msgstr "建立Slider"
+
+#: include/admin/class-admin.php:416 include/admin/class-admin.php:417
+msgid "Store Setting"
+msgstr ""
+"\n"
+"網路商店設定\n"
+
+#: include/admin/class-admin.php:361 include/admin/class-admin.php:362
+#: include/admin/class-admin.php:1358
+msgid "Team"
+msgstr "團隊介紹"
+
+#: include/admin/class-admin.php:352 include/admin/class-admin.php:353
+#: include/admin/class-admin.php:1355
+msgid "Testimonial"
+msgstr ""
+"\n"
+"用戶見證\n"
+
+#: include/admin/class-admin.php:332 include/admin/class-admin.php:333
+msgid "Theme Builder"
+msgstr "網站外觀組件"
+
+#: include/admin/class-admin.php:177 include/admin/class-admin.php:178
+#: include/admin/class-admin.php:1370
+msgid "Traffic"
+msgstr "流量中心"
+
+#: include/admin/class-admin.php:1373
+msgid "Translate"
+msgstr ""
+"\n"
+"翻譯中心\n"
+
+#: include/admin/class-admin.php:499 include/admin/class-admin.php:500
+msgid "Tutorial"
+msgstr "教學中心"
+
+#: include/admin/class-admin.php:1376
+msgid "Uploads"
+msgstr "檔案上傳中心"
+
+#: include/admin/class-admin.php:1364
+msgid "Users"
+msgstr "用戶中心"

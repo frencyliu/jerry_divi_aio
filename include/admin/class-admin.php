@@ -174,8 +174,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         //流量中心
         if (class_exists('WP_Statistics', false)) {
             add_menu_page(
-                '流量中心',
-                '流量中心',
+                __('Traffic', 'Jerry_Divi_AIO'),
+                __('Traffic', 'Jerry_Divi_AIO'),
                 'read',
                 'admin.php?page=wps_overview_page',
                 '',
@@ -188,8 +188,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         //訂單中心
         if (class_exists('WooCommerce', false)) {
             add_menu_page(
-                '訂單中心',
-                '訂單中心',
+                __('Oders', 'Jerry_Divi_AIO'),
+                __('Oders', 'Jerry_Divi_AIO'),
                 'edit_shop_orders',
                 'edit.php?post_type=shop_order',
                 '',
@@ -200,8 +200,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             if (class_exists('WC_Order_Export_Admin', false)) {
                 add_submenu_page(
                     'edit.php?post_type=shop_order',
-                    '匯出訂單',
-                    '匯出訂單',
+                    __('Export Oders', 'Jerry_Divi_AIO'),
+                    __('Export Oders', 'Jerry_Divi_AIO'),
                     'edit_shop_orders',
                     'admin.php?page=wc-order-export#segment=common',
                     '',
@@ -212,8 +212,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             if (class_exists('Zorem_Woocommerce_Advanced_Shipment_Tracking', false)) {
 
                 add_menu_page(
-                    '物流中心',
-                    '物流中心',
+                    __('Shipping', 'Jerry_Divi_AIO'),
+                    __('Shipping', 'Jerry_Divi_AIO'),
                     'edit_shop_orders',
                     'admin.php?page=woocommerce-advanced-shipment-tracking',
                     '',
@@ -239,8 +239,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         //行銷中心
         if (class_exists('WooCommerce', false)) {
             add_menu_page(
-                '行銷中心',
-                '行銷中心',
+                __('Marketing', 'Jerry_Divi_AIO'),
+                __('Marketing', 'Jerry_Divi_AIO'),
                 'edit_shop_orders',
                 'edit.php?post_type=shop_coupon',
                 '',
@@ -249,8 +249,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             );
             add_submenu_page(
                 'edit.php?post_type=shop_coupon',
-                '折價券',
-                '折價券',
+                __('Coupons', 'Jerry_Divi_AIO'),
+                __('Coupons', 'Jerry_Divi_AIO'),
                 'edit_shop_orders',
                 'edit.php?post_type=shop_coupon',
                 '',
@@ -260,8 +260,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             if (class_exists('WooCommerce_Coupon_Generator', false)) {
                 add_submenu_page(
                     'edit.php?post_type=shop_coupon',
-                    '批量產生折價券',
-                    '批量產生折價券',
+                    __('Generate Coupons', 'Jerry_Divi_AIO'),
+                    __('Generate Coupons', 'Jerry_Divi_AIO'),
                     'edit_shop_orders',
                     'admin.php?page=woocommerce_coupon_generator',
                     '',
@@ -271,8 +271,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             //if (class_exists('The_SEO_Framework\Core', false)) {
             add_submenu_page(
                 'edit.php?post_type=shop_coupon',
-                'SEO設定',
-                'SEO設定',
+                __('SEO Settings', 'Jerry_Divi_AIO'),
+                __('SEO Settings', 'Jerry_Divi_AIO'),
                 'read',
                 'admin.php?page=theseoframework-settings',
                 '',
@@ -281,8 +281,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             //}
         } else {
             add_menu_page(
-                '行銷中心',
-                '行銷中心',
+                __('Marketing', 'Jerry_Divi_AIO'),
+                __('Marketing', 'Jerry_Divi_AIO'),
                 'read',
                 'admin.php?page=theseoframework-settings',
                 '',
@@ -295,8 +295,8 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         add_submenu_page(
             'jdaio_setting',
-            '首頁設定',
-            '首頁設定',
+            __('Homepage', 'Jerry_Divi_AIO'),
+            __('Homepage', 'Jerry_Divi_AIO'),
             'edit_shop_orders',
             'post.php?post=' . get_option('page_on_front') . '&action=edit',
             '',
@@ -304,8 +304,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         );
         add_submenu_page(
             'jdaio_setting',
-            '網站選單',
-            '網站選單',
+            __('Menus', 'Jerry_Divi_AIO'),
+            __('Menus', 'Jerry_Divi_AIO'),
             'edit_shop_orders',
             'nav-menus.php',
             '',
@@ -315,8 +315,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         if (class_exists('EasyWPSMTP', false)) {
             add_submenu_page(
                 'jdaio_setting',
-                '系統發信設定',
-                '系統發信設定',
+                __('Email Settings', 'Jerry_Divi_AIO'),
+                __('Email Settings', 'Jerry_Divi_AIO'),
                 'edit_shop_orders',
                 'options-general.php?page=swpsmtp_settings#smtp',
                 '',
@@ -329,8 +329,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         if (strpos($theme, 'Divi') !== false) {
 
             add_menu_page(
-                '網站外觀組件',
-                '網站外觀組件',
+                __('Theme Builder', 'Jerry_Divi_AIO'),
+                __('Theme Builder', 'Jerry_Divi_AIO'),
                 'edit_theme_options',
                 'admin.php?page=et_theme_builder',
                 '',
@@ -339,8 +339,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             );
             add_submenu_page(
                 'admin.php?page=et_theme_builder',
-                '建立Slider',
-                '建立Slider',
+                __('Slider Revolution', 'Jerry_Divi_AIO'),
+                __('Slider Revolution', 'Jerry_Divi_AIO'),
                 'edit_theme_options',
                 'admin.php?page=revslider',
                 '',
@@ -349,8 +349,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             if (class_exists('DIPL_DiviPlus', false)) {
                 add_submenu_page(
                     'admin.php?page=et_theme_builder',
-                    '用戶見證',
-                    '用戶見證',
+                    __('Testimonial', 'Jerry_Divi_AIO'),
+                    __('Testimonial', 'Jerry_Divi_AIO'),
                     'edit_theme_options',
                     'edit.php?post_type=dipl-testimonial',
                     '',
@@ -358,8 +358,8 @@ class Custom_Admin extends Jerry_Divi_AIO
                 );
                 add_submenu_page(
                     'admin.php?page=et_theme_builder',
-                    '團隊介紹',
-                    '團隊介紹',
+                    __('Team', 'Jerry_Divi_AIO'),
+                    __('Team', 'Jerry_Divi_AIO'),
                     'edit_theme_options',
                     'edit.php?post_type=dipl-team-member',
                     '',
@@ -380,8 +380,8 @@ class Custom_Admin extends Jerry_Divi_AIO
 
             add_submenu_page(
                 'admin.php?page=et_theme_builder',
-                '元件庫',
-                '元件庫',
+                __('Library', 'Jerry_Divi_AIO'),
+                __('Library', 'Jerry_Divi_AIO'),
                 'edit_theme_options',
                 'edit.php?post_type=et_pb_layout',
                 '',
@@ -413,8 +413,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         //網路商店設定
         if (class_exists('WooCommerce', false)) {
             add_menu_page(
-                '網路商店設定',
-                '網路商店設定',
+                __('Store Setting', 'Jerry_Divi_AIO'),
+                __('Store Setting', 'Jerry_Divi_AIO'),
                 'edit_shop_orders',
                 'admin.php?page=wc-settings',
                 '',
@@ -423,8 +423,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             );
             add_submenu_page(
                 'admin.php?page=wc-settings',
-                '運費設定',
-                '運費設定',
+                __('Shipping Cost', 'Jerry_Divi_AIO'),
+                __('Shipping Cost', 'Jerry_Divi_AIO'),
                 'edit_shop_orders',
                 'admin.php?page=wc-settings&tab=shipping',
                 '',
@@ -432,8 +432,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             );
             add_submenu_page(
                 'admin.php?page=wc-settings',
-                '付款方式設定',
-                '付款方式設定',
+                __('Payment Method', 'Jerry_Divi_AIO'),
+                __('Payment Method', 'Jerry_Divi_AIO'),
                 'edit_shop_orders',
                 'admin.php?page=wc-settings&tab=checkout',
                 '',
@@ -441,8 +441,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             );
             add_submenu_page(
                 'admin.php?page=wc-settings',
-                '帳號及隱私權設定',
-                '帳號及隱私權設定',
+                __('Privacy', 'Jerry_Divi_AIO'),
+                __('Privacy', 'Jerry_Divi_AIO'),
                 'edit_shop_orders',
                 'admin.php?page=wc-settings&tab=account',
                 '',
@@ -450,8 +450,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             );
             add_submenu_page(
                 'admin.php?page=wc-settings',
-                '訂單通知信內容設定',
-                '訂單通知信內容設定',
+                __('Email Notification', 'Jerry_Divi_AIO'),
+                __('Email Notification', 'Jerry_Divi_AIO'),
                 'edit_shop_orders',
                 'admin.php?page=wc-settings&tab=email',
                 '',
@@ -461,8 +461,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             if (class_exists('THWCFD', false)) {
                 add_submenu_page(
                     'admin.php?page=wc-settings',
-                    '自訂結帳表單',
-                    '自訂結帳表單',
+                    __('Checkout Form', 'Jerry_Divi_AIO'),
+                    __('Checkout Form', 'Jerry_Divi_AIO'),
                     'edit_shop_orders',
                     'admin.php?page=checkout_form_designer&tab=fields',
                     '',
@@ -496,8 +496,8 @@ class Custom_Admin extends Jerry_Divi_AIO
         if (DEV_ENV) {
             //教學中心
             add_menu_page(
-                '教學中心',
-                '教學中心',
+                __('Tutorial', 'Jerry_Divi_AIO'),
+                __('Tutorial', 'Jerry_Divi_AIO'),
                 'read',
                 'jdaio_teach',
                 [$this, 'jdaio_teach_page'],
@@ -549,8 +549,8 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         $defalut->addMenu(
             array(
-                'page_title' => __('網站一般設定', 'plugin-name'),
-                'menu_title' => __('網站一般設定', 'plugin-name'),
+                'page_title' => __('Setting', 'Jerry_Divi_AIO'),
+                'menu_title' => __('Setting', 'plugin-name'),
                 'capability' => 'edit_shop_orders',
                 'slug' => 'jdaio_setting',
                 'icon' => 'dashicons-admin-generic',
@@ -1037,7 +1037,7 @@ class Custom_Admin extends Jerry_Divi_AIO
 
     public function enqueue_front_css()
     {
-        wp_enqueue_style('Jerry_Divi_AIO front css', plugins_url('/../../assets/css/jdaio_front_level_' . self::$current_user_level . '.css', __FILE__));
+        wp_enqueue_style('Jerry_Divi_AIO front css', plugins_url('/../../assets/css/jdaio_front_level_' . self::$current_user_level . '.css', __FILE__), array(), '1.0.1');
 
         if (FA_ENABLE) {
             wp_enqueue_style('fontawesome_css', plugins_url('/../../assets/fontawesome/css/all.min.css', __FILE__));
@@ -1343,37 +1343,37 @@ class Custom_Admin extends Jerry_Divi_AIO
 
             switch ($menu_array[2]) {
                 case 'edit.php':
-                    $menu[$key][0] = '文章中心';
+                    $menu[$key][0] = __('Posts', 'Jerry_Divi_AIO');
                     break;
                 case 'edit.php?post_type=page':
-                    $menu[$key][0] = '頁面中心';
+                    $menu[$key][0] = __('Pages', 'Jerry_Divi_AIO');
                     break;
                 case 'edit.php?post_type=project':
-                    $menu[$key][0] = '作品集/案例展示';
+                    $menu[$key][0] = __('Projects', 'Jerry_Divi_AIO');
                     break;
                 case 'edit.php?post_type=dipl-testimonial':
-                    $menu[$key][0] = '用戶見證';
+                    $menu[$key][0] = __('Testimonial', 'Jerry_Divi_AIO');
                     break;
                 case 'edit.php?post_type=dipl-team-member':
-                    $menu[$key][0] = '團隊介紹';
+                    $menu[$key][0] = __('Team', 'Jerry_Divi_AIO');
                     break;
                 case 'edit.php?post_type=product':
-                    $menu[$key][0] = '商品中心';
+                    $menu[$key][0] = __('Products', 'Jerry_Divi_AIO');
                     break;
                 case 'users.php':
-                    $menu[$key][0] = '用戶中心';
+                    $menu[$key][0] = __('Users', 'Jerry_Divi_AIO');
                     break;
                 case 'wc-admin&path=/analytics/overview':
-                    $menu[$key][0] = '銷售圖表';
+                    $menu[$key][0] = __('Analytics', 'Jerry_Divi_AIO');
                     break;
                 case 'wps_overview_page':
-                    $menu[$key][0] = '流量中心';
+                    $menu[$key][0] = __('Traffic', 'Jerry_Divi_AIO');
                     break;
                 case 'loco':
-                    $menu[$key][0] = '翻譯中心';
+                    $menu[$key][0] = __('Translate', 'Jerry_Divi_AIO');
                     break;
                     case 'upload.php':
-                        $menu[$key][0] = '檔案上傳中心';
+                        $menu[$key][0] = __('Uploads', 'Jerry_Divi_AIO');
                         break;
 
 
@@ -1388,7 +1388,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         foreach ($submenu["users.php"] as $key => $submenu_array) {
             switch ($submenu_array[2]) {
                 case 'import-export-menu-old':
-                    $submenu["users.php"][$key][0] = '匯出用戶資料';
+                    $submenu["users.php"][$key][0] = __('Export User', 'Jerry_Divi_AIO');
                     break;
 
                 default:

@@ -1,0 +1,127 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Jerry-Divi-AIO\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-01 18:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.3; wp-5.8.1\n"
+"X-Domain: Jerry_Divi_AIO"
+
+#: include/admin/class-admin.php:464 include/admin/class-admin.php:465
+msgctxt "自訂結帳表單"
+msgid "Checkout Form"
+msgstr ""
+
+#: include/admin/class-admin.php:252 include/admin/class-admin.php:253
+msgid "Coupons"
+msgstr ""
+
+#: include/admin/class-admin.php:453 include/admin/class-admin.php:454
+msgid "Email Notification"
+msgstr ""
+
+#: include/admin/class-admin.php:318 include/admin/class-admin.php:319
+msgid "Email Settings"
+msgstr ""
+
+#: include/admin/class-admin.php:203 include/admin/class-admin.php:204
+msgid "Export Oders"
+msgstr ""
+
+#. Description of the plugin
+msgid "EZ update all the site"
+msgstr ""
+
+#: include/admin/class-admin.php:263 include/admin/class-admin.php:264
+msgid "Generate Coupons"
+msgstr ""
+
+#: include/admin/class-admin.php:298 include/admin/class-admin.php:299
+msgid "Homepage"
+msgstr ""
+
+#. Author of the plugin
+msgid "Jerry Liu"
+msgstr ""
+
+#. Name of the plugin
+msgid "Jerry-Divi-AIO"
+msgstr ""
+
+#: include/admin/class-admin.php:383 include/admin/class-admin.php:384
+msgid "Library"
+msgstr ""
+
+#: include/admin/class-admin.php:242 include/admin/class-admin.php:243
+#: include/admin/class-admin.php:284 include/admin/class-admin.php:285
+msgid "Marketing"
+msgstr ""
+
+#: include/admin/class-admin.php:307 include/admin/class-admin.php:308
+msgid "Menus"
+msgstr ""
+
+#: include/admin/class-admin.php:191 include/admin/class-admin.php:192
+msgid "Oders"
+msgstr ""
+
+#: include/admin/class-admin.php:435 include/admin/class-admin.php:436
+msgid "Payment Method"
+msgstr ""
+
+#: include/admin/class-admin.php:444 include/admin/class-admin.php:445
+msgid "Privacy"
+msgstr ""
+
+#: include/admin/class-admin.php:274 include/admin/class-admin.php:275
+msgid "SEO Settings"
+msgstr ""
+
+#: include/admin/class-admin.php:552
+msgid "Setting"
+msgstr ""
+
+#: include/admin/class-admin.php:215 include/admin/class-admin.php:216
+msgid "Shipping"
+msgstr ""
+
+#: include/admin/class-admin.php:426 include/admin/class-admin.php:427
+msgid "Shipping Cost"
+msgstr ""
+
+#: include/admin/class-admin.php:342 include/admin/class-admin.php:343
+msgid "Slider Revolution"
+msgstr ""
+
+#: include/admin/class-admin.php:416 include/admin/class-admin.php:417
+msgid "Store Setting"
+msgstr ""
+
+#: include/admin/class-admin.php:361 include/admin/class-admin.php:362
+msgid "Team"
+msgstr ""
+
+#: include/admin/class-admin.php:352 include/admin/class-admin.php:353
+msgid "Testimonial"
+msgstr ""
+
+#: include/admin/class-admin.php:332 include/admin/class-admin.php:333
+msgid "Theme Builder"
+msgstr ""
+
+#: include/admin/class-admin.php:177 include/admin/class-admin.php:178
+msgid "Traffic"
+msgstr ""
+
+#: include/admin/class-admin.php:499 include/admin/class-admin.php:500
+msgid "Tutorial"
+msgstr ""
