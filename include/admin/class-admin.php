@@ -550,7 +550,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         $defalut->addMenu(
             array(
                 'page_title' => __('Setting', 'Jerry_Divi_AIO'),
-                'menu_title' => __('Setting', 'plugin-name'),
+                'menu_title' => __('Setting', 'Jerry_Divi_AIO'),
                 'capability' => 'edit_shop_orders',
                 'slug' => 'jdaio_setting',
                 'icon' => 'dashicons-admin-generic',
@@ -563,23 +563,23 @@ class Custom_Admin extends Jerry_Divi_AIO
             array(
                 array(
                     'id' => 'general_section',
-                    'title' => __('基礎設定', 'plugin-name'),
-                    //'desc'  => __( 'These are general settings for Plugin Name', 'plugin-name' ),
+                    'title' => __('基礎設定', 'Jerry_Divi_AIO'),
+                    //'desc'  => __( 'These are general settings for Plugin Name', 'Jerry_Divi_AIO' ),
                 ),
                 array(
                     'id' => 'chatbutton_section',
-                    'title' => __('聊天按鈕', 'plugin-name'),
-                    //'desc'  => __( 'These are advance settings for Plugin Name', 'plugin-name' )
+                    'title' => __('聊天按鈕', 'Jerry_Divi_AIO'),
+                    //'desc'  => __( 'These are advance settings for Plugin Name', 'Jerry_Divi_AIO' )
                 ),
                 array(
                     'id' => 'tracking_section',
-                    'title' => __('網站追蹤設定', 'plugin-name'),
-                    //'desc'  => __( 'These are advance settings for Plugin Name', 'plugin-name' )
+                    'title' => __('網站追蹤設定', 'Jerry_Divi_AIO'),
+                    //'desc'  => __( 'These are advance settings for Plugin Name', 'Jerry_Divi_AIO' )
                 ),
                 array(
                     'id' => 'sociallogin_section',
-                    'title' => __('社群登入', 'plugin-name'),
-                    //'desc'  => __( 'These are advance settings for Plugin Name', 'plugin-name' )
+                    'title' => __('社群登入', 'Jerry_Divi_AIO'),
+                    //'desc'  => __( 'These are advance settings for Plugin Name', 'Jerry_Divi_AIO' )
                 )
             )
         );
@@ -588,8 +588,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             'general_section',
             array(
                 'id' => 'blogname',
-                'label' => __('網站名稱', 'plugin-name'),
-                'desc' => __('Some description of my field', 'plugin-name'),
+                'label' => __('網站名稱', 'Jerry_Divi_AIO'),
+                'desc' => __('Some description of my field', 'Jerry_Divi_AIO'),
                 'placeholder' => '請輸入網站名稱',
                 'show_in_rest' => true,
                 'size' => 'regular',
@@ -599,8 +599,8 @@ class Custom_Admin extends Jerry_Divi_AIO
             'general_section',
             array(
                 'id' => 'blogname',
-                'label' => __('網站名稱', 'plugin-name'),
-                //'desc'              => __( 'Some description of my field', 'plugin-name' ),
+                'label' => __('網站名稱', 'Jerry_Divi_AIO'),
+                //'desc'              => __( 'Some description of my field', 'Jerry_Divi_AIO' ),
                 'placeholder' => '請輸入網站名稱',
                 'show_in_rest' => true,
                 'size' => 'regular',
@@ -610,20 +610,20 @@ class Custom_Admin extends Jerry_Divi_AIO
             'general_section',
             array(
                 'id' => 'blogdescription',
-                'label' => __('網站說明', 'plugin-name'),
-                //'desc'        => __( 'Textarea description', 'plugin-name' ),
-                'placeholder' => __('請說明你的網站特色', 'plugin-name'),
+                'label' => __('網站說明', 'Jerry_Divi_AIO'),
+                //'desc'        => __( 'Textarea description', 'Jerry_Divi_AIO' ),
+                'placeholder' => __('請說明你的網站特色', 'Jerry_Divi_AIO'),
             ),
         );
         $defalut->addMedia(
             'general_section',
             array(
                 'id' => 'jdaio_site_logo',
-                'label' => __('網站 LOGO', 'plugin-name'),
-                'desc' => __('建議尺寸300X300，支援JPG/PNG圖檔', 'plugin-name'),
+                'label' => __('網站 LOGO', 'Jerry_Divi_AIO'),
+                'desc' => __('建議尺寸300X300，支援JPG/PNG圖檔', 'Jerry_Divi_AIO'),
                 'type' => 'media',
                 'options' => array(
-                    'btn' => __('選擇圖片', 'plugin-name'),
+                    'btn' => __('選擇圖片', 'Jerry_Divi_AIO'),
                     //'width'     => 300,
                     //'max_width' => 300,
                 ),
@@ -634,11 +634,11 @@ class Custom_Admin extends Jerry_Divi_AIO
             'general_section',
             array(
                 'id' => 'jdaio_favicon',
-                'label' => __('網站小圖標(favicon)', 'plugin-name'),
-                'desc' => __('建議尺寸100X100，支援JPG/PNG圖檔', 'plugin-name'),
+                'label' => __('網站小圖標(favicon)', 'Jerry_Divi_AIO'),
+                'desc' => __('建議尺寸100X100，支援JPG/PNG圖檔', 'Jerry_Divi_AIO'),
                 'type' => 'media',
                 'options' => array(
-                    'btn' => __('選擇圖片', 'plugin-name'),
+                    'btn' => __('選擇圖片', 'Jerry_Divi_AIO'),
                     'width' => 100,
                     'max_width' => 100,
                 ),
@@ -649,11 +649,11 @@ class Custom_Admin extends Jerry_Divi_AIO
             'general_section',
             array(
                 'id' => 'jdaio_login_bg',
-                'label' => __('登入頁背景', 'plugin-name'),
-                'desc' => __('建議尺寸1980X1080，支援JPG/PNG圖檔', 'plugin-name'),
+                'label' => __('登入頁背景', 'Jerry_Divi_AIO'),
+                'desc' => __('建議尺寸1980X1080，支援JPG/PNG圖檔', 'Jerry_Divi_AIO'),
                 'type' => 'media',
                 'options' => array(
-                    'btn' => __('選擇圖片', 'plugin-name'),
+                    'btn' => __('選擇圖片', 'Jerry_Divi_AIO'),
                     //'width'     => 1000,
                     //'max_width' => 1000,
                 ),
@@ -678,7 +678,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             array(
                 'id' => 'jdaio_chatbutton_fb_enable',
                 'class' => 'submit_on_change',
-                'label' => __('啟用 FB 即時聊天', 'plugin-name'),
+                'label' => __('啟用 FB 即時聊天', 'Jerry_Divi_AIO'),
                 'desc' => $jdaio_chatbutton_fb_edit . '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;"><span class="material-icons-outlined uk-margin-small-right">info</span><span>用戶可在網頁直接傳送訊息</span></div>',
                 'options' => array(
                     '1' => '啟用',
@@ -692,7 +692,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'chatbutton_section',
             array(
                 'id' => 'jdaio_chatbutton_line',
-                'label' => __('輸入 LINE 連結', 'plugin-name'),
+                'label' => __('輸入 LINE 連結', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                                     <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                         <a href="https://www.pkstep.com/archives/5261" target="_blank">如何產生 LINE 連結</a>
@@ -707,7 +707,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'chatbutton_section',
             array(
                 'id' => 'jdaio_chatbutton_tg',
-                'label' => __('輸入 Telegram 連結', 'plugin-name'),
+                'label' => __('輸入 Telegram 連結', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                 <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                         <a href="https://www.inside.com.tw/article/18743-Telegram-username" target="_blank">如何產生 Telegram 連結</a>
@@ -722,7 +722,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'chatbutton_section',
             array(
                 'id' => 'jdaio_chatbutton_ig',
-                'label' => __('輸入 Instagram 連結', 'plugin-name'),
+                'label' => __('輸入 Instagram 連結', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                 <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                         <a href="https://www.tech-girlz.com/2020/08/instagram-bio-link.html" target="_blank">如何產生 Instagram 連結</a>
@@ -737,7 +737,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'chatbutton_section',
             array(
                 'id' => 'jdaio_chatbutton_whatsapp',
-                'label' => __('輸入 WhatsApp 連結', 'plugin-name'),
+                'label' => __('輸入 WhatsApp 連結', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                 <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                         <a href="https://moredigital.com.hk/2018/07/23/%E7%B6%B2%E5%BA%97%E5%BF%85%E5%AD%B8-30-%E7%A7%92%E5%AE%8C%E6%88%90%E8%A8%AD%E5%AE%9A-direct-whatsapp/" target="_blank">如何產生 WhatsApp 連結</a>
@@ -752,7 +752,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'chatbutton_section',
             array(
                 'id' => 'jdaio_chatbutton_email',
-                'label' => __('輸入 EMAIL', 'plugin-name'),
+                'label' => __('輸入 EMAIL', 'Jerry_Divi_AIO'),
                 'desc' => '',
                 'placeholder' => '例如：my_name@gmail.com',
                 'show_in_rest' => false,
@@ -763,7 +763,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'chatbutton_section',
             array(
                 'id' => 'jdaio_chatbutton_phone',
-                'label' => __('輸入手機號碼', 'plugin-name'),
+                'label' => __('輸入手機號碼', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                 <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                 請不要輸入-等符號
@@ -779,7 +779,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'tracking_section',
             array(
                 'id' => 'jdaio_fb_track',
-                'label' => __('Facebook Pixel ID', 'plugin-name'),
+                'label' => __('Facebook Pixel ID', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                                         <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                             <a href="https://blog.recart.com/how-to-find-my-facebook-pixel-id/" target="_blank">如何取得</a>
@@ -794,7 +794,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'tracking_section',
             array(
                 'id' => 'jdaio_ga_track',
-                'label' => __('Google Analytics tracking ID', 'plugin-name'),
+                'label' => __('Google Analytics tracking ID', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                                         <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                             <a href="https://www.whatconverts.com/help/docs/integrations/google-analytics/where-do-i-find-my-google-analytics-tracking-id/" target="_blank">如何取得</a>
@@ -810,7 +810,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'sociallogin_section',
             array(
                 'id' => 'jdaio_sociallogin_enable',
-                'label' => __('啟用社群登入', 'plugin-name'),
+                'label' => __('啟用社群登入', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;"><span class="material-icons-outlined uk-margin-small-right">info</span><span><a href="' . site_url() . '/my-account" target="_blank">查看登入頁面</a></span></div>',
                 'options' => array(
                     '1' => '啟用',
@@ -821,7 +821,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'sociallogin_section',
             array(
                 'id' => 'jdaio_facebook_app',
-                'label' => __('Facebook App ID', 'plugin-name'),
+                'label' => __('Facebook App ID', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                                     <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                         <a href="http://support.heateor.com/how-to-get-google-plus-client-id/" target="_blank">參考教學</a>
@@ -836,7 +836,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'sociallogin_section',
             array(
                 'id' => 'jdaio_facebook_secret',
-                'label' => __('Facebook App Secret', 'plugin-name'),
+                'label' => __('Facebook App Secret', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                                     <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                         <a href="http://support.heateor.com/how-to-get-google-plus-client-id/" target="_blank">參考教學</a>
@@ -851,7 +851,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'sociallogin_section',
             array(
                 'id' => 'jdaio_google_app',
-                'label' => __('Google Client ID', 'plugin-name'),
+                'label' => __('Google Client ID', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                                     <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                         <a href="http://support.heateor.com/how-to-get-google-plus-client-id/" target="_blank">參考教學</a>
@@ -866,7 +866,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'sociallogin_section',
             array(
                 'id' => 'jdaio_google_secret',
-                'label' => __('Google Client Secret', 'plugin-name'),
+                'label' => __('Google Client Secret', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                                     <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                         <a href="http://support.heateor.com/how-to-get-google-plus-client-id/" target="_blank">參考教學</a>
@@ -881,7 +881,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'sociallogin_section',
             array(
                 'id' => 'jdaio_line_app',
-                'label' => __('Line Channel ID', 'plugin-name'),
+                'label' => __('Line Channel ID', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                                     <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                         <a href="http://support.heateor.com/create-line-channel-for-line-login/" target="_blank">參考教學</a>
@@ -896,7 +896,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             'sociallogin_section',
             array(
                 'id' => 'jdaio_line_secret',
-                'label' => __('Line Channel Secret', 'plugin-name'),
+                'label' => __('Line Channel Secret', 'Jerry_Divi_AIO'),
                 'desc' => '<div class="uk-flex a2020-notification-tag" style="border-bottom:none;">
                                     <span class="material-icons-outlined uk-margin-small-right">info</span><span>
                                         <a href="http://support.heateor.com/create-line-channel-for-line-login/" target="_blank">參考教學</a>
