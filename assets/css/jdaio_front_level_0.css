@@ -281,6 +281,16 @@ p.woocommerce-thankyou-order-received{
     content: "◤";
     font-size: 22px;
 }
+
+body.woocommerce-cart table.cart td.actions .coupon .input-text{
+    padding: 8px 16px !important;
+}
+body.woocommerce-cart table.cart td.actions .coupon .input-text{
+    font-size: 16px !important;
+    height: auto !important;
+}
+
+
 li.product p,
 li.product .short-desic{
     text-align: center;

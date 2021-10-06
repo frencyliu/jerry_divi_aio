@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'change WC default checkout template'
+git commit -m 'cart css'
 
 git push origin DEV
 
