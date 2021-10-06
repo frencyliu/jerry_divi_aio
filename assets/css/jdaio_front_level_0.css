@@ -285,7 +285,8 @@ p.woocommerce-thankyou-order-received{
 body.woocommerce-cart table.cart td.actions .coupon .input-text{
     padding: 8px 16px !important;
 }
-body.woocommerce-cart table.cart td.actions .coupon .input-text{
+body.woocommerce-cart table.cart td.actions .coupon .input-text,
+body.woocommerce-cart .quantity input.qty{
     font-size: 16px !important;
     height: auto !important;
 }
