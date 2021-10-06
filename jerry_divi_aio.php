@@ -79,7 +79,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
             add_action( 'init', [ $this, 'jdaio_i18n' ] );
 
             //Override Woocommerce template
-            add_filter('woocommerce_locate_template', [$this, 'jdaio_override_woocommerce_template'], 10, 3);
+            add_filter('woocommerce_locate_template', [$this, 'jdaio_override_woocommerce_template'], 15, 3);
         }
 
         public function jdaio_wps_setting($options)

@@ -272,8 +272,12 @@ p.woocommerce-thankyou-order-received{
     padding-bottom: 30px;
     width: 100%;
 }
+#billing_country_field{
+    display: none;
+}
 .woocommerce-checkout .woocommerce-order h2::before,
-.woocommerce-checkout h3::before{
+.woocommerce-checkout .woocommerce-billing-fields > h3::before,
+.woocommerce-checkout h3#order_review_heading::before{
     content: "◤";
     font-size: 22px;
 }
