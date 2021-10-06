@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'add translate'
+git commit -m 'change WC default checkout template'
 
 git push origin DEV
 

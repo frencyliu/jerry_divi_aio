@@ -269,7 +269,7 @@ p.woocommerce-thankyou-order-received{
     font-weight: 900;
     border-bottom: 2px solid #ddd;
     margin-bottom: 30px !important;
-    padding-bottom: 0px;
+    padding-bottom: 30px;
     width: 100%;
 }
 .woocommerce-checkout .woocommerce-order h2::before,
