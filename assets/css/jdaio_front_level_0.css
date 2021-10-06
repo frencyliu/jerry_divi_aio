@@ -289,6 +289,7 @@ body.woocommerce-cart table.cart td.actions .coupon .input-text,
 body.woocommerce-cart .quantity input.qty{
     font-size: 16px !important;
     height: auto !important;
+    padding: 8px 16px !important;
 }
 
 
