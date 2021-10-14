@@ -87,7 +87,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
             //shop頁添加 購物車按鈕
             add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 20);
             //Override Woocommerce template
-            add_filter('woocommerce_locate_template', [$this, 'jdaio_override_woocommerce_template'], 15, 3);
+            add_filter('woocommerce_locate_template', [$this, 'jdaio_override_woocommerce_template'], 99, 3);
             //移除產品連結，改成加入購物車
             if (!JWC_LINK_TO_PRODUCT) {
                 add_action('after_setup_theme', [$this, 'jdaio_remove_product_link'], 98);
