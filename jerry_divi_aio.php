@@ -212,7 +212,7 @@ return $items;
             // Modification: Get the template from this plugin, if it exists
             if (!$template && file_exists($plugin_path . $template_name))
                 $template = $plugin_path . $template_name;
-            //var_dump($plugin_path . $template_name);
+            var_dump($plugin_path . $template_name);
             // Use default template
             if (!$template)
                 $template = $_template;
