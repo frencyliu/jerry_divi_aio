@@ -199,7 +199,7 @@ return $items;
             if (!$template_path) $template_path = $woocommerce->template_url;
 
             $plugin_path  = $this->get_plugin_abs_path() . '\\templates\\woocommerce\\';
-
+            var_dump($plugin_path);
             // Look within passed path within the theme - this is priority
             $template = locate_template(
 
@@ -212,7 +212,7 @@ return $items;
             // Modification: Get the template from this plugin, if it exists
             if (!$template && file_exists($plugin_path . $template_name))
                 $template = $plugin_path . $template_name;
-            var_dump($plugin_path . $template_name);
+
             // Use default template
             if (!$template)
                 $template = $_template;
