@@ -193,13 +193,12 @@ return $items;
         function jdaio_override_woocommerce_template($template, $template_name, $template_path)
         {
             global $woocommerce;
-
             $_template = $template;
 
             if (!$template_path) $template_path = $woocommerce->template_url;
 
             $plugin_path  = $this->get_plugin_abs_path() . '\\templates\\woocommerce\\';
-            var_dump($plugin_path);
+
             // Look within passed path within the theme - this is priority
             $template = locate_template(
 
