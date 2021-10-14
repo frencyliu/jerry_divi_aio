@@ -21,6 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+wp_redirect( site_url() . '/my-account/orders/' );
+exit;
+
 $allowed_html = array(
 	'a' => array(
 		'href' => array(),

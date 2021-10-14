@@ -60,6 +60,12 @@ if (!class_exists('Jerry_Divi_AIO')) {
             if (!defined('PROJECT_OPEN')) define('PROJECT_OPEN', false);
             if (!defined('FLUSH_METABOX')) define('FLUSH_METABOX', false);
             if (!defined('ONESHOP')) define('ONESHOP', false);
+            if (!defined('ENABLE_DOWNLOAD_PRODUCT')) define('ENABLE_DOWNLOAD_PRODUCT', false);
+
+            if (!defined('JWC_LINK_TO_PRODUCT')) define('JWC_LINK_TO_PRODUCT', true);
+            if (!defined('JWC_SHOW_ADD_TO_CART_WHEN_LOOP')) define('JWC_SHOW_ADD_TO_CART_WHEN_LOOP', true);
+            if (!defined('JWC_SHOW_DIRECT_BUY_WHEN_LOOP')) define('JWC_SHOW_DIRECT_BUY_WHEN_LOOP', true);
+            if (!defined('JWC_SHOW_EXCERPT_WHEN_LOOP')) define('JWC_SHOW_EXCERPT_WHEN_LOOP', false);
             if (!defined('FA_ENABLE')) define('FA_ENABLE', true);
             if (!defined('FLIPSTER_ENABLE')) define('FLIPSTER_ENABLE', false);
             //是否啟用擴充模組
@@ -76,11 +82,30 @@ if (!class_exists('Jerry_Divi_AIO')) {
             });
 
             //i18n
-            add_action( 'init', [ $this, 'jdaio_i18n' ] );
+            add_action('init', [$this, 'jdaio_i18n']);
 
+            //shop頁添加 購物車按鈕
+            add_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 20);
             //Override Woocommerce template
             add_filter('woocommerce_locate_template', [$this, 'jdaio_override_woocommerce_template'], 15, 3);
+            //移除產品連結，改成加入購物車
+            if (!JWC_LINK_TO_PRODUCT) {
+                add_action('after_setup_theme', [$this, 'jdaio_remove_product_link'], 98);
+            }
+            //移除my account選單
+            add_filter( 'woocommerce_account_menu_items', [ $this, 'custom_remove_downloads_my_account' ], 99 );
         }
+
+
+
+
+function custom_remove_downloads_my_account( $items ) {
+unset($items['dashboard']);
+if(!ENABLE_DOWNLOAD_PRODUCT){
+unset($items['downloads']);
+}
+return $items;
+}
 
         public function jdaio_wps_setting($options)
         {
@@ -110,6 +135,11 @@ if (!class_exists('Jerry_Divi_AIO')) {
             add_filter("wp_statistics_option_read_capability", function () {
                 return 'read';
             }, 99, 1);
+
+
+            //修改My Account選單
+
+
         }
 
 
@@ -168,7 +198,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
 
             if (!$template_path) $template_path = $woocommerce->template_url;
 
-            $plugin_path  = $this->get_plugin_abs_path() . '/templates/woocommerce/';
+            $plugin_path  = $this->get_plugin_abs_path() . '\\templates\\woocommerce\\';
 
             // Look within passed path within the theme - this is priority
             $template = locate_template(
@@ -182,7 +212,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
             // Modification: Get the template from this plugin, if it exists
             if (!$template && file_exists($plugin_path . $template_name))
                 $template = $plugin_path . $template_name;
-
+            //var_dump($plugin_path . $template_name);
             // Use default template
             if (!$template)
                 $template = $_template;
@@ -191,8 +221,30 @@ if (!class_exists('Jerry_Divi_AIO')) {
             return $template;
         }
 
-        function jdaio_i18n() {
-            load_plugin_textdomain( 'Jerry_Divi_AIO', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+        function jdaio_i18n()
+        {
+            load_plugin_textdomain('Jerry_Divi_AIO', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+        }
+
+        public function jdaio_remove_product_link()
+        {
+            //移除產品連結
+            remove_action(
+                'woocommerce_before_shop_loop_item',
+                'woocommerce_template_loop_product_link_open',
+                10
+            );
+            remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_product_link_close', 5);
+
+            //改成加入購物車
+            add_action(
+                'woocommerce_before_shop_loop_item',
+                function () {
+                    global $product;
+                    echo '<a href="?add-to-cart=105" data-quantity="1" class="show_cart add_to_cart_button ajax_add_to_cart" data-product_id="' . $product->get_ID() . '" >';
+                },
+                10
+            );
         }
 
 

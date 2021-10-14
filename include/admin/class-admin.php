@@ -109,8 +109,12 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         //圖片  移除所有圖片尺寸
         add_action('init', [$this, 'jdaio_remove_all_image_sizes']);
-        add_filter( 'big_image_size_threshold', function() { return 20000; } );
-        add_filter( 'jpeg_quality', function() { return 100; });
+        add_filter('big_image_size_threshold', function () {
+            return 20000;
+        });
+        add_filter('jpeg_quality', function () {
+            return 100;
+        });
 
 
         //自訂後台標題
@@ -366,17 +370,17 @@ class Custom_Admin extends Jerry_Divi_AIO
                     4
                 );
             }
-            if(class_exists('DiviMegaPro', false)){
-            add_submenu_page(
-                'admin.php?page=et_theme_builder',
-                'MEGA MENU',
-                'MEGA MENU',
-                'edit_theme_options',
-                'edit.php?post_type=divi_mega_pro',
-                '',
-                5
-            );
-        }
+            if (class_exists('DiviMegaPro', false)) {
+                add_submenu_page(
+                    'admin.php?page=et_theme_builder',
+                    'MEGA MENU',
+                    'MEGA MENU',
+                    'edit_theme_options',
+                    'edit.php?post_type=divi_mega_pro',
+                    '',
+                    5
+                );
+            }
 
             add_submenu_page(
                 'admin.php?page=et_theme_builder',
@@ -933,7 +937,7 @@ class Custom_Admin extends Jerry_Divi_AIO
                 $html_btn .= '<a href="' . $prefix . get_option($button) . '" class="' . $button . '" target="_blank"></a>';
             }
         }
-        if(empty($html_btn)) return;
+        if (empty($html_btn)) return;
 
         $html = '';
         $html .= '<div class="' . $class . '">';
@@ -1165,6 +1169,26 @@ class Custom_Admin extends Jerry_Divi_AIO
         <script>
             let SITE_URL = "<?php echo site_url(); ?>";
         </script>
+
+        <style>
+            :root {
+                --primary: <?php echo @et_get_option('accent_color', '#2ea3f2') ?>;
+                --woocommerce: #2ea2cc;
+                --wc-green: #7ad03a;
+                --wc-red: #ffa4a4;
+                --wc-orange: #ffba00;
+                --wc-blue: #2ea2cc;
+                --wc-primary: #2ea2cc;
+                --wc-primary-hover: #4bb7df;
+                --wc-primary-text: white;
+                --wc-secondary: #ebe9eb;
+                --wc-secondary-text: #515151;
+                --wc-highlight: #77a464;
+                --wc-highligh-text: white;
+                --wc-content-bg: #fff;
+                --wc-subtext: #767676;
+            }
+        </style>
         <?php
     }
 
@@ -1372,9 +1396,9 @@ class Custom_Admin extends Jerry_Divi_AIO
                 case 'loco':
                     $menu[$key][0] = __('Translate', 'Jerry_Divi_AIO');
                     break;
-                    case 'upload.php':
-                        $menu[$key][0] = __('Uploads', 'Jerry_Divi_AIO');
-                        break;
+                case 'upload.php':
+                    $menu[$key][0] = __('Uploads', 'Jerry_Divi_AIO');
+                    break;
 
 
                 default:

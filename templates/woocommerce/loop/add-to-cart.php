@@ -22,8 +22,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $product;
 global $woocommerce;
 
-
+if(JWC_SHOW_EXCERPT_WHEN_LOOP){
 the_excerpt();
+}
+
+if(JWC_SHOW_ADD_TO_CART_WHEN_LOOP){
+echo apply_filters(
+	'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
+	sprintf(
+		'<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
+		esc_url( $product->add_to_cart_url() ),
+		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
+		'jdaio_btn-primary',
+		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
+		esc_html( $product->add_to_cart_text() )
+	),
+	$product,
+	$args
+);
+}
+
+if(JWC_SHOW_DIRECT_BUY_WHEN_LOOP){
 echo sprintf(
     '<a href="%s" class="%s" %s>%s</a>',
     esc_url( site_url() . '/checkout/?empty_cart=yes&add-to-cart=' . $product->get_ID() ),
@@ -31,16 +50,4 @@ echo sprintf(
     '',
     esc_html( '直接購買' )
 );
-/*echo apply_filters(
-	'woocommerce_loop_add_to_cart_link', // WPCS: XSS ok.
-	sprintf(
-		'<a href="%s" data-quantity="%s" class="%s" %s>%s</a>',
-		esc_url( $product->add_to_cart_url() ),
-		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
-		esc_attr( isset( $args['class'] ) ? $args['class'] : 'button' ),
-		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
-		esc_html( $product->add_to_cart_text() )
-	),
-	$product,
-	$args
-);*/
+}

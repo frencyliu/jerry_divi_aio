@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'cart css'
+git commit -m 'add JWC, split function of ONESHOP'
 
 git push origin DEV
 

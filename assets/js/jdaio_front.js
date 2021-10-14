@@ -17,9 +17,7 @@ jQuery(document).ready(function () {
         }
     });
 
-    //註冊按鈕
-    let html = '<p class="woocommerce-register"><a href="/register/">註冊</a></p>';
-    jQuery(".woocommerce-form-login .woocommerce-LostPassword").after(html);
+
 
     //CHATBUTTON
     let chatbutton_width = jQuery(".chatbutton_content").width();
