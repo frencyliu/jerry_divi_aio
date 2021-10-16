@@ -137,7 +137,22 @@ return $items;
             }, 99, 1);
 
 
-            //修改My Account選單
+            //讓每個頁面都設為no sidebar
+            $args = array(
+                'numberposts'      => 20,
+                'post_type'        => 'page',
+            );
+            $all_posts = get_posts( $args );
+            foreach ($all_posts as $single_post) {
+
+                $get_page_layout = get_post_meta($single_post->ID, '_et_pb_page_layout', true);
+                if(!empty($get_page_layout)){
+                    update_post_meta( $single_post->ID, '_et_pb_page_layout', 'et_no_sidebar');
+                }
+            }
+            //update_post_meta( $r_post_id, '_et_pb_page_layout', 'et_no_sidebar');
+
+
 
 
         }
@@ -197,7 +212,7 @@ return $items;
 
             if (!$template_path) $template_path = $woocommerce->template_url;
 
-            $plugin_path  = $this->get_plugin_abs_path() . '\\templates\\woocommerce\\';
+            $plugin_path  = $this->get_plugin_abs_path() . '/templates/woocommerce/';
 
             // Look within passed path within the theme - this is priority
             $template = locate_template(
@@ -222,6 +237,9 @@ return $items;
 
         function jdaio_i18n()
         {
+            //debug
+
+
             load_plugin_textdomain('Jerry_Divi_AIO', false, dirname(plugin_basename(__FILE__)) . '/languages/');
         }
 

@@ -85,6 +85,14 @@
     min-width: 460px;
 }*/
 
+/*My account沒有訂單時會歪掉*/
+.woocommerce-message--info{
+    line-height: 36px;
+}
+.woocommerce-MyAccount-content{
+    margin-bottom: 50px;
+}
+
 /*隱藏webpush 前端icon*/
 #webpushr-prompt-wrapper{
     display: none !important;
