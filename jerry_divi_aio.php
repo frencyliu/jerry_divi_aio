@@ -213,7 +213,6 @@ return $items;
             if (!$template_path) $template_path = $woocommerce->template_url;
 
             $plugin_path  = $this->get_plugin_abs_path() . '/templates/woocommerce/';
-
             // Look within passed path within the theme - this is priority
             $template = locate_template(
 
