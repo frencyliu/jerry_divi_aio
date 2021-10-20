@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'fixed menu bar'
+git commit -m 'style admin bar, hook jwc template'
 
 git push origin DEV
 

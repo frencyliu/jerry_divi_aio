@@ -1075,7 +1075,7 @@ class Custom_Admin extends Jerry_Divi_AIO
 
     public function remove_admin_bar()
     {
-        // level 0跟1可以看到manu bar
+        // level 0跟1可以看到menu bar
         if (self::$current_user_level > 1) {
             show_admin_bar(false);
         }
@@ -1184,6 +1184,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         <style>
             :root {
                 --primary: <?php echo @et_get_option('accent_color', '#2ea3f2') ?>;
+                --secondary: #45C5AF;
                 --woocommerce: #2ea2cc;
                 --wc-green: #7ad03a;
                 --wc-red: #ffa4a4;
