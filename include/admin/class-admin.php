@@ -89,8 +89,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         //add admin footer
         add_action('admin_footer', [$this, 'jdaio_add_admin_footer']);
 
-        add_action('after_setup_theme', [$this, 'remove_admin_bar']);
-
+        add_action('init', [$this, 'remove_admin_bar']);
 
         add_filter('bogo_localizable_post_types', [$this, 'jdaio_bogo_support_for_custom_post_types'], 10, 1);
 
@@ -1076,8 +1075,8 @@ class Custom_Admin extends Jerry_Divi_AIO
 
     public function remove_admin_bar()
     {
-
-        if (self::$current_user_level > 0) {
+        // level 0跟1可以看到manu bar
+        if (self::$current_user_level > 1) {
             show_admin_bar(false);
         }
     }

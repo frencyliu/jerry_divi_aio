@@ -93,19 +93,20 @@ if (!class_exists('Jerry_Divi_AIO')) {
                 add_action('after_setup_theme', [$this, 'jdaio_remove_product_link'], 98);
             }
             //移除my account選單
-            add_filter( 'woocommerce_account_menu_items', [ $this, 'custom_remove_downloads_my_account' ], 99 );
+            add_filter('woocommerce_account_menu_items', [$this, 'custom_remove_downloads_my_account'], 99);
         }
 
 
 
 
-function custom_remove_downloads_my_account( $items ) {
-unset($items['dashboard']);
-if(!ENABLE_DOWNLOAD_PRODUCT){
-unset($items['downloads']);
-}
-return $items;
-}
+        function custom_remove_downloads_my_account($items)
+        {
+            unset($items['dashboard']);
+            if (!ENABLE_DOWNLOAD_PRODUCT) {
+                unset($items['downloads']);
+            }
+            return $items;
+        }
 
         public function jdaio_wps_setting($options)
         {
@@ -142,12 +143,12 @@ return $items;
                 'numberposts'      => 20,
                 'post_type'        => 'page',
             );
-            $all_posts = get_posts( $args );
+            $all_posts = get_posts($args);
             foreach ($all_posts as $single_post) {
 
                 $get_page_layout = get_post_meta($single_post->ID, '_et_pb_page_layout', true);
-                if(!empty($get_page_layout)){
-                    update_post_meta( $single_post->ID, '_et_pb_page_layout', 'et_no_sidebar');
+                if (!empty($get_page_layout)) {
+                    update_post_meta($single_post->ID, '_et_pb_page_layout', 'et_no_sidebar');
                 }
             }
             //update_post_meta( $r_post_id, '_et_pb_page_layout', 'et_no_sidebar');

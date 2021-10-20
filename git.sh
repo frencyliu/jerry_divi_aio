@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'add Facebook for WC'
+git commit -m 'fixed menu bar'
 
 git push origin DEV
 
