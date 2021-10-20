@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'add JWC, split function of ONESHOP'
+git commit -m 'add Facebook for WC'
 
 git push origin DEV
 

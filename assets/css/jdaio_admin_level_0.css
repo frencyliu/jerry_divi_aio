@@ -289,7 +289,11 @@ ul.add-menu-item-tabs li, ul.category-tabs li, ul.wp-tab-bar li{
 #wpadminbar .ab-top-secondary .menupop .ab-sub-wrapper {
     right: auto;
     left: 0;
-    top: calc(100% + 15px);
+    /*top: calc(100% + 15px);*/
+}
+/*BOGO*/
+#bogo-add-translation{
+    width: 100%;
 }
 /* tool bar cache icon*/
 #wpadminbar #wp-admin-bar-cache > div.ab-item {

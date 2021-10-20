@@ -474,6 +474,18 @@ class Custom_Admin extends Jerry_Divi_AIO
                 );
             }
 
+            if (class_exists('WC_Facebookcommerce', false)) {
+                add_submenu_page(
+                    'admin.php?page=wc-settings',
+                    __('Connect Facebook', 'Jerry_Divi_AIO'),
+                    __('Connect Facebook', 'Jerry_Divi_AIO'),
+                    'edit_shop_orders',
+                    'admin.php?page=wc-facebook',
+                    '',
+                    7
+                );
+            }
+
             /*add_submenu_page(
   'admin.php?page=wc-settings',
   '綠界電子發票設定',
@@ -1461,6 +1473,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         remove_menu_page('edit.php?post_type=dipl-team-member');
         remove_menu_page('media-cloud');
         remove_menu_page('media-cloud-tools');
+        remove_menu_page('WP-Optimize');
 
 
 
