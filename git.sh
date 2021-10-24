@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'add slick assets'
+git commit -m 'adjust slick arrow css'
 
 git push origin DEV
 

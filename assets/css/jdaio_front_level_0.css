@@ -744,6 +744,20 @@ i.theChampLogin .theChampLineLoginSvg {
     padding: 0.5em 1em;
 }
 
+/*slick*/
+button.slick-prev:before{
+    content: "\f054";
+    font-weight: 300;
+    font-family: "Font Awesome 5 Pro";
+    color: #bbb;
+}
+button.slick-next:before{
+    content: "\f053";
+    font-weight: 300;
+    font-family: "Font Awesome 5 Pro";
+    color: #bbb;
+}
+
 /* WCMP */
 .wcmp-wrapper .navbar-default.sidebar.side-collapse {
     width: 284px !important;
