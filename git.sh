@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'my account page'
+git commit -m 'add slick assets'
 
 git push origin DEV
 

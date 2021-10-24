@@ -68,6 +68,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
             if (!defined('JWC_SHOW_EXCERPT_WHEN_LOOP')) define('JWC_SHOW_EXCERPT_WHEN_LOOP', false);
             if (!defined('FA_ENABLE')) define('FA_ENABLE', true);
             if (!defined('FLIPSTER_ENABLE')) define('FLIPSTER_ENABLE', false);
+            if (!defined('SLICK_ENABLE')) define('SLICK_ENABLE', false);
             //是否啟用擴充模組
             if (!defined('JDAIO_EXTENSION')) define('JDAIO_EXTENSION', false);
 
