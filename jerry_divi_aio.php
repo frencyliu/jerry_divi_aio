@@ -55,6 +55,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
             add_action('init', [$this, 'jdaio_get_current_user_level']);
             add_action('init', [$this, 'jdaio_set_default']);
 
+            if (!defined('LIBRARY_ONLY')) define('LIBRARY_ONLY', false);
             if (!defined('DEV_ENV')) define('DEV_ENV', false);
             if (!defined('COMMENTS_OPEN')) define('COMMENTS_OPEN', false);
             if (!defined('PROJECT_OPEN')) define('PROJECT_OPEN', false);

@@ -1,21 +1,4 @@
 /*
-INQ HYDRA test
-*/
-
-
-/*後台關閉 Premade layout*/
-.et-fb-main-settings--load_layout .et-fb-settings-tabs-nav-item.et-fb-settings-options_tab_modules_all,
-.et-core-modal-overlay.et-builder-page-creation-modal{
-    display: none !important;
-}
-
-
-
-
-
-
-
-/*
  * for Admin
  * 限制最少
 */
