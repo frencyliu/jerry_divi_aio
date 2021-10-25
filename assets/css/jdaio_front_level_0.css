@@ -757,6 +757,22 @@ button.slick-next:before{
     font-family: "Font Awesome 5 Pro";
     color: #bbb;
 }
+/*JWC woocommerce*/
+.jwc_tab_nav{
+    margin-bottom: 50px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.jwc_tab_nav a{
+    line-height: 4em;
+    background-color: #eee;
+    color: #333;
+    width: 100%;
+    text-align: center;
+    margin: 0px 15px;
+    border-radius: 10px;
+}
 
 /* WCMP */
 .wcmp-wrapper .navbar-default.sidebar.side-collapse {

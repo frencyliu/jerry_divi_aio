@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'adjust slick arrow css'
+git commit -m 'JWC css'
 
 git push origin DEV
 
