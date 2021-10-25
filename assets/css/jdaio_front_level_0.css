@@ -764,6 +764,7 @@ button.slick-next:before{
     width: 100%;
     justify-content: space-around;
 }
+
 .jwc_tab_nav a{
     line-height: 4em;
     background-color: #eee;
@@ -772,6 +773,12 @@ button.slick-next:before{
     text-align: center;
     margin: 0px 15px;
     border-radius: 10px;
+}
+.jwc_tab_nav a:first-child{
+    margin-left: 0px;
+}
+.jwc_tab_nav a:last-child{
+    margin-right: 0px;
 }
 
 /* WCMP */
