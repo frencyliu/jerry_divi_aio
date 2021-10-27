@@ -485,6 +485,18 @@ class Custom_Admin extends Jerry_Divi_AIO
                 );
             }
 
+            //if (class_exists('', false)) {
+                add_submenu_page(
+                    'wpcf7',
+                    __('contact record', 'Jerry_Divi_AIO'),
+                    __('contact record', 'Jerry_Divi_AIO'),
+                    'read',
+                    'admin.php?page=cfdb7-list.php',
+                    '',
+                    7
+                );
+            //}
+
             /*add_submenu_page(
   'admin.php?page=wc-settings',
   '綠界電子發票設定',
@@ -1451,7 +1463,7 @@ class Custom_Admin extends Jerry_Divi_AIO
 
 
         /*echo '<pre>';
-        var_dump($submenu["upload.php"]);
+        var_dump($submenu["wpcf7"]);
         echo '</pre>';*/
     }
     public function jdaio_remove_menu_page_level_0()
@@ -1486,6 +1498,7 @@ class Custom_Admin extends Jerry_Divi_AIO
         remove_menu_page('media-cloud');
         remove_menu_page('media-cloud-tools');
         remove_menu_page('WP-Optimize');
+        remove_menu_page('cfdb7-extensions');
 
 
 
@@ -1495,9 +1508,13 @@ class Custom_Admin extends Jerry_Divi_AIO
         remove_submenu_page('wc-admin&path=/analytics/overview', 'wc-admin&path=/analytics/downloads');
 
         //remove_menu_page('upload.php');
-        remove_submenu_page('upload.php', 'upload.php');
+        //remove_submenu_page('upload.php', 'upload.php');
         remove_submenu_page('upload.php', 'media-new.php');
         remove_submenu_page('upload.php', 'ewww-image-optimizer-bulk');
+
+        /*cfdb7 contact form 7*/
+        remove_submenu_page('wpcf7', 'wpcf7-integration');
+        remove_menu_page('cfdb7-list.php');
 
 
         //WP statistic

@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'basic css update'
+git commit -m 'Contact form 7 integrate'
 
 git push origin DEV
 
