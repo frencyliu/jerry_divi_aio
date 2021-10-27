@@ -57,6 +57,7 @@ span.gutenberg,
     background-image: url("../img/transparent.jpg");
 }
 
+
 /*自訂結帳欄位*/
 #wpbody-content > div.wrap > div.thwcfd-wrap > div.wrap.woocommerce {
     padding: 0px;
@@ -233,6 +234,9 @@ ul.order_notes li.system-note .note_content {
 .a2020_night_mode #wpadminbar #wp-admin-bar-root-default li .ab-item:hover,
 .a2020_night_mode #wpadminbar #wp-admin-bar-top-secondary li .ab-item:hover {
     color: rgba(255, 255, 255, 0.7) !important;
+}
+#wpwrap .wp-list-table.plugins th{
+    background-color: transparent;
 }
 
 /*文章編輯*/

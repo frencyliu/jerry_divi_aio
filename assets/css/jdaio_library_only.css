@@ -9,7 +9,7 @@ INQ HYDRA test
 .et-core-modal-overlay.et-core-active,
 /*editor*/
 .post-type-page #et_pb_main_editor_wrap,
-.post-type-post #et_pb_main_editor_wrap,
+/*.post-type-post #et_pb_main_editor_wrap,*/
 /*Divi button*//*a[data-editor="Return To Standard Editor"]*/
 .et_pb_toggle_builder_wrapper #et_pb_toggle_builder:before,
 .et_pb_toggle_builder_wrapper > .et_pb_builder_is_used,

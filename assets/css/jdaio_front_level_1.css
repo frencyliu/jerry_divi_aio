@@ -1,3 +1,10 @@
 @import "jdaio_front_level_0.css";
 
-
+/*ET builder front-end editor Module Link*/
+li.select-option-item-post_link_url_dipl-testimonial,
+li.select-option-item-post_link_url_dipl-team-member,
+li.select-option-item-post_link_url_project,
+li.select-option-item-post_link_url_divi_mega_pro,
+li.select-option-item-post_author_url{
+    display: none !important;
+}

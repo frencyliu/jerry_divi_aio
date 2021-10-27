@@ -244,7 +244,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             add_menu_page(
                 __('Marketing', 'Jerry_Divi_AIO'),
                 __('Marketing', 'Jerry_Divi_AIO'),
-                'edit_shop_orders',
+                'read',
                 'edit.php?post_type=shop_coupon',
                 '',
                 'dashicons-megaphone', //icon
@@ -1101,7 +1101,7 @@ class Custom_Admin extends Jerry_Divi_AIO
     {
         // level 0跟1可以看到menu bar
         //if (self::$current_user_level > 1) {
-            show_admin_bar(false);
+            //show_admin_bar(false);
         //}
     }
 
