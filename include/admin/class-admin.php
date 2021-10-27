@@ -244,7 +244,7 @@ class Custom_Admin extends Jerry_Divi_AIO
             add_menu_page(
                 __('Marketing', 'Jerry_Divi_AIO'),
                 __('Marketing', 'Jerry_Divi_AIO'),
-                'read',
+                'edit_shop_orders',
                 'edit.php?post_type=shop_coupon',
                 '',
                 'dashicons-megaphone', //icon
@@ -992,13 +992,16 @@ class Custom_Admin extends Jerry_Divi_AIO
 
         //Social Login
         $the_champ_login = get_option('the_champ_login');
-        $the_champ_login['enable'] = get_option('jdaio_sociallogin_enable');
+
+        $the_champ_login['enable'] = ( get_option('jdaio_sociallogin_enable')[1] == 1 )?true:false;
+
         $the_champ_login['fb_key'] = get_option('jdaio_facebook_app');
         $the_champ_login['fb_secret'] = get_option('jdaio_facebook_secret');
         $the_champ_login['google_key'] = get_option('jdaio_google_app');
         $the_champ_login['google_secret'] = get_option('jdaio_google_secret');
         $the_champ_login['line_channel_id'] = get_option('jdaio_line_app');
         $the_champ_login['line_channel_secret'] = get_option('jdaio_line_secret');
+
 
         if (!empty($the_champ_login['fb_key']) && !empty($the_champ_login['fb_secret'])) {
             $providers[] = 'facebook';

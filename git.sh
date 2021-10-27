@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'Contact form 7 integrate'
+git commit -m 'fixed social login'
 
 git push origin DEV
 
