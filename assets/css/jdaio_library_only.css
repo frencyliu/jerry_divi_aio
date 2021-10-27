@@ -5,6 +5,24 @@ INQ HYDRA test
 
 /*後台關閉 Premade layout*/
 .et-fb-main-settings--load_layout .et-fb-settings-tabs-nav-item.et-fb-settings-options_tab_modules_all,
-.et-core-modal-overlay.et-builder-page-creation-modal{
+.et-core-modal-overlay.et-builder-page-creation-modal,
+.et-core-modal-overlay.et-core-active,
+/*editor*/
+.post-type-page #et_pb_main_editor_wrap,
+.post-type-post #et_pb_main_editor_wrap,
+/*Divi button*//*a[data-editor="Return To Standard Editor"]*/
+.et_pb_toggle_builder_wrapper #et_pb_toggle_builder:before,
+.et_pb_toggle_builder_wrapper > .et_pb_builder_is_used,
+.et-fb-page-creation-card-wrapper:not(:last-child),
+button[data-tip="Add New Row"],
+button[data-tip="Add New Module"]{
     display: none !important;
+}
+
+
+.et_pb_toggle_builder_wrapper #et_pb_toggle_builder{
+    padding: 0px 16px;
+}
+.et_pb_toggle_builder_wrapper #et_pb_fb_cta{
+    margin-left: 0px !important;
 }

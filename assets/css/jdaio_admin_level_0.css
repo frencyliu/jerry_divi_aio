@@ -440,12 +440,15 @@ body[class*="_page_wps_optimization_page"] .wps-wrap__main {
 .et_pb_toggle_builder_wrapper  #et_pb_fb_cta{
     color: #fff !important;
 }
+/*
 .et_pb_toggle_builder_wrapper  #et_pb_toggle_builder.button-primary{
     background-color: #ddd !important;
 }
 .et_pb_toggle_builder_wrapper  #et_pb_toggle_builder.button-primary:hover{
     background-color: #ccc !important;
 }
+*/
+
 /*預設把Divi builder縮起來*/
 /*#post-body #et_pb_layout > .inside{
     display: none;

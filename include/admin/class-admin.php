@@ -1024,7 +1024,7 @@ class Custom_Admin extends Jerry_Divi_AIO
 
     public function enqueue_admin_css()
     {
-        if(LIBRARY_ONLY){
+        if(LIBRARY_ONLY && self::$current_user_level > 1){
             wp_enqueue_style('Jerry_Divi_AIO Library only css', plugins_url('/../../assets/css/jdaio_library_only.css', __FILE__));
         }
         wp_enqueue_style('Jerry_Divi_AIO admin_for_editor css', plugins_url('/../../assets/css/jdaio_admin_level_' . self::$current_user_level . '.css', __FILE__));
@@ -1066,6 +1066,9 @@ class Custom_Admin extends Jerry_Divi_AIO
             wp_enqueue_style('slick-theme_css', plugins_url('/../../assets/slick/slick-theme.css', __FILE__));
             wp_enqueue_style('slick_css', plugins_url('/../../assets/slick/slick.css', __FILE__));
         }
+        if(LIBRARY_ONLY && (self::$current_user_level > 1)){
+            wp_enqueue_style('Jerry_Divi_AIO Library only css', plugins_url('/../../assets/css/jdaio_library_only.css', __FILE__));
+        }
     }
 
     public function enqueue_front_js()
@@ -1085,9 +1088,9 @@ class Custom_Admin extends Jerry_Divi_AIO
     public function remove_admin_bar()
     {
         // level 0跟1可以看到menu bar
-        if (self::$current_user_level > 1) {
+        //if (self::$current_user_level > 1) {
             show_admin_bar(false);
-        }
+        //}
     }
 
     public function jdaio_simple_mode()

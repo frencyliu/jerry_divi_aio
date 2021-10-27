@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'JWC css'
+git commit -m 'basic css update'
 
 git push origin DEV
 
