@@ -1,7 +1,7 @@
 #/bin/bash
 
 git add .
-git commit -m 'fixed social login'
+git commit -m 'adjust checkout'
 
 git push origin DEV
 

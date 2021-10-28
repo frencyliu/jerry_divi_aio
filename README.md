@@ -42,6 +42,7 @@ FLIPSTER_ENABLE | bool  | false | 是否載入Flipster Slide資源
 1. users-customers-import-export-for-wp-woocommerce
 因為他的多語系沒有指定text domain，所以更新可能被覆蓋掉
 2. Divi Mega Pro
+3. 綠界物流 - 統一超商前面要加上7-11
 
 # Change Log
 

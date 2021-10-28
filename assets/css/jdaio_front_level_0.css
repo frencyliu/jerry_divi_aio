@@ -385,7 +385,11 @@ form.checkout #shipping_first_name_field {
     width: 100%;
     float: unset;
 }
-
+.woocommerce-checkout-payment{
+    order:3;
+    margin-top: 50px;
+    width: 100%;
+}
 .woo-sale-badge-circle .onsale {
     display: none !important;
 }
@@ -418,7 +422,7 @@ p.woocommerce-thankyou-order-received {
 .woocommerce-checkout .woocommerce-order h2::before,
 .woocommerce-checkout .woocommerce-billing-fields > h3::before,
 .woocommerce-checkout h3#order_review_heading::before,
-.woocommerce-checkout h3.jdaio_billing_detail_heading {
+.woocommerce-checkout h3.jdaio_billing_detail_heading::before{
     content: "◤";
     font-size: 22px;
 }
@@ -488,11 +492,15 @@ li.product .short-desic {
 .jdaio_login_form input[type="password"],
 .jdaio_login_form input[type="tel"],
 .jdaio_login_form input[type="text"],
+.jdaio_login_form input[type="date"],
 .jdaio_login_form select,
 .jdaio_login_form textarea {
     border: unset;
     border-bottom: 1px solid #bbb;
     width:100%;
+}
+.jdaio_login_form select{
+    height: 2.5rem;
 }
 .jdaio_login_form input[type="radio"]{
     width: auto;
@@ -500,11 +508,17 @@ li.product .short-desic {
 }
 .jdaio_login_form input.text:focus,
 .jdaio_login_form input.title:focus,
+.jdaio_login_form input[type="email"]:focus,
+.jdaio_login_form input[type="password"]:focus,
+.jdaio_login_form input[type="tel"]:focus,
 .jdaio_login_form input[type="text"]:focus,
+.jdaio_login_form input[type="date"]:focus,
 .jdaio_login_form select:focus,
 .jdaio_login_form textarea:focus {
     border-bottom: 1px solid #2d3940;
 }
+
+
 .jdaio_login_form form.login p {
     position: relative;
 }
@@ -533,6 +547,7 @@ li.product .short-desic {
 .jdaio_login_form .woocommerce-register {
     text-align: center;
 }
+
 
 /*Register*/
 h1.entry-title.main_title {

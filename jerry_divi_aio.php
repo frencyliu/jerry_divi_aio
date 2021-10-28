@@ -96,6 +96,12 @@ if (!class_exists('Jerry_Divi_AIO')) {
             }
             //移除my account選單
             add_filter('woocommerce_account_menu_items', [$this, 'custom_remove_downloads_my_account'], 99);
+
+            //
+
+
+            add_action( 'woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment', 40 );
+
         }
 
 
@@ -240,9 +246,11 @@ if (!class_exists('Jerry_Divi_AIO')) {
         function jdaio_i18n()
         {
             //debug
-
-
             load_plugin_textdomain('Jerry_Divi_AIO', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+
+
+            //調整WC板位
+            remove_filter( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
         }
 
         public function jdaio_remove_product_link()
