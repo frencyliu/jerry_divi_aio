@@ -45,7 +45,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 				<input class="woocommerce-Input woocommerce-Input--text input-text" type="password" name="password" id="password" autocomplete="current-password" />
 			</p>
             <p class="woocommerce-LostPassword lost_password">
-                <a href="<?php echo site_url(); ?>/register/">註冊</a>
+                <a href="<?php echo esc_url( add_query_arg( 'r', $_SERVER['REQUEST_URI'], site_url() . '/register/' ) )  ?>">註冊</a>
 				<a href="<?php echo esc_url( wp_lostpassword_url() ); ?>"><?php esc_html_e( 'Lost your password?', 'woocommerce' ); ?></a>
 			</p>
 

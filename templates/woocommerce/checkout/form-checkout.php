@@ -41,6 +41,7 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
                 <?php do_action('woocommerce_checkout_billing'); ?>
             </div>
 
+
             <div class="col-2">
                 <?php do_action('woocommerce_checkout_shipping'); ?>
             </div>
@@ -56,29 +57,51 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
     <h3 id="order_review_heading"><?php esc_html_e('Your order', 'woocommerce'); ?></h3>
 
     <?php do_action('woocommerce_checkout_before_order_review'); ?>
+    <p id="yc_coupon_alter" class="form-row form-row-wide">
+    <input id="yc_coupon_alter_input" class="input-text" type="text" placeholder="如果有折價券代碼，請在這邊輸入" /><span class="button">使用折價券</span>
+    </p>
+    <div id="coupon_error"></div>
+
+    <h3 class="jdaio_billing_detail_heading">帳單資訊</h3>
+    <?php do_action('woocommerce_checkout_after_order_review'); ?>
 
     <div id="order_review" class="woocommerce-checkout-review-order">
         <?php do_action('woocommerce_checkout_order_review'); ?>
     </div>
 
-    <h3 class="jdaio_billing_detail_heading">帳單資訊</h3>
-    <?php do_action('woocommerce_checkout_after_order_review'); ?>
+
 
 </form>
 
 <?php do_action('woocommerce_after_checkout_form', $checkout); ?>
 
 <style>
+    #yc_coupon_alter{
+        display: flex !important;
+        order: 2;
+        margin-bottom: 100px;
+    }
+    #yc_coupon_alter span.button{
+        text-align: center;
+        cursor:pointer;
+        background-color:var(--primary, #f0b325) !important;
+        min-width: 150px;
+    margin-left: 15px;
+    font-size: 16px !important;
+    color: #fff !important;
+    padding: 15px !important;
+    border-radius: 5px;
+    }
     .jdaio_billing_detail_heading{
         display: block;
     width: 100%;
     order: 1;
-    }
+}
     /** common style */
     form.checkout.woocommerce-checkout #customer_details{
         padding: 15px;
-    border-radius: 5px;
-    border: 1px solid #eee;
+        border-radius: 5px;
+        border: 1px solid #eee;
     }
     div.woocommerce {
         max-width: 800px;
@@ -122,7 +145,8 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
     .woocommerce+.cart_totals tr.woocommerce-shipping-totals.shipping,
     .woocommerce+.cart_totals tr.order-total,
     .hidden,
-    .woocommerce-billing-fields > h3 {
+    .woocommerce-billing-fields > h3,
+    .woocommerce-form-coupon-toggle {
         display: none !important;
     }
 
@@ -158,14 +182,23 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
 
     form.checkout.woocommerce-checkout {
         display: flex;
-        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    h3.order_review_heading{
+        order: 0;
+    }
+    .jdaio_billing_detail_heading{
+        order: 3;
     }
 
     form.checkout.woocommerce-checkout #customer_details {
-        order: 2;
+        order: 4;
         width: 100% !important;
         float: none !important;
         margin-right: 0 !important;
+    }
+    #payment{
+        order: 5;
     }
 
     form.checkout.woocommerce-checkout #order_review {
@@ -243,7 +276,12 @@ if (!$checkout->is_registration_enabled() && $checkout->is_registration_required
     }
 </style>
 
-<?php
-echo "<link rel='stylesheet' href='" . home_url() . "/wp-content/plugins/woomp/public/css/themes/" . strtolower(wp_get_theme()->name) . ".css'>";
-
-?>
+<script>
+    jQuery('#yc_coupon_alter_input').on('keyup', function(){
+        let coupon_code = jQuery(this).val();
+        jQuery('#coupon_code').val(coupon_code);
+    });
+    jQuery('#yc_coupon_alter .button').on('click', function(){
+        jQuery('.checkout_coupon button[name="apply_coupon"]').click();
+    });
+</script>

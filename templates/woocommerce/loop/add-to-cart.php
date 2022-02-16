@@ -51,7 +51,7 @@ if (JWC_SHOW_ADD_TO_CART_WHEN_LOOP) {
     );
 }
 
-if (JWC_SHOW_DIRECT_BUY_WHEN_LOOP) {
+if (JWC_SHOW_DIRECT_BUY_WHEN_LOOP && $product->is_type( 'simple' )) {
     echo sprintf(
         '<a href="%s" class="%s" %s>%s</a>',
         esc_url(site_url() . '/checkout/?empty_cart=yes&add-to-cart=' . $product->get_ID()),

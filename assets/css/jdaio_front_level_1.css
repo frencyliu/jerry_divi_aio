@@ -8,3 +8,21 @@ li.select-option-item-post_link_url_divi_mega_pro,
 li.select-option-item-post_author_url{
     display: none !important;
 }
+
+/*WP Support Candy*/
+#wpsc_tickets_container{
+    border:none !important;
+}
+.wpsp_sidebar_labels{
+    overflow: visible;
+}
+#wpsc_add_people_widget,
+#wpsc_individual_copyurl_btn,
+#wpsc_save_ticket_filter_btn,
+.wpsc_edit_custom_filter,
+#wpsc_load_list_reset_filters_btn{
+    display: none !important;
+}
+div#wpsc_popup_container{
+    top: 250px;
+}

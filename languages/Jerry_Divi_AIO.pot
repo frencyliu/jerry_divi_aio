@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Jerry-Divi-AIO\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 18:26+0000\n"
+"POT-Creation-Date: 2021-10-27 03:30+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -16,31 +16,39 @@ msgstr ""
 "X-Loco-Version: 2.5.3; wp-5.8.1\n"
 "X-Domain: Jerry_Divi_AIO"
 
-#: include/admin/class-admin.php:1367
+#: include/admin/class-admin.php:1427
 msgid "Analytics"
 msgstr ""
 
-#: include/admin/class-admin.php:464 include/admin/class-admin.php:465
+#: include/admin/class-admin.php:467 include/admin/class-admin.php:468
 msgid "Checkout Form"
 msgstr ""
 
-#: include/admin/class-admin.php:252 include/admin/class-admin.php:253
+#: include/admin/class-admin.php:479 include/admin/class-admin.php:480
+msgid "Connect Facebook"
+msgstr ""
+
+#: include/admin/class-admin.php:491 include/admin/class-admin.php:492
+msgid "contact record"
+msgstr ""
+
+#: include/admin/class-admin.php:255 include/admin/class-admin.php:256
 msgid "Coupons"
 msgstr ""
 
-#: include/admin/class-admin.php:453 include/admin/class-admin.php:454
+#: include/admin/class-admin.php:456 include/admin/class-admin.php:457
 msgid "Email Notification"
 msgstr ""
 
-#: include/admin/class-admin.php:318 include/admin/class-admin.php:319
+#: include/admin/class-admin.php:321 include/admin/class-admin.php:322
 msgid "Email Settings"
 msgstr ""
 
-#: include/admin/class-admin.php:203 include/admin/class-admin.php:204
+#: include/admin/class-admin.php:206 include/admin/class-admin.php:207
 msgid "Export Oders"
 msgstr ""
 
-#: include/admin/class-admin.php:1391
+#: include/admin/class-admin.php:1451
 msgid "Export User"
 msgstr ""
 
@@ -48,11 +56,35 @@ msgstr ""
 msgid "EZ update all the site"
 msgstr ""
 
-#: include/admin/class-admin.php:263 include/admin/class-admin.php:264
+#: include/admin/class-admin.php:851
+msgid "Facebook App ID"
+msgstr ""
+
+#: include/admin/class-admin.php:866
+msgid "Facebook App Secret"
+msgstr ""
+
+#: include/admin/class-admin.php:809
+msgid "Facebook Pixel ID"
+msgstr ""
+
+#: include/admin/class-admin.php:266 include/admin/class-admin.php:267
 msgid "Generate Coupons"
 msgstr ""
 
-#: include/admin/class-admin.php:298 include/admin/class-admin.php:299
+#: include/admin/class-admin.php:824
+msgid "Google Analytics tracking ID"
+msgstr ""
+
+#: include/admin/class-admin.php:881
+msgid "Google Client ID"
+msgstr ""
+
+#: include/admin/class-admin.php:896
+msgid "Google Client Secret"
+msgstr ""
+
+#: include/admin/class-admin.php:301 include/admin/class-admin.php:302
 msgid "Homepage"
 msgstr ""
 
@@ -64,102 +96,227 @@ msgstr ""
 msgid "Jerry-Divi-AIO"
 msgstr ""
 
-#: include/admin/class-admin.php:383 include/admin/class-admin.php:384
+#: include/admin/class-admin.php:386 include/admin/class-admin.php:387
 msgid "Library"
 msgstr ""
 
-#: include/admin/class-admin.php:242 include/admin/class-admin.php:243
-#: include/admin/class-admin.php:284 include/admin/class-admin.php:285
+#: include/admin/class-admin.php:911
+msgid "Line Channel ID"
+msgstr ""
+
+#: include/admin/class-admin.php:926
+msgid "Line Channel Secret"
+msgstr ""
+
+#: include/admin/class-admin.php:245 include/admin/class-admin.php:246
+#: include/admin/class-admin.php:287 include/admin/class-admin.php:288
 msgid "Marketing"
 msgstr ""
 
-#: include/admin/class-admin.php:307 include/admin/class-admin.php:308
+#: include/admin/class-admin.php:310 include/admin/class-admin.php:311
 msgid "Menus"
 msgstr ""
 
-#: include/admin/class-admin.php:191 include/admin/class-admin.php:192
+#: include/admin/class-admin.php:194 include/admin/class-admin.php:195
 msgid "Oders"
 msgstr ""
 
-#: include/admin/class-admin.php:1349
+#: include/admin/class-admin.php:1409
 msgid "Pages"
 msgstr ""
 
-#: include/admin/class-admin.php:435 include/admin/class-admin.php:436
+#: include/admin/class-admin.php:438 include/admin/class-admin.php:439
 msgid "Payment Method"
 msgstr ""
 
-#: include/admin/class-admin.php:1346
+#: include/admin/class-admin.php:1406
 msgid "Posts"
 msgstr ""
 
-#: include/admin/class-admin.php:444 include/admin/class-admin.php:445
+#: include/admin/class-admin.php:447 include/admin/class-admin.php:448
 msgid "Privacy"
 msgstr ""
 
-#: include/admin/class-admin.php:1361
+#: include/admin/class-admin.php:1421
 msgid "Products"
 msgstr ""
 
-#: include/admin/class-admin.php:1352
+#: include/admin/class-admin.php:1412
 msgid "Projects"
 msgstr ""
 
-#: include/admin/class-admin.php:274 include/admin/class-admin.php:275
+#: include/admin/class-admin.php:277 include/admin/class-admin.php:278
 msgid "SEO Settings"
 msgstr ""
 
-#: include/admin/class-admin.php:552
+#: include/admin/class-admin.php:579 include/admin/class-admin.php:580
 msgid "Setting"
 msgstr ""
 
-#: include/admin/class-admin.php:215 include/admin/class-admin.php:216
+#: include/admin/class-admin.php:218 include/admin/class-admin.php:219
 msgid "Shipping"
 msgstr ""
 
-#: include/admin/class-admin.php:426 include/admin/class-admin.php:427
+#: include/admin/class-admin.php:429 include/admin/class-admin.php:430
 msgid "Shipping Cost"
 msgstr ""
 
-#: include/admin/class-admin.php:342 include/admin/class-admin.php:343
+#: include/admin/class-admin.php:345 include/admin/class-admin.php:346
 msgid "Slider Revolution"
 msgstr ""
 
-#: include/admin/class-admin.php:416 include/admin/class-admin.php:417
+#: include/admin/class-admin.php:619
+msgid "Some description of my field"
+msgstr ""
+
+#: include/admin/class-admin.php:419 include/admin/class-admin.php:420
 msgid "Store Setting"
 msgstr ""
 
-#: include/admin/class-admin.php:361 include/admin/class-admin.php:362
-#: include/admin/class-admin.php:1358
+#: include/admin/class-admin.php:364 include/admin/class-admin.php:365
+#: include/admin/class-admin.php:1418
 msgid "Team"
 msgstr ""
 
-#: include/admin/class-admin.php:352 include/admin/class-admin.php:353
-#: include/admin/class-admin.php:1355
+#: include/admin/class-admin.php:355 include/admin/class-admin.php:356
+#: include/admin/class-admin.php:1415
 msgid "Testimonial"
 msgstr ""
 
-#: include/admin/class-admin.php:332 include/admin/class-admin.php:333
+#: include/admin/class-admin.php:335 include/admin/class-admin.php:336
 msgid "Theme Builder"
 msgstr ""
 
-#: include/admin/class-admin.php:177 include/admin/class-admin.php:178
-#: include/admin/class-admin.php:1370
+#: include/admin/class-admin.php:180 include/admin/class-admin.php:181
+#: include/admin/class-admin.php:1430
 msgid "Traffic"
 msgstr ""
 
-#: include/admin/class-admin.php:1373
+#: include/admin/class-admin.php:1433
 msgid "Translate"
 msgstr ""
 
-#: include/admin/class-admin.php:499 include/admin/class-admin.php:500
+#: include/admin/class-admin.php:526 include/admin/class-admin.php:527
 msgid "Tutorial"
 msgstr ""
 
-#: include/admin/class-admin.php:1376
+#: include/admin/class-admin.php:1436
 msgid "Uploads"
 msgstr ""
 
-#: include/admin/class-admin.php:1364
+#: include/admin/class-admin.php:1424
 msgid "Users"
+msgstr ""
+
+#: include/admin/class-admin.php:708
+msgid "啟用 FB 即時聊天"
+msgstr ""
+
+#: include/admin/class-admin.php:840
+msgid "啟用社群登入"
+msgstr ""
+
+#: include/sync/class-page.php:133
+msgid "地址"
+msgstr ""
+
+#: include/admin/class-admin.php:593
+msgid "基礎設定"
+msgstr ""
+
+#: include/sync/class-page.php:138
+msgid "如何得知我們"
+msgstr ""
+
+#: include/sync/class-page.php:112
+msgid "姓名"
+msgstr ""
+
+#: include/admin/class-admin.php:665
+msgid "建議尺寸100X100，支援JPG/PNG圖檔"
+msgstr ""
+
+#: include/admin/class-admin.php:680
+msgid "建議尺寸1980X1080，支援JPG/PNG圖檔"
+msgstr ""
+
+#: include/admin/class-admin.php:650
+msgid "建議尺寸300X300，支援JPG/PNG圖檔"
+msgstr ""
+
+#: include/sync/class-page.php:117
+msgid "性別"
+msgstr ""
+
+#: include/sync/class-page.php:123
+msgid "手機"
+msgstr ""
+
+#: include/sync/class-page.php:128
+msgid "生日"
+msgstr ""
+
+#: include/admin/class-admin.php:679
+msgid "登入頁背景"
+msgstr ""
+
+#: include/admin/class-admin.php:608
+msgid "社群登入"
+msgstr ""
+
+#: include/admin/class-admin.php:649
+msgid "網站 LOGO"
+msgstr ""
+
+#: include/admin/class-admin.php:618 include/admin/class-admin.php:629
+msgid "網站名稱"
+msgstr ""
+
+#: include/admin/class-admin.php:664
+msgid "網站小圖標(favicon)"
+msgstr ""
+
+#: include/admin/class-admin.php:640
+msgid "網站說明"
+msgstr ""
+
+#: include/admin/class-admin.php:603
+msgid "網站追蹤設定"
+msgstr ""
+
+#: include/admin/class-admin.php:598
+msgid "聊天按鈕"
+msgstr ""
+
+#: include/admin/class-admin.php:642
+msgid "請說明你的網站特色"
+msgstr ""
+
+#: include/admin/class-admin.php:782
+msgid "輸入 EMAIL"
+msgstr ""
+
+#: include/admin/class-admin.php:752
+msgid "輸入 Instagram 連結"
+msgstr ""
+
+#: include/admin/class-admin.php:722
+msgid "輸入 LINE 連結"
+msgstr ""
+
+#: include/admin/class-admin.php:737
+msgid "輸入 Telegram 連結"
+msgstr ""
+
+#: include/admin/class-admin.php:767
+msgid "輸入 WhatsApp 連結"
+msgstr ""
+
+#: include/admin/class-admin.php:793
+msgid "輸入手機號碼"
+msgstr ""
+
+#: include/admin/class-admin.php:653 include/admin/class-admin.php:668
+#: include/admin/class-admin.php:683
+msgid "選擇圖片"
 msgstr ""

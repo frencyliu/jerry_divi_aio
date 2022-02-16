@@ -51,11 +51,12 @@ if (!class_exists('Jerry_Divi_AIO')) {
 
         public function __construct()
         {
-            //add_action('admin_head', [ $this, 'test' ]);
-            add_action('init', [$this, 'jdaio_get_current_user_level']);
-            add_action('init', [$this, 'jdaio_set_default']);
 
+
+            //START INQ only
             if (!defined('LIBRARY_ONLY')) define('LIBRARY_ONLY', false);
+            //END INQ only
+
             if (!defined('DEV_ENV')) define('DEV_ENV', false);
             if (!defined('COMMENTS_OPEN')) define('COMMENTS_OPEN', false);
             if (!defined('PROJECT_OPEN')) define('PROJECT_OPEN', false);
@@ -67,11 +68,24 @@ if (!class_exists('Jerry_Divi_AIO')) {
             if (!defined('JWC_SHOW_ADD_TO_CART_WHEN_LOOP')) define('JWC_SHOW_ADD_TO_CART_WHEN_LOOP', true);
             if (!defined('JWC_SHOW_DIRECT_BUY_WHEN_LOOP')) define('JWC_SHOW_DIRECT_BUY_WHEN_LOOP', true);
             if (!defined('JWC_SHOW_EXCERPT_WHEN_LOOP')) define('JWC_SHOW_EXCERPT_WHEN_LOOP', false);
+            if (!defined('TAG_ENABLE')) define('TAG_ENABLE', false);
+            if (!defined('CAT_RADIO')) define('CAT_RADIO', false);//設分類為單選
+            if (!defined('VIDEO_CPT')) define('VIDEO_CPT', false);//設分類為單選
+
+
+            if (!defined('ROW_ACTION_ENABLE')) define('ROW_ACTION_ENABLE', false);
+
             if (!defined('FA_ENABLE')) define('FA_ENABLE', true);
             if (!defined('FLIPSTER_ENABLE')) define('FLIPSTER_ENABLE', false);
             if (!defined('SLICK_ENABLE')) define('SLICK_ENABLE', false);
             //是否啟用擴充模組
             if (!defined('JDAIO_EXTENSION')) define('JDAIO_EXTENSION', false);
+
+
+
+            //add_action('admin_head', [ $this, 'test' ]);
+            add_action('init', [$this, 'jdaio_get_current_user_level']);
+            add_action('init', [$this, 'jdaio_set_default']);
 
 
 
@@ -99,9 +113,8 @@ if (!class_exists('Jerry_Divi_AIO')) {
 
             //
 
-
-            add_action( 'woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment', 40 );
-
+            //調整結帳頁順序
+            add_action('woocommerce_checkout_after_customer_details', 'woocommerce_checkout_payment', 40);
         }
 
 
@@ -120,6 +133,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
         {
             //var_dump($options);
         }
+
 
         public function jdaio_set_default()
         {
@@ -160,6 +174,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
                 }
             }
             //update_post_meta( $r_post_id, '_et_pb_page_layout', 'et_no_sidebar');
+
 
 
 
@@ -250,7 +265,7 @@ if (!class_exists('Jerry_Divi_AIO')) {
 
 
             //調整WC板位
-            remove_filter( 'woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20 );
+            remove_filter('woocommerce_checkout_order_review', 'woocommerce_checkout_payment', 20);
         }
 
         public function jdaio_remove_product_link()

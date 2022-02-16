@@ -22,7 +22,42 @@ span.gutenberg,
     color: #ddd;
     font-style: italic;
 }
-
+.yc_general {
+    background-color: #bbb;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    line-height: 2.5em;
+}
+.yc_warning {
+    background-color: lightcoral;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    line-height: 2.5em;
+}
+.yc_success {
+    background-color: green;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    line-height: 2.5em;
+}
+.widefat td{
+    vertical-align: middle;
+}
+ul.order_notes li.customer-note.ask_by_customer .note_content{
+    background-color: var(--wc-red, #ffa4a4);
+}
+ul.order_notes li.ask_by_customer .note_content p{
+    text-align: right;
+}
+ul.order_notes li.customer-note.ask_by_customer .note_content::after{
+    border-color: var(--wc-red, #ffa4a4) transparent;
+    transform: scaleX(-1);
+    left: unset;
+    right: 20px;
+}
 .button-primary{
     background: var(--a2020-primary, #2271b1) !important;
     /*border-color:unset !important;
@@ -39,9 +74,37 @@ span.gutenberg,
 .button-primary:hover{
     background: var(--a2020-primary-darker, #135e96) !important;
 }
-
-
-
+.jdaio_general{
+    background-color: #bbb;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    line-height: 2.5em;
+}
+.jdaio_warning{
+    background-color: lightcoral;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    line-height: 2.5em;
+}
+.jdaio_success{
+    background-color: green;
+    color: #fff;
+    padding: 4px 8px;
+    border-radius: 4px;
+    line-height: 2.5em;
+}
+/*APF*/
+p, ul, ol, dl, pre, address, fieldset, figure{
+    margin: 0 0 20px 0;
+}
+.repeatable .MyFirstPlugin-field[data-type="inline_mixed"]{
+    display: flex;
+}
+div[class*="-input-label-container"]{
+    width: 100% !important;
+}
 /*極簡模式*/
 .jdaio_simple_mode_btn {
     position: fixed;
@@ -217,6 +280,7 @@ ul.order_notes li.system-note .note_content {
     background-color: transparent !important;
 }
 
+
 .a2020-admin-bar.a2020_night_mode {
     background: #111 !important;
 }
@@ -237,6 +301,9 @@ ul.order_notes li.system-note .note_content {
 }
 #wpwrap .wp-list-table.plugins th{
     background-color: transparent;
+}
+input[id*="submit_button"]{
+    margin-left: 0px !important;
 }
 
 /*文章編輯*/
@@ -550,4 +617,18 @@ table.wp-list-table span.wc-featured, table.wp-list-table span.wc-image{
     content:' -';
 }
 
+/*Support Candy*/
+.raised_by_div .thread_avatar{
+    width: 30px !important;
+}
 
+/*Custom Product Tabs for WooCommerce*/
+
+.yikes_woo_add_another_tab a{
+    color: #fff !important;
+}
+.yikes_woo_reusable_tab_title_label{
+    width:unset;
+    position: relative;
+    top: 7px;
+}

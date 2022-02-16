@@ -2,6 +2,18 @@
 .w-100{
     width: 100% !important;
 }
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left !important;
+}
+.text-right{
+    text-align: right !important;
+}
+.text-justify{
+    text-align: justify !important;
+}
 .white-space-nowrap {
     white-space: nowrap !important;
 }
@@ -318,8 +330,22 @@ body .jdaio_btn-sm-primary {
     cursor: pointer;
     border: none;
 }
+body .jdaio_btn-gray {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #999;
+    color: #fff !important;
+    border-radius: 6px;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+}
 body .jdaio_btn-primary:hover,
-body .jdaio_btn-sm-primary:hover {
+body .jdaio_btn-sm-primary:hover,
+body .jdaio_btn-gray:hover {
     opacity: 0.8;
 }
 
@@ -482,6 +508,15 @@ li.product .short-desic {
     box-shadow: 0px 0px 30px #ccc;
     padding: 3rem;
 }
+@media (max-width:576px){
+    .jdaio_login_form_wrap{
+        padding: 0px 32px;
+    }
+    .jdaio_login_form{
+        padding: 3rem 0px;
+        width: 100%;
+    }
+}
 
 .woocommerce .jdaio_login_form form.login {
     border: none !important;
@@ -628,6 +663,10 @@ form.woocommerce-form-register .woocommerce-form-register__submit:hover {
 #content-area table th {
     font-size: 14px;
 }
+.woocommerce-orders-table__cell-order-actions .woocommerce-button{
+    margin-right: 10px;
+}
+
 @media (min-width: 992px) {
     #customer_login {
         max-width: 600px;
@@ -797,6 +836,10 @@ button.slick-next:before{
 }
 .jwc_tab_nav a:last-child{
     margin-right: 0px;
+}
+/**/
+#wpsc_status_widget{
+    margin-top: 47px;
 }
 
 /* WCMP */

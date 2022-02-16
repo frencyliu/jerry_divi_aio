@@ -15,7 +15,8 @@ INQ HYDRA test
 .et_pb_toggle_builder_wrapper > .et_pb_builder_is_used,
 .et-fb-page-creation-card-wrapper:not(:last-child),
 button[data-tip="Add New Row"],
-button[data-tip="Add New Module"]{
+button[data-tip="Add New Module"],
+li.et-fb-settings-options_tab_modules_all{
     display: none !important;
 }
 

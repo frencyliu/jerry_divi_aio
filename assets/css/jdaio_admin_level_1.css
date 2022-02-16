@@ -4,15 +4,23 @@
  * 可以使用AVADA複雜選項選單(懂CSS)，可以套版
  * 新增用戶
 */
-
 @import "jdaio_admin_level_0.css";
+
+
+/*Custom Product Tabs for WooCommerce*/
+.yikes-woo-all-about-us,
+/*WPC*/
+#woobt_settings > table > tbody > tr:nth-child(3),/*個別加入購物車*/
+#woobt_settings > table > tbody > tr:nth-child(1) > th > a,/*setting*/
+/*Support Candy*/
+#wpsc_assign_agent_widget,
+/*#wpbody-content .bootstrap-iso:nth-child(2),*/
 /*CF7 contact form 7*/
 #wpcf7-contact-form-list-table #welcome-panel,
 /*BOGO*/
 #toplevel_page_bogo,
 /*控制台留言*/
 #latest-comments,
-#wp-admin-bar-root-default > li,
 #contextual-help-link-wrap,
 .woocommerce-marketing-knowledgebase-card,
 .wp-list-table tr#tag-29,
@@ -75,6 +83,8 @@ select#role option[value="translator"],
 /*WC 折價券*/
 #coupon-root,
 .components-card.woocommerce-store-alerts.is-alert-update,
+/*WC 隱藏組合商品*/
+#product-type option[value="grouped"],
 /*匯出會員資料*/
 .wt-import-export-upsell-wrapper.market-box,
 #wpbody-content > div.wt_user_show_legecy_menu.notice-info.notice.is-dismissible,
@@ -130,7 +140,15 @@ select#role option[value="translator"],
 /*admin 2020*/
 li.uk-animation-slide-right #a2020-update-wrap,
 /*#offcanvas-user-menu > div > div:nth-child(2) > div > div.uk-width-1-1.uk-margin-top.uk-grid-margin.uk-first-column > div.a2020-switch-container.uk-margin-bottom,*/
-/*文章編輯*/
+/*文章編輯 edit.php */
+#post_status option[value="pending"],
+.misc-pub-section.misc-pub-visibility,
+.misc-pub-section.misc-pub-revisions,
+#taxonomy-category .tsf-tooltip-wrap,
+#taxonomy-category .tsf-primary-term-selector,
+#taxonomy-category li#category-1,
+button.handle-order-lower,
+button.handle-order-higher,
 #side-sortables #featured-image-2_post,
 #side-sortables #featured-image-3_post,
 #side-sortables #featured-image-4_post,
@@ -155,7 +173,10 @@ body[class*='_page_wps_optimization_page'] #postbox-container-1,
 #plugin_news_row,
 body.toplevel_page_revslider .div150,
 /*分類頁 - 分類與標籤轉換程式*/
-.edit-term-notes{
+.edit-term-notes,
+/*simple-css*/
+.appearance_page_simple-css .simple-css-sidebar .postbox,
+#linked_product_data > div.options_group > p.form-field:nth-child(2){
     display: none !important;
     opacity: 0 !important;
     visibility: hidden !important;

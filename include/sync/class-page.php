@@ -17,11 +17,21 @@ class Page extends Jerry_Divi_AIO
 
     public function __construct()
     {
-
-
         add_action('admin_head', [$this, 'jdaio_create_default_page']);
         add_action('admin_head', [$this, 'jdaio_hide_post']);
         add_action('init', [$this, 'jdaio_add_shortcode']);
+
+        add_action('woocommerce_registration_redirect', [$this, 'custom_registration_redirect'], 100);
+    }
+
+    // After registration, logout the user and redirect to home page
+    function custom_registration_redirect()
+    {
+        $redirect = $_GET['r'];
+        if((strpos($redirect, 'register') != false) || !isset($redirect)){
+            return home_url('/my-account');
+        }
+        return site_url() . $redirect;
     }
 
     function jdaio_create_default_page()
@@ -81,7 +91,7 @@ class Page extends Jerry_Divi_AIO
                     <?php if ('no' === get_option('woocommerce_registration_generate_username')) : ?>
 
                         <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
-                            <label for="reg_username"><?php esc_html_e('Username', 'woocommerce'); ?> <span class="required">*</span></label>
+                            <label for="reg_username"><?php esc_html_e('帳號', 'woocommerce'); ?> <span class="required">*</span></label>
                             <input type="text" class="woocommerce-Input woocommerce-Input--text input-text" name="username" id="reg_username" autocomplete="username" value="<?php echo (!empty($_POST['username'])) ? esc_attr(wp_unslash($_POST['username'])) : ''; ?>" /><?php // @codingStandardsIgnoreLine
                                                                                                                                                                                                                                                                             ?>
                         </p>
@@ -115,8 +125,8 @@ class Page extends Jerry_Divi_AIO
 
                     <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
                         <label for="reg_gender"><?php esc_html_e('性別', 'Jerry_Divi_AIO'); ?> <span class="required">*</span></label>
-                        <input type="radio" id="male" name="male" value="male"> 男
-                        <input type="radio" id="female" name="female" value="female"> 女
+                        <input type="radio" id="male" name="reg_gender" value="male"> 男
+                        <input type="radio" id="female" name="reg_gender" value="female"> 女
                     </p>
 
                     <p class="woocommerce-form-row woocommerce-form-row--wide form-row form-row-wide">
@@ -139,9 +149,15 @@ class Page extends Jerry_Divi_AIO
 
                         <select class="woocommerce-Input woocommerce-Input--select input-select" name="how_to_know_us" id="reg_how_to_know_us" autocomplete="how_to_know_us" value="<?php echo (!empty($_POST['how_to_know_us'])) ? esc_attr(wp_unslash($_POST['how_to_know_us'])) : ''; ?>">
                             <option>-</option>
-                            <option value="google">Google</option>
-                            <option value="fb">Facebook</option>
-                            <option value="ig">Instagram</option>
+                            <option value="tv">電視/廣告</option>
+                            <option value="broadcast">廣播</option>
+                            <option value="moto_shop">機車行</option>
+                            <option value="moto_outlet">汽機車用品量販店</option>
+                            <option value="facebook">FACEBOOK</option>
+                            <option value="youtube">YOUTUBE</option>
+                            <option value="google">GOOGLE</option>
+                            <option value="mall">購物平台</option>
+                            <option value="friend">親朋好友介紹</option>
                         </select>
                     </p>
 

@@ -1,0 +1,337 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Jerry-Divi-AIO\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-01 17:45+0000\n"
+"PO-Revision-Date: 2021-10-20 03:28+0000\n"
+"Last-Translator: \n"
+"Language-Team: 繁體中文\n"
+"Language: zh_TW\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.5.3; wp-5.8.1\n"
+"X-Domain: Jerry_Divi_AIO"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1403
+msgid "Analytics"
+msgstr "銷售圖表"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:468
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:469
+msgid "Checkout Form"
+msgstr "自訂結帳表單"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:480
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:481
+msgid "Connect Facebook"
+msgstr "連結 Facebook"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:256
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:257
+msgid "Coupons"
+msgstr "折價券"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:457
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:458
+msgid "Email Notification"
+msgstr "訂單通知信內容設定"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:322
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:323
+msgid "Email Settings"
+msgstr "系統發信設定"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:207
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:208
+msgid "Export Oders"
+msgstr "匯出訂單"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1427
+msgid "Export User"
+msgstr "匯出用戶資料"
+
+#. Description of the plugin
+msgid "EZ update all the site"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:840
+msgid "Facebook App ID"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:855
+msgid "Facebook App Secret"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:798
+msgid "Facebook Pixel ID"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:267
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:268
+msgid "Generate Coupons"
+msgstr "批量產生折價券"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:813
+msgid "Google Analytics tracking ID"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:870
+msgid "Google Client ID"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:885
+msgid "Google Client Secret"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:302
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:303
+msgid "Homepage"
+msgstr "首頁設定"
+
+#. Author of the plugin
+msgid "Jerry Liu"
+msgstr ""
+
+#. Name of the plugin
+msgid "Jerry-Divi-AIO"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:387
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:388
+msgid "Library"
+msgstr "元件庫"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:900
+msgid "Line Channel ID"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:915
+msgid "Line Channel Secret"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:246
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:247
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:288
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:289
+msgid "Marketing"
+msgstr ""
+"行銷中心\n"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:311
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:312
+msgid "Menus"
+msgstr "網站選單"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:195
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:196
+msgid "Oders"
+msgstr "訂單中心"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1385
+msgid "Pages"
+msgstr ""
+"頁面中心\n"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:439
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:440
+msgid "Payment Method"
+msgstr "付款方式設定"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1382
+msgid "Posts"
+msgstr ""
+"\n"
+"文章中心\n"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:448
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:449
+msgid "Privacy"
+msgstr "帳號及隱私權設定"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1397
+msgid "Products"
+msgstr ""
+"\n"
+"商品中心\n"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1388
+msgid "Projects"
+msgstr "案例/作品集"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:278
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:279
+msgid "SEO Settings"
+msgstr "SEO設定"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:568
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:569
+msgid "Setting"
+msgstr ""
+"\n"
+"網站一般設定\n"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:219
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:220
+msgid "Shipping"
+msgstr ""
+"\n"
+"物流中心"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:430
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:431
+msgid "Shipping Cost"
+msgstr "運費設定"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:346
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:347
+msgid "Slider Revolution"
+msgstr "建立Slider"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:608
+msgid "Some description of my field"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:420
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:421
+msgid "Store Setting"
+msgstr ""
+"\n"
+"網路商店設定\n"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:365
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:366
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1394
+msgid "Team"
+msgstr "團隊介紹"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:356
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:357
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1391
+msgid "Testimonial"
+msgstr ""
+"\n"
+"用戶見證\n"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:336
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:337
+msgid "Theme Builder"
+msgstr "網站外觀組件"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:181
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:182
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1406
+msgid "Traffic"
+msgstr "流量中心"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1409
+msgid "Translate"
+msgstr ""
+"\n"
+"翻譯中心\n"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:515
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:516
+msgid "Tutorial"
+msgstr "教學中心"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1412
+msgid "Uploads"
+msgstr "檔案上傳中心"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:1400
+msgid "Users"
+msgstr "用戶中心"
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:697
+msgid "啟用 FB 即時聊天"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:829
+msgid "啟用社群登入"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:582
+msgid "基礎設定"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:654
+msgid "建議尺寸100X100，支援JPG/PNG圖檔"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:669
+msgid "建議尺寸1980X1080，支援JPG/PNG圖檔"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:639
+msgid "建議尺寸300X300，支援JPG/PNG圖檔"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:668
+msgid "登入頁背景"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:597
+msgid "社群登入"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:638
+msgid "網站 LOGO"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:607
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:618
+msgid "網站名稱"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:653
+msgid "網站小圖標(favicon)"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:629
+msgid "網站說明"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:592
+msgid "網站追蹤設定"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:587
+msgid "聊天按鈕"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:631
+msgid "請說明你的網站特色"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:771
+msgid "輸入 EMAIL"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:741
+msgid "輸入 Instagram 連結"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:711
+msgid "輸入 LINE 連結"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:726
+msgid "輸入 Telegram 連結"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:756
+msgid "輸入 WhatsApp 連結"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:782
+msgid "輸入手機號碼"
+msgstr ""
+
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:642
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:657
+#: ../../../../divi_tp/wp-content/plugins/jerry_divi_aio/include/admin/class-admin.php:672
+msgid "選擇圖片"
+msgstr ""

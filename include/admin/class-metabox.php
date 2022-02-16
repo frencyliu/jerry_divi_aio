@@ -77,6 +77,22 @@ class MetaBox extends Jerry_Divi_AIO
     function jdaio_remove_metabox()
     {
 
+        remove_meta_box(
+            'revisionsdiv',
+            'post',
+            'normal'
+        );
+        remove_meta_box(
+            'revisionsdiv',
+            'page',
+            'normal'
+        );
+        remove_meta_box(
+            'revisionsdiv',
+            'project',
+            'normal'
+        );
+
         /*remove_meta_box(
             string $id, //require
             string|array|WP_Screen $screen, //require, like post type
@@ -158,6 +174,13 @@ class MetaBox extends Jerry_Divi_AIO
             'product',
             'normal'
         );
+
+        //Project
+        remove_meta_box(
+            'postcustom',
+            'project',
+            'normal'
+        );
     }
 
     function jdaio_reorder_post_metabox($order)
@@ -234,6 +257,21 @@ class MetaBox extends Jerry_Divi_AIO
                     )),
                 );
                 break;
+
+                case 'video':
+                    return array(
+                        'normal'   => join(",", array(
+                            'postimagediv',
+                            'tsf-inpost-box',
+                            'slider_revolution_metabox',
+                        )),
+                        'side'     => join(",", array(
+                            'submitdiv',
+                        )),
+                    );
+                    break;
+
+
 
             default:
                 # code...
